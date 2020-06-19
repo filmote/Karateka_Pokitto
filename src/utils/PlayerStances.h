@@ -1,8 +1,11 @@
 #pragma once
 
-#include "Arduboy2Ext.h"
+#include "Pokitto.h"
 #include "../images/images.h"
-#include "../../Enums.h"
+#include "Enums.h"
+
+using PC = Pokitto::Core;
+using PD = Pokitto::Display;
 
 const int8_t PROGMEM player_head[] = {
 14, -39, 0, 0,        // STANCE_DEFAULT
@@ -211,39 +214,3 @@ const int8_t PROGMEM player_legs[] = {
 */
 };
        
-
-void renderPlayerStance(Arduboy2Ext &arduboy, int8_t x, int8_t y, uint8_t stance) {
-
-  RenderDetails head = { 0, 0, 127, false };
-  RenderDetails body = { 0, 0, 127, false };
-  RenderDetails leg = { 0, 0, 127, false };
-  
-  if (stance <= STANCE_ENTRANCE_6) {
-
-    head.xOffset = pgm_read_byte(&player_head[ (stance * 4) ]);
-    head.yOffset = pgm_read_byte(&player_head[ (stance * 4) + 1]);
-    head.index = pgm_read_byte(&player_head[ (stance * 4)  + 2]);
-    head.rev = (pgm_read_byte(&player_head[ (stance * 4) ] + 3) == 1);
-
-  }
-
-  if (stance <= STANCE_DEATH_2) {
-
-    body.xOffset = pgm_read_byte(&player_body[ (stance * 4) ]);
-    body.yOffset = pgm_read_byte(&player_body[ (stance * 4) + 1]);
-    body.index = pgm_read_byte(&player_body[ (stance * 4)  + 2]);
-    body.rev = (pgm_read_byte(&player_body[ (stance * 4) ] + 3) == 1);
-
-  }
-
-  leg.xOffset = pgm_read_byte(&player_legs[ (stance * 4) ]);
-  leg.yOffset = pgm_read_byte(&player_legs[ (stance * 4) + 1]);
-  leg.index = pgm_read_byte(&player_legs[ (stance * 4)  + 2]);
-  leg.rev = (pgm_read_byte(&player_legs[ (stance * 4) ] + 3) == 1);  
-  
-  if (leg.index != 127) arduboy.drawCompressedMirror(x + leg.xOffset, y + leg.yOffset, masks_leg[leg.index], BLACK, leg.rev);
-  if (leg.index != 127) arduboy.drawCompressedMirror(x + leg.xOffset, y + leg.yOffset, imgs_leg[leg.index], WHITE, leg.rev);
-  if (body.index != 127) arduboy.drawCompressedMirror(x + body.xOffset, y + body.yOffset, imgs_body[body.index], WHITE, body.rev);
-  if (head.index != 127) arduboy.drawCompressedMirror(x + head.xOffset, y + head.yOffset, imgs_head[head.index], WHITE, head.rev);
-
-}
