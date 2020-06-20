@@ -29,44 +29,43 @@ void Game::gameSetup() {
 // ---------------------------------------------------------------------------------------------------------------
 
 void Game::draw_background() {
-
-    const uint8_t *backdrop_img = (outdoors ? Images::Backdrop: Images::Backdrop2);
+printf("outdoord %i\n", this->gameStateDetails.outside);
+    const uint8_t *backdrop_img = (this->gameStateDetails.outside ? Images::Backdrop: Images::Backdrop2);
+    const uint8_t yOffset = (this->gameStateDetails.outside ? 18: 0);
 
     // arduboy.drawFastHLine(0, 47, WIDTH, WHITE);
-    PD::drawLine(0, 47, 110, 47);
+    PD::drawLine(0, 67, 110, 67);
+    PD::drawLine(0, 79, 110, 79);
 
 
-    for (int i = 49; i < 58; i++) {
+    for (int i = 69; i < 78; i++) {
         drawHorizontalDottedLine(i % 2, 110, i);
     }
 
     if (gameStateDetails.showCrevice) {
         // arduboy.drawCompressedMirror(-player.xPosOverall, 0, crevice_mask, BLACK, false);
         // arduboy.drawCompressedMirror(-player.xPosOverall, 0, crevice, WHITE, false);
-        PD::drawBitmap(-player.xPosOverall, 0, Images::Crevice);
+        PD::drawBitmap(-player.xPosOverall, 20, Images::Crevice);
     }
 
-    if (outside) {
-        // arduboy.drawCompressedMirror(mainSceneX, -2, backdrop_img, WHITE, false);
-        // arduboy.drawCompressedMirror(mainSceneX + MAIN_SCENE_IMG_WIDTH, -2, backdrop_img, WHITE, false);
-        // arduboy.drawCompressedMirror(mainSceneX + (2 * MAIN_SCENE_IMG_WIDTH), -2, backdrop_img, WHITE, false);
-        // arduboy.drawCompressedMirror(mainSceneX + (3 * MAIN_SCENE_IMG_WIDTH), -2, backdrop_img, WHITE, false);
-        PD::drawBitmap(mainSceneX, -2, backdrop_img);
-        PD::drawBitmap(mainSceneX + MAIN_SCENE_IMG_WIDTH, -2, backdrop_img);
-        PD::drawBitmap(mainSceneX + (2 * MAIN_SCENE_IMG_WIDTH), -2, backdrop_img);
-        PD::drawBitmap(mainSceneX + (3 * MAIN_SCENE_IMG_WIDTH), -2, backdrop_img);
-    }
+    //if (outside) {
+        printf("%i\n",mainSceneX);
+        PD::drawBitmap(0, 0, Images::Mountain);
+        PD::drawBitmap(mainSceneX, yOffset, backdrop_img);
+        PD::drawBitmap(mainSceneX + MAIN_SCENE_IMG_WIDTH, yOffset, backdrop_img);
+        PD::drawBitmap(mainSceneX + (2 * MAIN_SCENE_IMG_WIDTH), yOffset, backdrop_img);
+        PD::drawBitmap(mainSceneX + (3 * MAIN_SCENE_IMG_WIDTH), yOffset, backdrop_img);
+    //}
 
 
     // Draw player triangles ..
 
     if (PC::frameCount % ANIMATION_FLASHING_TRIANGLES == 0) displayHealth = !displayHealth;
 
-    if (player.health > 20 || displayHealth) {
+    if (player.health > 16 || displayHealth) {
 
         for (uint8_t i = 0; i < (player.health / 10); i++) {
-//            arduboy.drawCompressedMirror((i * 4), 59, arrow, WHITE, false);
-            PD::drawBitmap((i * 4), 59, Images::ArrowLeft);
+            PD::drawBitmap((i * 4), 82, Images::ArrowLeft);
         }
 
     }
@@ -76,11 +75,10 @@ void Game::draw_background() {
 
     if (gameStateDetails.enemyType == ENEMY_TYPE_PERSON) {
 
-        if (enemy.health > 20 || displayHealth) {
+        if (enemy.health > 16 || displayHealth) {
 
             for (uint8_t i = (enemy.health / 10); i > 0; i--) {
-                // arduboy.drawCompressedMirror(129 - (i * 4), 59, arrow, WHITE, true);
-                PD::drawBitmap(129 - (i * 4), 59, Images::ArrowRight);
+                PD::drawBitmap(106 - (i * 4), 82, Images::ArrowRight);
             }
 
         }
@@ -228,19 +226,22 @@ void Game::play_loop() {
     if (gameStateDetails.extArch == ARCH_RIGHT_HAND) {
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos, -2, arch_exterior_lh_mask, BLACK, false);
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos, -2, arch_exterior_lh, WHITE, false);
-        PD::drawBitmap(gameStateDetails.archXPos, -2, Images::ArchExterior_LH);
+        PD::drawBitmap(gameStateDetails.archXPos - 19, 10, Images::ArchExterior_LH);
+        //printf("Arch 1\n");
     }
 
     if (gameStateDetails.extArch == ARCH_LEFT_HAND) {
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 16, -2, arch_exterior_lh_mask, BLACK, true);
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 16, -2, arch_exterior_lh, WHITE, true);
-        PD::drawBitmap(gameStateDetails.archXPos + 16, -2, Images::ArchExterior_LH);
+        PD::drawBitmap(gameStateDetails.archXPos + 16, 10, Images::ArchExterior_LH, NOROT, FLIPH);
+        //printf("Arch 2\n");
     }
 
     if (gameStateDetails.intArch == ARCH_RIGHT_HAND) {
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 2, 7, arch_interior_rh_mask, BLACK, true);
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 2, 7, arch_interior_rh, WHITE, true);
-        PD::drawBitmap(gameStateDetails.archXPos + 2, 7, Images::ArchExterior_RH);
+        PD::drawBitmap(gameStateDetails.archXPos + 2 - 20, 7 + 20, Images::ArchInterior_RH, NOROT, FLIPH);
+        //printf("Arch 3\n");
     }
 
     if (enemy.xPosDelta != 0) { enemy.xPos = enemy.xPos + enemy.xPosDelta; }
@@ -251,19 +252,22 @@ void Game::play_loop() {
     if (gameStateDetails.extArch == ARCH_RIGHT_HAND) {
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 17, -2, arch_exterior_rh_mask, BLACK, false);
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 17, -2, arch_exterior_rh, WHITE, false);
-        PD::drawBitmap(gameStateDetails.archXPos + 17, -2, Images::ArchExterior_RH);
+        PD::drawBitmap(gameStateDetails.archXPos + 17 - 20, 2, Images::ArchExterior_RH);
+        //printf("Arch 4\n");
     }
 
     if (gameStateDetails.extArch == ARCH_LEFT_HAND) {
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos - 6, -2, arch_exterior_rh_mask, BLACK, true);
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos - 6, -2, arch_exterior_rh, WHITE, true);
-        PD::drawBitmap(gameStateDetails.archXPos - 6, -2, Images::ArchExterior_RH);
+        PD::drawBitmap(gameStateDetails.archXPos - 6, 2, Images::ArchExterior_RH, NOROT, FLIPH);
+        //printf("Arch 5\n");
     }
 
     if (gameStateDetails.intArch == ARCH_RIGHT_HAND) {
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 16, 3, arch_interior_lh_mask, BLACK, true);
         // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 16, 3, arch_interior_lh, WHITE, true);
-        PD::drawBitmap(gameStateDetails.archXPos + 16, 3, Images::ArchInterior_LH);
+        PD::drawBitmap(gameStateDetails.archXPos + 16 - 20, 3 + 20, Images::ArchInterior_LH, NOROT, FLIPH);
+        //printf("Arch 6\n");
     }
 
 
@@ -285,7 +289,7 @@ void Game::play_loop() {
             #ifdef USE_DIFFERENT_BAMS
                 // arduboy.drawCompressedMirror(player_BamX, player_BamY, bam_masks[index], BLACK, false);
                 // arduboy.drawCompressedMirror(player_BamX, player_BamY, bam_images[index], WHITE, false);
-                PD::drawBitmap(player_BamX, player_BamY, Images::bam_images[index], WHITE, false);
+                PD::drawBitmap(player_BamX, player_BamY, bam_images[index], WHITE, false);
             #endif
 
             #ifndef USE_DIFFERENT_BAMS
@@ -309,7 +313,7 @@ void Game::play_loop() {
             #ifdef USE_DIFFERENT_BAMS
                 // arduboy.drawCompressedMirror(enemy_BamX, enemy_BamY, bam_masks[index], BLACK, false);
                 // arduboy.drawCompressedMirror(enemy_BamX, enemy_BamY, bam_images[index], WHITE, false);
-                PD::drawBitmap(enemy_BamX, enemy_BamY, Imaghes::bam_images[index]);
+                PD::drawBitmap(enemy_BamX, enemy_BamY, bam_images[index]);
             #endif
 
             #ifndef USE_DIFFERENT_BAMS

@@ -132,7 +132,7 @@ void Game::playerMovements() {
 
       // Is the B button being pressed ?
 
-      if (PC::buttons.pressed(BTN_B) || PC::buttons.repeat(BTN_C, 1)) {
+      if (PC::buttons.pressed(BTN_B) || PC::buttons.repeat(BTN_B, 1)) {
 
         switch (player.stance) {
 
@@ -231,7 +231,7 @@ void Game::playerMovements() {
               playerStack.push(STANCE_STANDING_UPRIGHT, STANCE_DEFAULT_LEAN_BACK);
             }
 
-            else if (PC::buttons.pressed(BTN_RIGHT))  { // Sidle forward ..
+            else if (PC::buttons.pressed(BTN_RIGHT) || PC::buttons.repeat(BTN_RIGHT, 1))  { // Sidle forward ..
               
               if (distBetween > DISTANCE_BETWEEN_LRG || !gameStateDetails.enemyType == ENEMY_TYPE_PERSON) {
 
@@ -262,7 +262,7 @@ void Game::playerMovements() {
                                             
             }
 
-            else if (PC::buttons.pressed(BTN_LEFT) && player.xPosOverall > 12)  { // Sidle backward ..
+            else if ((PC::buttons.pressed(BTN_LEFT) || PC::buttons.repeat(BTN_LEFT, 1)) && player.xPosOverall > 8)  { // Sidle backward ..
               
               player.xPosDelta = MAIN_SCENE_X_SIDLING_1_DELTA; 
               playerStack.push(STANCE_DEFAULT, STANCE_SIDLING_7, STANCE_DEFAULT_LEAN_FORWARD);
@@ -278,7 +278,7 @@ void Game::playerMovements() {
               playerStack.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK);
             }
             
-            else if (PC::buttons.pressed(BTN_RIGHT) && distBetween > 100)  { // Start running ..
+            else if ((PC::buttons.pressed(BTN_RIGHT) || PC::buttons.repeat(BTN_RIGHT, 1)) && distBetween > 100)  { // Start running ..
               player.rightFoot = true;
               player.xPosDelta = -MAIN_SCENE_X_SIDLING_2_DELTA;            
               playerStack.push(STANCE_RUNNING_6, STANCE_RUNNING_8, STANCE_RUNNING_5);
@@ -290,7 +290,7 @@ void Game::playerMovements() {
           case STANCE_RUNNING_LF_END:
           case STANCE_RUNNING_RF_END:
             
-            if (PC::buttons.pressed(BTN_RIGHT) && distBetween > 100)  { // Continue running ..
+            if ((PC::buttons.pressed(BTN_RIGHT) || PC::buttons.repeat(BTN_RIGHT, 1)) && distBetween > 100)  { // Continue running ..
 
               if (!player.rightFoot) {
                 player.xPosDelta = -MAIN_SCENE_X_SIDLING_2_DELTA;            

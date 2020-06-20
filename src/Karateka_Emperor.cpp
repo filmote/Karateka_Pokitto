@@ -25,10 +25,10 @@ void Game::emperor_loop() {
 
         // Draw background ..
 
-        PD::drawLine(0, 52, 110, 52);
+        PD::drawLine(0, 72, 110, 72);
         // arduboy.drawFastHLine(0, 52, WIDTH);
 
-        for (int i=54; i< 64; i+=2) {
+        for (int i=74; i< 84; i+=2) {
 
             drawHorizontalDottedLine(i % 2, 110, i);
 
@@ -51,7 +51,7 @@ void Game::emperor_loop() {
                     }
 
                     enemy.xPosDelta = 5;
-                    enemy.xPos = -48;
+                    enemy.xPos = -64;
 
                     break;
 
@@ -124,18 +124,18 @@ void Game::emperor_loop() {
 
         // arduboy.drawCompressedMirror(92, 45, emperor_mask, BLACK, false);
         // arduboy.drawCompressedMirror(87, 4, emperor, WHITE, false);
-        PD::drawBitmap(87, 4, Images::Emperor);
+        PD::drawBitmap(69, 24, Images::Emperor);
 
         if (emperorMode >= EMPEROR_LIFT_ARM && emperorMode < EMPEROR_MODE_FIGHTER_LEAVE) {
 
     //    arduboy.drawCompressedMirror(70, 19, emperor_arm_out, WHITE, false);
-            PD::drawBitmap(87, 4, Images::Emperor);
+            PD::drawBitmap(54, 39, Images::EmperorArmOut);
         
         }
         else {
 
             // arduboy.drawCompressedMirror(87, 21, emperor_arm_normal, WHITE, false);
-            PD::drawBitmap(87, 4, Images::EmperorArmNormal);
+            PD::drawBitmap(71, 41, Images::EmperorArmNormal);
         
         }
 

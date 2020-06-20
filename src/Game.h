@@ -7,6 +7,7 @@
 #include "utils/GameCookie.h"
 #include "utils/Stack.h"
 #include "utils/Structs.h"
+#include "images/images.h"
 
 
 class Game {
@@ -65,7 +66,6 @@ class Game {
 
         int8_t mainSceneX = 0;
         bool displayHealth = false;
-        bool outdoors = true;
 
         uint8_t enemyHit = 0;
         uint8_t playerHit = 0;
@@ -77,11 +77,9 @@ class Game {
         uint8_t finalSceneMode = FINAL_SCENE_INACTIVE;
 
         #ifdef USE_DIFFERENT_BAMS
-        const uint8_t *bam_images[] =               { bam1, bam2, bam3 };
-        const uint8_t *bam_masks[] =                { bam1_mask, bam2_mask, bam3_mask };
+        const uint8_t *bam_images[3] =               { Images::Bam1, Images::Bam2, Images::Bam3 };
         #endif
 
-        bool outside = true;
         GameStateDetails gameStateDetails;
 
         #ifdef DEBUG_HITS
@@ -92,8 +90,8 @@ class Game {
         uint16_t _pos = 0;
         #endif
 
-        Entity player = { STANCE_DEFAULT, 10, 0, 0, 55, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
-        Entity enemy = { STANCE_DEFAULT, 153, 0, 0, 55, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
+        Entity player = { STANCE_DEFAULT, 10, 0, 0, 75, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
+        Entity enemy = { STANCE_DEFAULT, 153, 0, 0, 75, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
 
         bool enemyImmediateAction = false;
         bool enemyImmediateRetreat = false;

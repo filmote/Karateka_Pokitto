@@ -20,7 +20,7 @@ void Game::splashScreen() {
 
     if (justPressed > 0) {
 
-        this->gameState = GameState::MainMenu; 
+        this->gameState = GameState::Game; 
 
     }
     

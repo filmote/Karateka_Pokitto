@@ -14435,7 +14435,7 @@
 		"\\src\\images\\title\\ByJordanMechner2.png": {
 			"sdcard": false
 		},
-		"\\src\\images\\title\\eCastle.png": {
+		"\\src\\images\\title\\Castle.png": {
 			"sdcard": false
 		},
 		"\\src\\images\\title\\TheEnd.png": {
@@ -14861,7 +14861,7 @@
 		"\\src\\images\\title\\ByJordanMechner4.h": {
 			"sdcard": false
 		},
-		"\\src\\images\\title\\eCastle.h": {
+		"\\src\\images\\title\\Castle.h": {
 			"sdcard": false
 		},
 		"\\src\\images\\title\\TheEnd.h": {
@@ -14964,6 +14964,30 @@
 			"sdcard": false
 		},
 		"\\Karateka_Pokitto.eeprom": {
+			"sdcard": false
+		},
+		"\\src\\images\\scenery\\Mountain.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\scenery\\Mountain.h": {
+			"sdcard": false
+		},
+		"\\Karateka_Pokitto.bin.1.gif": {
+			"sdcard": false
+		},
+		"\\Karateka_Pokitto.bin.1.png": {
+			"sdcard": false
+		},
+		"\\Karateka_Pokitto.bin.1.h": {
+			"sdcard": false
+		},
+		"\\Karateka_Pokitto.bin.2.gif": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Castle.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Castle.h": {
 			"sdcard": false
 		}
 	},

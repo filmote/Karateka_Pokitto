@@ -215,7 +215,7 @@ void Game::renderEnemyStance(int8_t x, int8_t y, uint8_t stance) {
     leg.yOffset = enemy_legs[ (stance * 4) + 1];
     leg.index = enemy_legs[ (stance * 4) + 2];
     leg.rev = (enemy_legs[ (stance * 4) + 3] == 1);  
-printf("leg.rev %i %i %i > %i\n", head.rev, body.rev, leg.rev, enemy_legs[ (stance * 4) ] + 3);
+
     // if (leg.index != 127) arduboy.drawCompressedMirror(x + leg.xOffset, y + leg.yOffset, masks_leg[leg.index], BLACK, leg.rev);
     // if (leg.index != 127) arduboy.drawCompressedMirror(x + leg.xOffset, y + leg.yOffset, imgs_leg[leg.index], WHITE, leg.rev);
     // if (body.index != 127) arduboy.drawCompressedMirror(x + body.xOffset, y + body.yOffset, imgs_body[body.index], WHITE, body.rev);

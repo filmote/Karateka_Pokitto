@@ -8,8 +8,7 @@
 #define _DEBUG_STRIKING_RANGE
 
 #define JORDAN_MECHNER
-#define _USE_DIFFERENT_BAMS
-#define USE_ENHANCED_BAM3
+#define USE_DIFFERENT_BAMS
 
 #define GAME_STATE_TITLE_SCENE                    0
 #define GAME_STATE_JM_SCENE                       1
@@ -31,15 +30,12 @@
 #define GAME_STATE_PRINCESS                       17
 #define GAME_STATE_FINAL_SCENE                    18
 
-#define GAME_STATE_SEQ_SIZE                       6
+#define GAME_STATE_SEQ_SIZE                       7
 #define COOKIE_INITIALISED                        37
 
 
 enum class GameState : uint8_t {
     SplashScreen,
-    MainMenu, 
-    Settings, 
-    Game_Init_Music,
     Game, 
 };
 
@@ -83,55 +79,56 @@ struct GameStateDetails {
     uint8_t prevState;
     uint8_t activity;
     uint16_t sequence;    
+    bool outside;
 
   private:
     uint8_t _currState;
 
 };
 
-const uint8_t PROGMEM gameSequence[] = {
+const uint8_t gameSequence[] = {
   
-  //                                      Delay   IntArch     Launch      Show        Enemy               
-  //                                              1 = LH      Enemies     Crevice     Activity            
+  //                                      Delay   IntArch     Launch      Show        Enemy               Interior = 0
+  //                                              1 = LH      Enemies     Crevice     Activity            Exterior = 1
   //                                              2 = RH      1=Person                100 Slow / 0 Fast   
   //                                              ExtArch     2=Eagle                                     
   //                                              3 = LH                  
   //                                              4 = RH                  
   
-  GAME_STATE_TITLE_SCENE,                 0,      0,          0,          0,          0,
+  GAME_STATE_TITLE_SCENE,                 0,      0,          0,          0,          0,                  1,
   #ifdef JORDAN_MECHNER
-  GAME_STATE_JM_SCENE,                    15,     0,          0,          0,          0,
+  GAME_STATE_JM_SCENE,                    15,     0,          0,          0,          0,                  1,
   #endif
-  GAME_STATE_CASTLE_SCENE,                15,     0,          0,          0,          0,
-  GAME_STATE_ENTRANCE_INIT,               0,      0,          0,          1,          0,
-  GAME_STATE_PLAY_INIT,                   25,     0,          0,          1,          0,
-  GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        130,
-  GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        125,
-  GAME_STATE_GO_THROUGH_GATE,             0,      4,          1,          0,          0,
-  GAME_STATE_PLAY_INIT,                   25,     3,          0,          0,        120,
-  GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        115,
-  GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        110,
-  GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        105,
-  GAME_STATE_GO_THROUGH_GATE,             0,      2,          0,          0,          0,
-  GAME_STATE_PRINCESS,                    15,     0,          0,          1,          0,
-  GAME_STATE_EMPEROR_INIT,                0,      0,          0,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        100,
-  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,         95,
-  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,         80,
-  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,
-  GAME_STATE_GO_THROUGH_GATE,             0,      2,          0,          0,         75,
-  GAME_STATE_FINAL_SCENE,                 0,      0,          0,          0,          0,
-  GAME_STATE_THE_END,                     0,      0,          0,          0,          0,
+  GAME_STATE_CASTLE_SCENE,                15,     0,          0,          0,          0,                  1,
+  GAME_STATE_ENTRANCE_INIT,               0,      0,          0,          1,          0,                  1,
+  GAME_STATE_PLAY_INIT,                   25,     0,          0,          1,          0,                  1,
+  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1, 
+  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        130,                  1, 
+  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        125,                  1,
+  // GAME_STATE_GO_THROUGH_GATE,             0,      4,          1,          0,          0,                  1,
+  // GAME_STATE_PLAY_INIT,                   25,     3,          0,          0,        120,                  1,
+  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        115,                  1,
+  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        110,                  1,
+  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        105,                  1,
+  GAME_STATE_GO_THROUGH_GATE,             0,      2,          0,          0,          0,                  1,
+  GAME_STATE_PRINCESS,                    15,     0,          0,          1,          0,                  0,
+  GAME_STATE_EMPEROR_INIT,                0,      0,          0,          0,          0,                  0,
+  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
+  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        100,                  0,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,         95,                  0,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,         80,                  0,
+  // GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
+  GAME_STATE_GO_THROUGH_GATE,             0,      2,          0,          0,         75,                  0,
+  GAME_STATE_FINAL_SCENE,                 0,      0,          0,          0,          0,                  0,
+  GAME_STATE_THE_END,                     0,      0,          0,          0,          0,                  0,
   
 };
 
@@ -280,15 +277,17 @@ const uint8_t PROGMEM gameSequence[] = {
 #define EAGLE_MODE_FLY_AWAY                       6
 #define EAGLE_MODE_DONE                           7
 
-#define EAGLE_LEVEL_LOW                           40
-#define EAGLE_LEVEL_MED                           27
-#define EAGLE_LEVEL_HIGH                          19
+#define EAGLE_LEVEL_LOW                           60
+#define EAGLE_LEVEL_MED                           47
+#define EAGLE_LEVEL_HIGH                          39
 
 #define EAGLE_LEVEL_LOW_HEALTH                    30
 #define EAGLE_LEVEL_MED_HEALTH                    30
 #define EAGLE_LEVEL_HIGH_HEALTH                   50
 
 #define HEALTH_UNIT                               16
+// #define HEALTH_MAX_POINTS                         240
+// #define HEALTH_STARTING_POINTS                    160
 #define HEALTH_MAX_POINTS                         240
 #define HEALTH_STARTING_POINTS                    160
 #define HEALTH_REGAIN_POINTS                      3

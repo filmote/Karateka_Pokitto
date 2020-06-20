@@ -24,22 +24,14 @@ void Game::loop() {
             splashScreen(); 
             break;
 
-        case GameState::MainMenu: 
-            updateMainMenu(); 
-            break;
-
-        case GameState::Game_Init_Music:
-            gameState = GameState::Game;
-            [[fallthrough]];
-
         case GameState::Game: 
 
             switch (this->gameStateDetails.getCurrState()) {
 
                 case GAME_STATE_TITLE_SCENE:
 
-                    player = { STANCE_DEFAULT, 10, 0, 0, 55, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
-                    enemy = { STANCE_DEFAULT, 153, 0, 0, 55, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
+                    player = { STANCE_DEFAULT, 10, 0, 0, 75, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
+                    enemy = { STANCE_DEFAULT, 153, 0, 0, 75, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
                     showScene();
                     break;
 
@@ -60,19 +52,20 @@ void Game::loop() {
                         }
                         else {
 
-                        gameStateDetails.enemyType = 0;
-                        if (arches % 2 == 1) {
-                            gameStateDetails.archXPos = gameSequence[ (gameStateDetails.sequence * GAME_STATE_SEQ_SIZE) + 3];
-                        }
-                        else {
-                            gameStateDetails.archXPos = (uint16_t)128 - (uint16_t)gameSequence[ (gameStateDetails.sequence * GAME_STATE_SEQ_SIZE) + 3];
-                        }
+                            gameStateDetails.enemyType = 0;
+                            if (arches % 2 == 1) {
+                                gameStateDetails.archXPos = gameSequence[ (gameStateDetails.sequence * GAME_STATE_SEQ_SIZE) + 3];
+                            }
+                            else {
+                                gameStateDetails.archXPos = (uint16_t)110 - (uint16_t)gameSequence[ (gameStateDetails.sequence * GAME_STATE_SEQ_SIZE) + 3];
+                            }
                         
                         }
 
                         gameStateDetails.showCrevice = (gameSequence[ (gameStateDetails.sequence * GAME_STATE_SEQ_SIZE) + 4] == 1); 
                         gameStateDetails.hasDelay = (gameStateDetails.delayInterval > 0);
                         gameStateDetails.activity = gameSequence[ (gameStateDetails.sequence * GAME_STATE_SEQ_SIZE) + 5];
+                        gameStateDetails.outside = gameSequence[ (gameStateDetails.sequence * GAME_STATE_SEQ_SIZE) + 6];
                         gameStateDetails.sequence++;
 
                     }
@@ -91,9 +84,9 @@ void Game::loop() {
                     enemyStack.clear();
                     emperorMode = EMPEROR_MODE_INIT;
 
-                    enemy = { STANCE_DEFAULT, 153, 0, 0, 55, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
+                    enemy = { STANCE_DEFAULT, 153, 0, 0, 75, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
                     gameStateDetails.setCurrState(GAME_STATE_EMPEROR);
-                    outside = false;
+                    gameStateDetails.outside = false;
                     break;
 
                 case GAME_STATE_EMPEROR:
@@ -122,7 +115,7 @@ void Game::loop() {
                     
                     gameStateDetails.setCurrState(GAME_STATE_PLAY);
                     
-                    player.xPos = 10;
+                    player.xPos = 6;
                     player.xPosOverall = 0;
                     
                     if (gameStateDetails.enemyType == ENEMY_TYPE_PERSON) {
@@ -131,7 +124,7 @@ void Game::loop() {
                     }
 
                     player.regainLimit = (enemy.health < HEALTH_STARTING_POINTS - (2 * HEALTH_UNIT) ? player.health + (2 * HEALTH_UNIT) : HEALTH_STARTING_POINTS);
-                    enemy = { STANCE_DEFAULT, (gameStateDetails.enemyType == ENEMY_TYPE_EAGLE ? 170 : 140), 0, 0, 55, 0, HEALTH_STARTING_POINTS, 0, 0, true, true, false };
+                    enemy = { STANCE_DEFAULT, (gameStateDetails.enemyType == ENEMY_TYPE_EAGLE ? 170 : 140), 0, 0, 75, 0, HEALTH_STARTING_POINTS, 0, 0, true, true, false };
                     enemy.health = ((HEALTH_STARTING_POINTS * 2) - player.health  > HEALTH_MAX_POINTS ? HEALTH_MAX_POINTS : (HEALTH_STARTING_POINTS * 2) - player.health);
                     enemy.regainLimit = enemy.health;
                     eagleMode = EAGLE_MODE_FLY_INIT;

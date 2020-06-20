@@ -14,10 +14,10 @@ void Game::drawPrincessBackground_1() {
 
     uint8_t x = 72;
 
-    for (int y = 50; y < 64; y = y + 2) {
+    for (int y = 70; y < 84; y = y + 2) {
     // arduboy.drawFastHLine(x, y, WIDTH - x);    
         PD::drawLine(x, y, 110 - x, y);
-        x = x + (y < 56 ? -20 : 20);
+        x = x + (y < 76 ? -20 : 20);
     }
 
     // arduboy.drawCompressedMirror(16, 7, arch_interior_rh_mask, BLACK, false);
@@ -25,7 +25,7 @@ void Game::drawPrincessBackground_1() {
     // arduboy.drawCompressedMirror(89, 19, princess_seat_mask, BLACK, false);
     // arduboy.drawCompressedMirror(89, 19, princess_seat, WHITE, false);
     PD::drawBitmap(16, 7, Images::ArchInterior_RH);
-    PD::drawBitmap(89, 19, Images::Princess_Seat);
+    PD::drawBitmap(73, 39, Images::Princess_Seat);
 
 
 }
@@ -56,7 +56,7 @@ void Game::showScene() {
 
             case GAME_STATE_TITLE_SCENE:
                 // arduboy.drawCompressedMirror(0, 0, title, WHITE, false);
-                PD::drawBitmap(0, 0, Images::Title);
+                PD::drawBitmap(0, 33, Images::Title);
                 break;
 
             case GAME_STATE_JM_SCENE:
@@ -69,13 +69,11 @@ void Game::showScene() {
                 break;
 
             case GAME_STATE_CASTLE_SCENE:
-                // arduboy.drawCompressedMirror(0, 0, castle, WHITE, false);
-                PD::drawBitmap(0, 0, Images::eCastle);
+                PD::drawBitmap(0, 0, Images::Castle);
                 break;
             
             case GAME_STATE_THE_END:
-                // arduboy.drawCompressedMirror(34, 26, theend, WHITE, false);
-                PD::drawBitmap(34, 26, Images::TheEnd);
+                PD::drawBitmap(25, 26, Images::TheEnd);
                 break;
             
             case GAME_STATE_PRINCESS:
@@ -84,7 +82,7 @@ void Game::showScene() {
                 drawPrincessBackground_2();
                 // arduboy.drawCompressedMirror(93, 19, princess_sitting_mask, BLACK, false);
                 // arduboy.drawCompressedMirror(93, 19, princess_sitting, WHITE, false);
-                PD::drawBitmap(93, 19, Images::Princess_Sitting);
+                PD::drawBitmap(77, 39, Images::Princess_Sitting);
                 
                 break;
 
@@ -185,14 +183,14 @@ void Game::finalScene() {
                     }
 
                     player.xPosDelta = 5;
-                    player.xPos = -48;
+                    player.xPos = -64;
 
                     enemyStack.push(STANCE_PRINCESS_STANDING);
                     for (int i = 0; i < 12; i++) {
                         enemyStack.push(STANCE_PRINCESS_SITTING);
                     }
-                    enemy.xPos = 93;
-                    enemy.yPos = 14;
+                    enemy.xPos = 77;//93;
+                    enemy.yPos = 34;
 
                     break;
 
@@ -210,14 +208,14 @@ void Game::finalScene() {
                     break;
 
                 case FINAL_SCENE_KISSING:
-                    enemy.xPos = 90;
-                    enemy.yPos = 15;
+                    enemy.xPos = 74;//90;
+                    enemy.yPos = 35;
                     enemyStack.push(STANCE_PRINCESS_KISSING, STANCE_PRINCESS_KISSING, STANCE_PRINCESS_KISSING);
                     break;
 
                 case FINAL_SCENE_BREAK_UP:
-                    enemy.xPos = 93;
-                    enemy.yPos = 15;
+                    enemy.xPos = 77;//93;
+                    enemy.yPos = 35;
                     for (int i = 0; i < 18; i++) {
                     enemyStack.push(STANCE_PRINCESS_STANDING);
                     }
