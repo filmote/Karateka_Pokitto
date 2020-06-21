@@ -71,7 +71,6 @@ void Game::loop() {
                     }
                     break;
                 
-                case GAME_STATE_JM_SCENE:
                 case GAME_STATE_CASTLE_SCENE:
                 case GAME_STATE_THE_END:
                 case GAME_STATE_ENEMY_APPROACH:

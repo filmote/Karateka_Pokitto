@@ -61,7 +61,7 @@ void Game::draw_background() {
 
     if (PC::frameCount % ANIMATION_FLASHING_TRIANGLES == 0) displayHealth = !displayHealth;
 
-    if (player.health > 20 || displayHealth) {
+    if (player.health > 27 || displayHealth) {
 
         for (uint8_t i = 0; i < (player.health / 10); i++) {
             PD::drawBitmap((i * 4), 82, Images::ArrowLeft);
@@ -74,10 +74,10 @@ void Game::draw_background() {
 
     if (gameStateDetails.enemyType == ENEMY_TYPE_PERSON) {
 
-        if (enemy.health > 20 || displayHealth) {
+        if (enemy.health > 27 || displayHealth) {
 
             for (uint8_t i = (enemy.health / 10); i > 0; i--) {
-                PD::drawBitmap(110 - (i * 4), 82, Images::ArrowRight);
+                PD::drawBitmap(111 - (i * 4), 82, Images::ArrowRight);
             }
 
         }

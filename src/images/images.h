@@ -4,7 +4,6 @@
 #include "bam/Bams.h"
 #include "eagle/Eagles.h"
 #include "emperor/Emperors.h"
-#include "entrance/FullBodies.h"
 #include "player/Players.h"
 #include "princess/Pricesses.h"
 #include "scenery/Backgrounds.h"

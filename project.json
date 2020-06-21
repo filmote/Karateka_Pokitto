@@ -13985,12 +13985,6 @@
 		"\\distibutable\\screenshot05.png": {
 			"sdcard": false
 		},
-		"\\Images\\ByJordanMechner.png": {
-			"sdcard": false
-		},
-		"\\Images\\ByJordanMechner3.png": {
-			"sdcard": false
-		},
 		"\\Images\\Gate.png": {
 			"sdcard": false
 		},
@@ -14429,12 +14423,6 @@
 		"\\src\\images\\scenery\\Outside_wall.png": {
 			"sdcard": false
 		},
-		"\\src\\images\\title\\ByJordanMechner4.png": {
-			"sdcard": false
-		},
-		"\\src\\images\\title\\ByJordanMechner2.png": {
-			"sdcard": false
-		},
 		"\\src\\images\\title\\Castle.png": {
 			"sdcard": false
 		},
@@ -14469,9 +14457,6 @@
 			"sdcard": false
 		},
 		"\\src\\images\\princess\\Princess_Sitting.png": {
-			"sdcard": false
-		},
-		"\\Images\\ByJordanMechner.h": {
 			"sdcard": false
 		},
 		"\\distibutable\\screenshot00.h": {
@@ -14532,9 +14517,6 @@
 			"sdcard": false
 		},
 		"\\src\\images\\bam\\Bam1.h": {
-			"sdcard": false
-		},
-		"\\Images\\ByJordanMechner3.h": {
 			"sdcard": false
 		},
 		"\\src\\images\\archway\\ArchInterior_RH.h": {
@@ -14853,12 +14835,6 @@
 			"sdcard": false
 		},
 		"\\src\\images\\scenery\\Outside_wall.h": {
-			"sdcard": false
-		},
-		"\\src\\images\\title\\ByJordanMechner2.h": {
-			"sdcard": false
-		},
-		"\\src\\images\\title\\ByJordanMechner4.h": {
 			"sdcard": false
 		},
 		"\\src\\images\\title\\Castle.h": {

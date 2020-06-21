@@ -69,15 +69,6 @@ void Game::showScene() {
                 PD::drawBitmap(0, 33, Images::Title);
                 break;
 
-            case GAME_STATE_JM_SCENE:
-                // arduboy.drawCompressedMirror(0, 0, jordanMechner, WHITE, false);
-                PD::drawBitmap(0, 0, Images::ByJordanMechner2);
-                if (gameStateDetails.delayInterval > 8) {
-                    // arduboy.fillRect(0, 40, WIDTH, 24, BLACK);
-                    PD::fillRect(0, 40, 110, 24);
-                }
-                break;
-
             case GAME_STATE_CASTLE_SCENE:
                 PD::drawBitmap(0, 0, Images::Castle);
                 break;
