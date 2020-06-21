@@ -29,7 +29,7 @@ void Game::gameSetup() {
 // ---------------------------------------------------------------------------------------------------------------
 
 void Game::draw_background() {
-printf("outdoord %i\n", this->gameStateDetails.outside);
+
     const uint8_t *backdrop_img = (this->gameStateDetails.outside ? Images::Backdrop: Images::Backdrop2);
     const uint8_t yOffset = (this->gameStateDetails.outside ? 18: 0);
 
@@ -49,7 +49,6 @@ printf("outdoord %i\n", this->gameStateDetails.outside);
     }
 
     //if (outside) {
-        printf("%i\n",mainSceneX);
         PD::drawBitmap(0, 0, Images::Mountain);
         PD::drawBitmap(mainSceneX, yOffset, backdrop_img);
         PD::drawBitmap(mainSceneX + MAIN_SCENE_IMG_WIDTH, yOffset, backdrop_img);
@@ -62,7 +61,7 @@ printf("outdoord %i\n", this->gameStateDetails.outside);
 
     if (PC::frameCount % ANIMATION_FLASHING_TRIANGLES == 0) displayHealth = !displayHealth;
 
-    if (player.health > 16 || displayHealth) {
+    if (player.health > 20 || displayHealth) {
 
         for (uint8_t i = 0; i < (player.health / 10); i++) {
             PD::drawBitmap((i * 4), 82, Images::ArrowLeft);
@@ -75,10 +74,10 @@ printf("outdoord %i\n", this->gameStateDetails.outside);
 
     if (gameStateDetails.enemyType == ENEMY_TYPE_PERSON) {
 
-        if (enemy.health > 16 || displayHealth) {
+        if (enemy.health > 20 || displayHealth) {
 
             for (uint8_t i = (enemy.health / 10); i > 0; i--) {
-                PD::drawBitmap(106 - (i * 4), 82, Images::ArrowRight);
+                PD::drawBitmap(110 - (i * 4), 82, Images::ArrowRight);
             }
 
         }
@@ -224,24 +223,28 @@ void Game::play_loop() {
     }
 
     if (gameStateDetails.extArch == ARCH_RIGHT_HAND) {
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos, -2, arch_exterior_lh_mask, BLACK, false);
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos, -2, arch_exterior_lh, WHITE, false);
         PD::drawBitmap(gameStateDetails.archXPos - 19, 10, Images::ArchExterior_LH);
         //printf("Arch 1\n");
     }
 
     if (gameStateDetails.extArch == ARCH_LEFT_HAND) {
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 16, -2, arch_exterior_lh_mask, BLACK, true);
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 16, -2, arch_exterior_lh, WHITE, true);
         PD::drawBitmap(gameStateDetails.archXPos + 16, 10, Images::ArchExterior_LH, NOROT, FLIPH);
         //printf("Arch 2\n");
     }
 
-    if (gameStateDetails.intArch == ARCH_RIGHT_HAND) {
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 2, 7, arch_interior_rh_mask, BLACK, true);
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 2, 7, arch_interior_rh, WHITE, true);
-        PD::drawBitmap(gameStateDetails.archXPos + 2 - 20, 7 + 20, Images::ArchInterior_RH, NOROT, FLIPH);
+    if (gameStateDetails.extArch == ARCH_RIGHT_HAND_2) {
+        PD::drawBitmap(gameStateDetails.archXPos - 29 - 5, 14, Images::ArchExterior_LH2);
         //printf("Arch 3\n");
+    }
+
+    if (gameStateDetails.extArch == ARCH_LEFT_HAND_2) {
+        PD::drawBitmap(gameStateDetails.archXPos + 16 + 1, 14, Images::ArchExterior_LH2, NOROT, FLIPH);
+        //printf("Arch 4\n");
+    }
+
+    if (gameStateDetails.intArch == ARCH_RIGHT_HAND) {
+        PD::drawBitmap(gameStateDetails.archXPos + 2 - 20, 7 - 1 + 10, Images::ArchInterior_RH, NOROT, FLIPH);
+        //printf("Arch 5\n");
     }
 
     if (enemy.xPosDelta != 0) { enemy.xPos = enemy.xPos + enemy.xPosDelta; }
@@ -250,26 +253,29 @@ void Game::play_loop() {
     if (gameStateDetails.prevState == GAME_STATE_GO_THROUGH_GATE) renderEnemyStance(enemy.xPos, enemy.yPos, STANCE_DEATH_6); 
 
     if (gameStateDetails.extArch == ARCH_RIGHT_HAND) {
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 17, -2, arch_exterior_rh_mask, BLACK, false);
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 17, -2, arch_exterior_rh, WHITE, false);
         PD::drawBitmap(gameStateDetails.archXPos + 17 - 20, 2, Images::ArchExterior_RH);
-        //printf("Arch 4\n");
-    }
-
-    if (gameStateDetails.extArch == ARCH_LEFT_HAND) {
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos - 6, -2, arch_exterior_rh_mask, BLACK, true);
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos - 6, -2, arch_exterior_rh, WHITE, true);
-        PD::drawBitmap(gameStateDetails.archXPos - 6, 2, Images::ArchExterior_RH, NOROT, FLIPH);
-        //printf("Arch 5\n");
-    }
-
-    if (gameStateDetails.intArch == ARCH_RIGHT_HAND) {
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 16, 3, arch_interior_lh_mask, BLACK, true);
-        // arduboy.drawCompressedMirror(gameStateDetails.archXPos + 16, 3, arch_interior_lh, WHITE, true);
-        PD::drawBitmap(gameStateDetails.archXPos + 16 - 20, 3 + 20, Images::ArchInterior_LH, NOROT, FLIPH);
         //printf("Arch 6\n");
     }
 
+    if (gameStateDetails.extArch == ARCH_LEFT_HAND) {
+        PD::drawBitmap(gameStateDetails.archXPos - 6, 2, Images::ArchExterior_RH, NOROT, FLIPH);
+        //printf("Arch 7\n");
+    }
+
+    if (gameStateDetails.intArch == ARCH_RIGHT_HAND) {
+        PD::drawBitmap(gameStateDetails.archXPos + 16 - 20, 3 + 10, Images::ArchInterior_LH, NOROT, FLIPH);
+        // printf("Arch 8\n");
+    }
+
+    if (gameStateDetails.extArch == ARCH_RIGHT_HAND_2) {
+        PD::drawBitmap(gameStateDetails.archXPos + 17 - 30 - 4, 2 + 2, Images::ArchExterior_RH2);
+        // printf("Arch 9\n");
+    }
+
+    if (gameStateDetails.extArch == ARCH_LEFT_HAND_2) {
+        PD::drawBitmap(gameStateDetails.archXPos - 6, 4, Images::ArchExterior_RH2, NOROT, FLIPH);
+        // printf("Arch 10\n");
+    }
 
 
     //  If the player or enemy has previously been hit, then update their health and render ..

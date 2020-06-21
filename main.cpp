@@ -24,7 +24,7 @@ void init() {
     PD::persistence = true;
     PD::setColor(5);
     PD::setInvisibleColor(14);
-    PC::setFrameRate(30);
+    PC::setFrameRate(45);
     PD::setFont(fontKoubit);
 
     if (cookie.initialised != COOKIE_INITIALISED) {

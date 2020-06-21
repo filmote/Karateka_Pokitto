@@ -141,11 +141,11 @@ void Game::emperor_loop() {
 
         // arduboy.drawCompressedMirror(16, 7, arch_interior_rh_mask, BLACK, false);
         // arduboy.drawCompressedMirror(16, 7, arch_interior_rh, WHITE, false);
-        PD::drawBitmap(16, 7, Images::ArchInterior_RH);
+        PD::drawBitmap(14, 17, Images::ArchInterior_RH);
         renderEnemyStance(enemy.xPos, enemy.yPos, enemy.stance);
         // arduboy.drawCompressedMirror(0, 3, arch_interior_lh_mask, BLACK, false);
         // arduboy.drawCompressedMirror(0, 3, arch_interior_lh, WHITE, false);
-        PD::drawBitmap(0, 3, Images::ArchInterior_LH);
+        PD::drawBitmap(0, 14, Images::ArchInterior_LH);
         
     }
 

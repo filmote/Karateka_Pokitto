@@ -7,11 +7,9 @@
 #define _DEBUG_HIDE_BAM
 #define _DEBUG_STRIKING_RANGE
 
-#define JORDAN_MECHNER
 #define USE_DIFFERENT_BAMS
 
 #define GAME_STATE_TITLE_SCENE                    0
-#define GAME_STATE_JM_SCENE                       1
 #define GAME_STATE_CASTLE_SCENE                   2
 #define GAME_STATE_EMPEROR_INIT                   3
 #define GAME_STATE_EMPEROR                        4
@@ -93,12 +91,12 @@ const uint8_t gameSequence[] = {
   //                                              2 = RH      1=Person                100 Slow / 0 Fast   
   //                                              ExtArch     2=Eagle                                     
   //                                              3 = LH                  
-  //                                              4 = RH                  
+  //                                              4 = RH      
+  //                                              5 = LH2                  
+  //                                              6 = RH2      
+              
   
   GAME_STATE_TITLE_SCENE,                 0,      0,          0,          0,          0,                  1,
-  #ifdef JORDAN_MECHNER
-  GAME_STATE_JM_SCENE,                    15,     0,          0,          0,          0,                  1,
-  #endif
   GAME_STATE_CASTLE_SCENE,                15,     0,          0,          0,          0,                  1,
   GAME_STATE_ENTRANCE_INIT,               0,      0,          0,          1,          0,                  1,
   GAME_STATE_PLAY_INIT,                   25,     0,          0,          1,          0,                  1,
@@ -106,18 +104,18 @@ const uint8_t gameSequence[] = {
   // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        130,                  1, 
   // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
   // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        125,                  1,
-  // GAME_STATE_GO_THROUGH_GATE,             0,      4,          1,          0,          0,                  1,
-  // GAME_STATE_PLAY_INIT,                   25,     3,          0,          0,        120,                  1,
+   GAME_STATE_GO_THROUGH_GATE,             0,      4,          1,          0,          0,                  1,
+   GAME_STATE_PLAY_INIT,                   25,     3,          0,          0,        120,                  1,
   // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
   // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        115,                  1,
   // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
   // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        110,                  1,
   // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        105,                  1,
-  GAME_STATE_GO_THROUGH_GATE,             0,      2,          0,          0,          0,                  1,
+  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        105,                  1,
+  GAME_STATE_GO_THROUGH_GATE,             0,      4,          0,          0,          0,                  1,
   GAME_STATE_PRINCESS,                    15,     0,          0,          1,          0,                  0,
   GAME_STATE_EMPEROR_INIT,                0,      0,          0,          0,          0,                  0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
+  GAME_STATE_PLAY_INIT,                   0,      1,          2,          0,          0,                  0,
   GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
   // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        100,                  0,
   // GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
@@ -288,8 +286,8 @@ const uint8_t gameSequence[] = {
 #define HEALTH_UNIT                               16
 // #define HEALTH_MAX_POINTS                         240
 // #define HEALTH_STARTING_POINTS                    160
-#define HEALTH_MAX_POINTS                         240
-#define HEALTH_STARTING_POINTS                    160
+#define HEALTH_MAX_POINTS                         200
+#define HEALTH_STARTING_POINTS                    140
 #define HEALTH_REGAIN_POINTS                      3
 #define HEALTH_REGAIN_LIMIT                       150
 
@@ -300,6 +298,8 @@ const uint8_t gameSequence[] = {
 
 #define ARCH_LEFT_HAND                            1
 #define ARCH_RIGHT_HAND                           2
+#define ARCH_LEFT_HAND_2                          3
+#define ARCH_RIGHT_HAND_2                         4
 
 #define ENEMY_TYPE_NONE                           0
 #define ENEMY_TYPE_PERSON                         1

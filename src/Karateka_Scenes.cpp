@@ -12,19 +12,29 @@ using PD = Pokitto::Display;
 
 void Game::drawPrincessBackground_1() {
 
-    uint8_t x = 72;
+    const uint8_t groundX[] = { 48, 62, 
+                                38, 72, 
+                                28, 82, 
+                                8, 102, 
+                                28, 82, 
+                                38, 72, 
+                                48, 62 };
+
+    uint8_t x = 0;
 
     for (int y = 70; y < 84; y = y + 2) {
     // arduboy.drawFastHLine(x, y, WIDTH - x);    
-        PD::drawLine(x, y, 110 - x, y);
-        x = x + (y < 76 ? -20 : 20);
+        PD::drawLine(groundX[x], y, groundX[x + 1], y);
+        x = x + 2;
+        // x = x + (y < 76 ? -20 : 20);
+        // printf("line %i %i %i %i\n", x, y, 110 - x, y);
     }
 
     // arduboy.drawCompressedMirror(16, 7, arch_interior_rh_mask, BLACK, false);
     // arduboy.drawCompressedMirror(16, 7, arch_interior_rh, WHITE, false);
     // arduboy.drawCompressedMirror(89, 19, princess_seat_mask, BLACK, false);
     // arduboy.drawCompressedMirror(89, 19, princess_seat, WHITE, false);
-    PD::drawBitmap(16, 7, Images::ArchInterior_RH);
+    PD::drawBitmap(14, 17, Images::ArchInterior_RH);
     PD::drawBitmap(73, 39, Images::Princess_Seat);
 
 
@@ -34,7 +44,7 @@ void Game::drawPrincessBackground_2() {
 
     // arduboy.drawCompressedMirror(0, 3, arch_interior_lh_mask, BLACK, false);
     // arduboy.drawCompressedMirror(0, 3, arch_interior_lh, WHITE, false);
-    PD::drawBitmap(0, 3, Images::ArchInterior_LH);
+    PD::drawBitmap(0, 14, Images::ArchInterior_LH);
 
 }
 
