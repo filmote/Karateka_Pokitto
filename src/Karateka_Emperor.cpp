@@ -16,48 +16,59 @@ void Game::emperor_loop() {
 
     if (PC::buttons.pressed(BTN_A)) {
 
-        enemyStack.clear();
-        gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+        this->enemy.clear();
+        this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
 
     }
     else {
-
+        
+        this->enemy.update();
 
         // Draw background ..
 
-        PD::drawLine(0, 72, 110, 72);
-        // arduboy.drawFastHLine(0, 52, WIDTH);
+        // PD::drawLine(0, 72, 110, 72);
 
-        for (int i=74; i< 84; i+=2) {
+        // for (int i=74; i< 84; i+=2) {
 
-            drawHorizontalDottedLine(i % 2, 110, i);
+        //     drawHorizontalDottedLine(i % 2, 110, i);
+
+        // }
+
+
+        for (int i = 0; i < 110; i = i + 24) {
+
+            PD::drawBitmap(i, 68, Images::Floor_Purple);
 
         }
 
-        if (enemyStack.isEmpty()) {
+        if (this->enemy.isEmpty()) {
 
             switch (emperorMode) {
 
                 case EMPEROR_MODE_INIT:
 
-                    enemyStack.push(STANCE_RUNNING_STRAIGHTEN_UP_REV);
+                    this->enemy.setEntityType(EntityType::EnemyTwo);
+                    this->enemy.push(STANCE_RUNNING_STRAIGHTEN_UP_REV, true);
 
                     for (int i = 0; i < 2; i++) {
 
-                        enemyStack.push(STANCE_RUNNING_RF_END_REV, STANCE_RUNNING_8_REV, STANCE_RUNNING_5_REV);
-                        enemyStack.push(STANCE_RUNNING_4_REV, STANCE_RUNNING_LF_END_REV, STANCE_RUNNING_2_REV);
-                        enemyStack.push(STANCE_RUNNING_7_REV, STANCE_RUNNING_4_REV);
+                        this->enemy.push(STANCE_RUNNING_RF_END_REV, STANCE_RUNNING_8_REV, STANCE_RUNNING_5_REV, true);
+                        this->enemy.push(STANCE_RUNNING_4_REV, STANCE_RUNNING_LF_END_REV, STANCE_RUNNING_2_REV, true);
+                        this->enemy.push(STANCE_RUNNING_7_REV, STANCE_RUNNING_4_REV, true);
 
                     }
 
-                    enemy.xPosDelta = 5;
-                    enemy.xPos = -64;
+                    this->enemy.setXPosDelta(10);
+                    this->enemy.setXPos(-138);
+                    this->enemy.setYPos(76);
+
+                    this->playTheme(SoundTheme::SendOutGuard);
 
                     break;
 
                 case EMPEROR_MODE_PAUSE_1:
                     for (int i = 0; i < 5; i++) {
-                        enemyStack.push(STANCE_STANDING_UPRIGHT_REV);
+                        this->enemy.push(STANCE_STANDING_UPRIGHT_REV, true);
                     }
 
                     break;
@@ -65,7 +76,7 @@ void Game::emperor_loop() {
                 case EMPEROR_LIFT_ARM:
 
                     for (int i =0; i < 9; i++) {
-                        enemyStack.push(STANCE_STANDING_UPRIGHT_REV);
+                        this->enemy.push(STANCE_STANDING_UPRIGHT_REV, true);
                     }
 
                     break;
@@ -74,15 +85,15 @@ void Game::emperor_loop() {
                 case EMPEROR_MODE_PAUSE_3:
 
                     for (int i = 0; i < 3; i++) {
-                    enemyStack.push(STANCE_STANDING_UPRIGHT_REV);
+                        this->enemy.push(STANCE_STANDING_UPRIGHT_REV, true);
                     }
 
                     break;
 
                 case EMPEROR_MODE_BOW:
 
-                    enemyStack.push(STANCE_BOW_1, STANCE_BOW_2);
-                    enemyStack.push(STANCE_BOW_2, STANCE_BOW_1);
+                    this->enemy.push(STANCE_BOW_1_REV, STANCE_BOW_2_REV, true);
+                    this->enemy.push(STANCE_BOW_2_REV, STANCE_BOW_1_REV, true);
 
                     break;
 
@@ -90,13 +101,13 @@ void Game::emperor_loop() {
 
                     for (int i = 0; i < 2; i++) {
 
-                        enemyStack.push(STANCE_RUNNING_RF_END, STANCE_RUNNING_8, STANCE_RUNNING_5);
-                        enemyStack.push(STANCE_RUNNING_4, STANCE_RUNNING_LF_END, STANCE_RUNNING_2);
-                        enemyStack.push(STANCE_RUNNING_7, STANCE_RUNNING_4);
+                        this->enemy.push(STANCE_RUNNING_RF_END, STANCE_RUNNING_8, STANCE_RUNNING_5, true);
+                        this->enemy.push(STANCE_RUNNING_4, STANCE_RUNNING_LF_END, STANCE_RUNNING_2, true);
+                        this->enemy.push(STANCE_RUNNING_7, STANCE_RUNNING_4, true);
 
                     }
 
-                    enemy.xPosDelta = -5;
+                    this->enemy.setXPosDelta(-10);
                     break;
 
             }
@@ -106,46 +117,39 @@ void Game::emperor_loop() {
 
         // Render screen ..
         
-        if (PC::frameCount % ANIMATION_NUMBER_OF_FRAMES == 0) {
+        if (this->enemy.getStackFrame() == 0) {
         
-            enemy.stance = enemyStack.pop();
-            enemy.xPos = enemy.xPos + enemy.xPosDelta;
+            this->enemy.setStance(this->enemy.pop());
+            this->enemy.setXPos(this->enemy.getXPos() + this->enemy.getXPosDelta());
+//("a %i %i\n", this->enemy.getXPosDisplay(), this->enemy.getYPos());   
+            if (this->enemy.isEmpty()) {
 
-            if (enemyStack.isEmpty()) {
-
-                enemy.xPosDelta = 0;
+                this->enemy.setXPosDelta(0);
                 emperorMode++;
 
-                if (emperorMode > EMPEROR_MODE_FIGHTER_LEAVE) { gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); }
+                if (emperorMode > EMPEROR_MODE_FIGHTER_LEAVE) { this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); }
 
             }
         
         }
 
-        // arduboy.drawCompressedMirror(92, 45, emperor_mask, BLACK, false);
-        // arduboy.drawCompressedMirror(87, 4, emperor, WHITE, false);
         PD::drawBitmap(69, 24, Images::Emperor);
 
         if (emperorMode >= EMPEROR_LIFT_ARM && emperorMode < EMPEROR_MODE_FIGHTER_LEAVE) {
 
-    //    arduboy.drawCompressedMirror(70, 19, emperor_arm_out, WHITE, false);
             PD::drawBitmap(54, 39, Images::EmperorArmOut);
         
         }
         else {
 
-            // arduboy.drawCompressedMirror(87, 21, emperor_arm_normal, WHITE, false);
             PD::drawBitmap(71, 41, Images::EmperorArmNormal);
         
         }
 
-        // arduboy.drawCompressedMirror(16, 7, arch_interior_rh_mask, BLACK, false);
-        // arduboy.drawCompressedMirror(16, 7, arch_interior_rh, WHITE, false);
-        PD::drawBitmap(14, 17, Images::ArchInterior_RH);
-        renderEnemyStance(enemy.xPos, enemy.yPos, enemy.stance);
-        // arduboy.drawCompressedMirror(0, 3, arch_interior_lh_mask, BLACK, false);
-        // arduboy.drawCompressedMirror(0, 3, arch_interior_lh, WHITE, false);
-        PD::drawBitmap(0, 14, Images::ArchInterior_LH);
+        PD::drawBitmap(8, 17, Images::Arch_LH1, NOROT, FLIPH);
+        renderEnemyShadow(this->enemy.getEntityType(), this->enemy.getXPosDisplay(), this->enemy.getYPos());
+        renderEnemyStance(this->enemy.getEntityType(), this->enemy.getXPosDisplay(), this->enemy.getYPos(), this->enemy.getStance());
+        PD::drawBitmap(0, 12, Images::Arch_RH1, NOROT, FLIPH);
         
     }
 

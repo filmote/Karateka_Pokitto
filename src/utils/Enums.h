@@ -9,12 +9,29 @@
 
 #define USE_DIFFERENT_BAMS
 
-#define GAME_STATE_TITLE_SCENE                    0
+#define IMMEDIATE_ACTION_FREQUENT                 3
+#define IMMEDIATE_ACTION_NORMAL                   7
+#define IMMEDIATE_ACTION_INFREQUENT               10
+
+#define RETREAT_ACTION_FREQUENT                   4
+#define RETREAT_ACTION_NORMAL                     7
+#define RETREAT_ACTION_INFREQUENT                 10
+
+#define ACTION_NO_PREF                            0
+#define ACTION_KICK_PREF                          1
+#define ACTION_PUNCH_PREF                         2
+
+#define MOVE_FWD_FREQUENT                         5
+#define MOVE_FWD_NORMAL                           8
+#define MOVE_FWD_INFREQUENT                       12
+
+#define GAME_STATE_FOLLOW_SEQUENCE                0
+#define GAME_STATE_TITLE_SCENE_INIT               19
+#define GAME_STATE_TITLE_SCENE                    1
 #define GAME_STATE_CASTLE_SCENE                   2
 #define GAME_STATE_EMPEROR_INIT                   3
 #define GAME_STATE_EMPEROR                        4
 #define GAME_STATE_PLAY_INIT                      5
-#define GAME_STATE_FOLLOW_SEQUENCE                6
 #define GAME_STATE_PLAY                           7
 #define GAME_STATE_ENEMY_APPROACH_INIT            8
 #define GAME_STATE_ENEMY_APPROACH                 9
@@ -24,12 +41,77 @@
 #define GAME_STATE_GO_THROUGH_GATE                13
 #define GAME_STATE_ENTRANCE                       14
 #define GAME_STATE_ENTRANCE_INIT                  15
-#define GAME_STATE_PRINCESS_INIT                  16
-#define GAME_STATE_PRINCESS                       17
+#define GAME_STATE_PRINCESS_BANISHMENT            16
+#define GAME_STATE_PRINCESS_SITTING               17
 #define GAME_STATE_FINAL_SCENE                    18
+#define GAME_STATE_SPLASH_SCREEN                  255
+#define GAME_STATE_SPLASH_SCREEN_INIT             251
+#define GAME_STATE_INTRO_TEXT                     254
+#define GAME_STATE_INTRO_TEXT_INIT                253
+#define GAME_STATE_CASTLE_SCENE_INIT              252
+#define GAME_STATE_EXTRO_TEXT                     250
+#define GAME_STATE_EXTRO_TEXT_INIT                249
 
-#define GAME_STATE_SEQ_SIZE                       7
 #define COOKIE_INITIALISED                        37
+#define XPOSOVERALL_NO_CHANGE                     127
+#define EAGLE_WING_UP                             0
+#define EAGLE_WING_DOWN                           1
+#define EAGLE_WING_FRAME_MAX                      2
+
+enum class ImageName : uint8_t {
+    Title,
+    Castle,
+    PPOT
+};
+
+enum class EntityType : uint8_t {
+    None,
+    EnemyOne,
+    EnemyTwo,
+    EnemyThree,
+    Eagle,
+    Princess,
+    Player,
+};
+
+enum class Movement : uint8_t {
+    None,
+    Sidle_Forward_Tiny,
+    Sidle_Forward_SML,
+    Sidle_Forward_MED,
+    Sidle_Forward_LRG,
+    Sidle_Forward_Unknown,
+    Running_Forward,
+    Sidle_Backward
+};
+
+enum class SoundTheme : uint8_t {
+    IntroPrincessToCell,
+    IntroPrincessCrying,
+    PrincessKillsPlayer,
+    PrincessNormalEnding,
+    PrincessNormalEndingShort,
+    StartOfScene,
+    TheEnd,
+    DefeatEmperor,      
+    DefeatEnemy,  
+    PrincessLookingUp,  
+    SendOutGuard,   
+    ExtroText, 
+    None,
+};
+
+enum class SoundEffect : uint8_t {
+    EagleApproaching,   // 08
+    EagleAttacking,     // 09
+    Kick,               // 10
+    Kiai,               // 11
+    Punch,              // 12
+    PlayerFootsteps,    // 13
+    EnemyFootsteps,     // 14
+    MissedPunch,        // 15
+    None,             
+};
 
 
 enum class GameState : uint8_t {
@@ -37,114 +119,31 @@ enum class GameState : uint8_t {
     Game, 
 };
 
-struct Entity {
-  uint8_t stance;
-  int16_t xPos;
-  int8_t xPosDelta;
-  int16_t xPosOverall;
-  uint8_t yPos;
-  int16_t yPosDelta;
-  uint8_t health;
-  uint8_t regain;
-  uint8_t regainLimit;
-  uint8_t activity;        // For enemies, defines how active they are (used in random actions). 
-                           // For player, defines the number of kicks or punches they have taken from the kick / punch ready position.
-  bool rightPunch;
-  bool rightFoot;
-  bool dead;
+enum class Direction : uint8_t {
+    Up,
+    Right,
+    Down,
+    Left 
 };
 
-struct GameStateDetails {
-
-  public:
-
-    uint8_t getCurrState() {
-      return _currState;
-    }
-
-    void setCurrState(uint8_t value) {
-      prevState = _currState;
-      _currState = value;
-    }
-
-    bool hasDelay;
-    uint8_t delayInterval;
-    uint8_t intArch;
-    uint8_t extArch;
-    uint8_t enemyType;
-    bool showCrevice;
-    int16_t archXPos;
-    uint8_t prevState;
-    uint8_t activity;
-    uint16_t sequence;    
-    bool outside;
-
-  private:
-    uint8_t _currState;
-
+enum class Background : uint8_t {
+    Inside,
+    Outside,
+    Dungeon
 };
-
-const uint8_t gameSequence[] = {
-  
-  //                                      Delay   IntArch     Launch      Show        Enemy               Interior = 0
-  //                                              1 = LH      Enemies     Crevice     Activity            Exterior = 1
-  //                                              2 = RH      1=Person                100 Slow / 0 Fast   
-  //                                              ExtArch     2=Eagle                                     
-  //                                              3 = LH                  
-  //                                              4 = RH      
-  //                                              5 = LH2                  
-  //                                              6 = RH2      
-              
-  
-  GAME_STATE_TITLE_SCENE,                 0,      0,          0,          0,          0,                  1,
-  GAME_STATE_CASTLE_SCENE,                15,     0,          0,          0,          0,                  1,
-  GAME_STATE_ENTRANCE_INIT,               0,      0,          0,          1,          0,                  1,
-  GAME_STATE_PLAY_INIT,                   25,     0,          0,          1,          0,                  1,
-  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1, 
-  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        130,                  1, 
-  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        125,                  1,
-   GAME_STATE_GO_THROUGH_GATE,             0,      4,          1,          0,          0,                  1,
-   GAME_STATE_PLAY_INIT,                   25,     3,          0,          0,        120,                  1,
-  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        115,                  1,
-  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        110,                  1,
-  // GAME_STATE_ENEMY_APPROACH_INIT,         0,      0,          0,          0,          0,                  1,
-  GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        105,                  1,
-  GAME_STATE_GO_THROUGH_GATE,             0,      4,          0,          0,          0,                  1,
-  GAME_STATE_PRINCESS,                    15,     0,          0,          1,          0,                  0,
-  GAME_STATE_EMPEROR_INIT,                0,      0,          0,          0,          0,                  0,
-  GAME_STATE_PLAY_INIT,                   0,      1,          2,          0,          0,                  0,
-  GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,        100,                  0,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,         95,                  0,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          1,          0,         80,                  0,
-  // GAME_STATE_PLAY_INIT,                   0,      0,          2,          0,          0,                  0,
-  GAME_STATE_GO_THROUGH_GATE,             0,      2,          0,          0,         75,                  0,
-  GAME_STATE_FINAL_SCENE,                 0,      0,          0,          0,          0,                  0,
-  GAME_STATE_THE_END,                     0,      0,          0,          0,          0,                  0,
-  
-};
-
-#define UP_BUTTON_MASK                            128
-#define DOWN_BUTTON_MASK                          16
-#define LEFT_BUTTON_MASK                          32
-#define RIGHT_BUTTON_MASK                         64
-#define A_BUTTON_MASK                             8
-#define B_BUTTON_MASK                             4
 
 #define ANIMATION_NUMBER_OF_FRAMES                5
 #define ANIMATION_FLASHING_TRIANGLES              12
 
 #define MAIN_SCENE_X_SIDLING_1_DELTA              1
 #define MAIN_SCENE_X_SIDLING_2_DELTA              2
-#define MAIN_SCENE_X_SIDLING_3_DELTA              3
-#define MAIN_SCENE_X_RUNNING_DELTA                6
-#define MAIN_SCENE_X_EAGLE_FLYING_DELTA           4
+#define MAIN_SCENE_X_SIDLING_4_DELTA              4
+#define MAIN_SCENE_X_EAGLE_FLYING_DELTA           6
+
+#define PLAYER_KICK_ACTIONS_MIN 50
+#define PLAYER_KICK_ACTIONS_MAX 90
+
+//4
 #define MAIN_SCENE_IMG_WIDTH                      48
 
 #define STANCE_DEFAULT                            0
@@ -188,6 +187,10 @@ const uint8_t gameSequence[] = {
 
 /* The following are not mapped for a player */
 #define STANCE_STANDING_UPRIGHT_REV               32
+
+
+
+
 #define STANCE_RUNNING_1_REV                      33
 #define STANCE_RUNNING_2_REV                      34
 #define STANCE_RUNNING_3_REV                      35
@@ -232,6 +235,16 @@ const uint8_t gameSequence[] = {
 #define STANCE_PRINCESS_SITTING                   64
 #define STANCE_PRINCESS_STANDING                  65
 #define STANCE_PRINCESS_KISSING                   66
+#define STANCE_PRINCESS_STANDING_REV              72
+
+#define STANCE_SIDLING_1_1                        67
+#define STANCE_SIDLING_1_2                        68
+#define STANCE_SIDLING_2_1                        69
+
+#define STANCE_BOW_1_REV                          70
+#define STANCE_BOW_2_REV                          71
+#define STANCE_VICTORY_1                          72
+#define STANCE_VICTORY_2                          73
 
 #define ACTION_MIN_KICK                           ACTION_MED_KICK
 #define ACTION_MED_KICK                           0
@@ -246,16 +259,20 @@ const uint8_t gameSequence[] = {
 #define ACTION_MAX                                ACTION_LOW_PUNCH
 #define ACTION_RETURN_TO_DEFAULT                  6
 #define ACTION_RETURN_TO_ACTION_READY             7
+#define ACTION_NO_ACTION                          8
 
 #define DISTANCE_TOO_CLOSE                        30
-#define DISTANCE_TOO_FAR                          38
-#define DISTANCE_BETWEEN_LRG                      80
-#define DISTANCE_BETWEEN_MED                      55
-#define DISTANCE_BETWEEN_SML                      35
-#define DISTANCE_BETWEEN_TINY                     25
+#define DISTANCE_TOO_FAR                          90
+
+#define DISTANCE_BETWEEN_LRG                      90
+#define DISTANCE_BETWEEN_MED                      80
+#define DISTANCE_BETWEEN_SML                      70
+#define DISTANCE_BETWEEN_TINY                     60
+
+#define DISTANCE_MINIMUM_MOVE                     25
 
 #define CHANCE_PERFORM_ACTION                     0
-#define CHANCE_PERFORM_ACTION_REGARDLESS_MAX      4
+#define CHANCE_PERFORM_ACTION_REGARDLESS_MAX      6
 #define CHANCE_MOVE_ENEMY_MAX                     10
  
 #define EMPEROR_MODE_INIT                         0
@@ -275,17 +292,16 @@ const uint8_t gameSequence[] = {
 #define EAGLE_MODE_FLY_AWAY                       6
 #define EAGLE_MODE_DONE                           7
 
-#define EAGLE_LEVEL_LOW                           60
-#define EAGLE_LEVEL_MED                           47
-#define EAGLE_LEVEL_HIGH                          39
+#define EAGLE_LEVEL_LOW                           50
+#define EAGLE_LEVEL_MED                           37
+#define EAGLE_LEVEL_HIGH                          29
+#define EAGLE_LEVEL_NONE                          0
 
 #define EAGLE_LEVEL_LOW_HEALTH                    30
 #define EAGLE_LEVEL_MED_HEALTH                    30
 #define EAGLE_LEVEL_HIGH_HEALTH                   50
 
 #define HEALTH_UNIT                               16
-// #define HEALTH_MAX_POINTS                         240
-// #define HEALTH_STARTING_POINTS                    160
 #define HEALTH_MAX_POINTS                         200
 #define HEALTH_STARTING_POINTS                    140
 #define HEALTH_REGAIN_POINTS                      3
@@ -296,14 +312,21 @@ const uint8_t gameSequence[] = {
 #define DAMAGE_3_POINT                            3
 #define DAMAGE_MAX_POINTS                         0
 
-#define ARCH_LEFT_HAND                            1
-#define ARCH_RIGHT_HAND                           2
+#define ARCH_LEFT_HAND_1                          1
+#define ARCH_RIGHT_HAND_1                         2
 #define ARCH_LEFT_HAND_2                          3
 #define ARCH_RIGHT_HAND_2                         4
-
-#define ENEMY_TYPE_NONE                           0
-#define ENEMY_TYPE_PERSON                         1
-#define ENEMY_TYPE_EAGLE                          2
+#define ARCH_LEFT_HAND_3                          5
+#define ARCH_RIGHT_HAND_3                         6
+#define ARCH_LEFT_HAND_4                          7
+#define ARCH_RIGHT_HAND_4                         8
+#define ARCH_LEFT_HAND_GATE                       9
+#define ARCH_RIGHT_HAND_GATE                      10
+#define ARCH_LEFT_HAND_ENTR                       11
+#define ARCH_RIGHT_HAND_ENTR                      12
+#define ARCH_LEFT_HAND_DBLD                       13
+#define ARCH_RIGHT_HAND_DBLD                      14
+#define ARCH_LEFT_STAIRS                          15
 
 #define FINAL_SCENE_INACTIVE                      0
 #define FINAL_SCENE_INIT                          1
@@ -311,10 +334,3 @@ const uint8_t gameSequence[] = {
 #define FINAL_SCENE_PAUSE_2                       3
 #define FINAL_SCENE_KISSING                       4
 #define FINAL_SCENE_BREAK_UP                      5
-
-struct RenderDetails {
-  int8_t xOffset;
-  int8_t yOffset;
-  uint8_t index;
-  bool rev;
-};

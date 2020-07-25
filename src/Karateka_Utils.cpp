@@ -6,18 +6,21 @@
 #include "images/images.h"
 #include "utils/Enums.h"
 #include "utils/Utils.h"
+#include "sound/Sounds.h"
 
 using PC = Pokitto::Core;
 using PD = Pokitto::Display;
 
-uint8_t Game::inStrikingRange(uint8_t action, int16_t attackerXPos, uint8_t targetType, uint8_t targetStance, int16_t targetXPos) {
+uint8_t Game::inStrikingRange(uint8_t action, Entity attacker, Entity target) {
 
-    int16_t distBetween = absT(targetXPos - attackerXPos);
+    int16_t distBetween = absT(target.getXPos() - attacker.getXPos());
+// printf("enemy type %i\n", (uint8_t)attacker.getEntityType());
+// printf("distBetween %i\n", distBetween);
 
-    if (targetType == ENEMY_TYPE_PERSON) {
+    if (target.isNormalEnemy() || target.getEntityType() == EntityType::Player) {
 
-        uint16_t pos = (action * ACTIONS_NUMBER_OF_STANCES) + targetStance;
-        uint8_t distance = actions_distance[ pos ] >> 2;
+        uint16_t pos = (action * ACTIONS_NUMBER_OF_STANCES) + target.getStance();
+        uint8_t distance = actions_distance[ pos ] / 4;
         uint8_t damage = actions_distance[ pos ] & 0x03;
 
         #ifdef DEBUG_STRIKING_RANGE
@@ -35,18 +38,32 @@ uint8_t Game::inStrikingRange(uint8_t action, int16_t attackerXPos, uint8_t targ
             _targetStance = targetStance;
         #endif
 
-        #ifdef DEBUG_SERIAL
-            Serial.print("inStrikingRange: "); 
-            Serial.print(pos); 
-            Serial.print(" "); 
-            Serial.print(distance); 
-            Serial.print(" "); 
-            Serial.print(distBetween); 
-            Serial.print(" "); 
-            Serial.println(damage); 
-        #endif
+        //#ifdef DEBUG_SERIAL
+            //printf("inStrikingRange: %i %i %i %i\n", pos, distance, distBetween, damage); 
+        //#endif
+        //SJH
 
-        return ((distBetween <= distance) ? (damage == 0 ? 255 : damage) : 0);
+        if (distBetween <= distance) { // A strike!
+
+            if (damage == DAMAGE_MAX_POINTS) {
+
+                return 255;
+
+            }
+            else {
+
+//printf("attacker.getEntityType() == EntityType::Player %i\n", attacker.getEntityType() == EntityType::Player);
+//                return (attacker.getEntityType() == EntityType::Player ? damage : 0);
+                return damage;
+                
+            }
+
+        }
+
+        return 0;
+
+//        return ((distBetween <= distance) ? (damage == 0 ? 255 : attacker.getEntityType() == EntityType::Player ? damage : 0 ) : 0);
+//        return ((distBetween <= distance) ? (damage == 0 ? 255 : damage) : 0);
 
     }
     else {
@@ -54,11 +71,29 @@ uint8_t Game::inStrikingRange(uint8_t action, int16_t attackerXPos, uint8_t targ
 
         // Attacking eagle ..
 
-        if (action != ACTION_LOW_PUNCH) {
-            return (distBetween > 35 && distBetween < 43 ? DAMAGE_3_POINT : 0); 
-        }
-        else {
-            return (distBetween > 30 && distBetween < 36 ? DAMAGE_3_POINT : 0); 
+        switch (action) {
+
+            case ACTION_LOW_PUNCH:
+                return (distBetween > 56 && distBetween <= 80 && target.getYPos() == EAGLE_LEVEL_LOW ? DAMAGE_3_POINT : 0); 
+
+            case ACTION_MED_PUNCH:
+                return (distBetween > 56 && distBetween <= 80 && target.getYPos() == EAGLE_LEVEL_MED ? DAMAGE_3_POINT : 0); 
+
+            case ACTION_HIGH_PUNCH:
+                return (distBetween > 56 && distBetween <= 80 && target.getYPos() == EAGLE_LEVEL_HIGH ? DAMAGE_3_POINT : 0); 
+
+            case ACTION_LOW_KICK:
+                return (distBetween >= 58 && distBetween <= 76 && target.getYPos() == EAGLE_LEVEL_LOW ? DAMAGE_3_POINT : 0); 
+
+            case ACTION_MED_KICK:
+                return (distBetween >= 52 && distBetween <= 84 && target.getYPos() == EAGLE_LEVEL_MED ? DAMAGE_3_POINT : 0);  //
+
+            case ACTION_HIGH_KICK:
+                return (distBetween >= 48 && distBetween <= 74 && target.getYPos() == EAGLE_LEVEL_HIGH ? DAMAGE_3_POINT : 0); 
+
+            default:
+                return 0; 
+
         }
 
     }
@@ -79,13 +114,13 @@ void Game::returnFromAction(uint8_t action, uint8_t returnAction) {
                 case ACTION_HIGH_KICK:
                 case ACTION_MED_KICK:
                 case ACTION_LOW_KICK:
-                    enemyStack.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD);
+                    this->enemy.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD, true);
                     break;
 
                 case ACTION_HIGH_PUNCH:
                 case ACTION_MED_PUNCH:
                 case ACTION_LOW_PUNCH:
-                    enemyStack.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD, STANCE_PUNCH_READY);
+                    this->enemy.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD, STANCE_PUNCH_READY, true);
                     break;
 
             }
@@ -99,13 +134,13 @@ void Game::returnFromAction(uint8_t action, uint8_t returnAction) {
                 case ACTION_HIGH_KICK:
                 case ACTION_MED_KICK:
                 case ACTION_LOW_KICK:
-                    enemyStack.push(STANCE_KICK_READY);
+                    this->enemy.push(STANCE_KICK_READY, true);
                     break;
 
                 case ACTION_HIGH_PUNCH:
                 case ACTION_MED_PUNCH:
                 case ACTION_LOW_PUNCH:
-                    enemyStack.push(STANCE_PUNCH_READY);
+                    this->enemy.push(STANCE_PUNCH_READY, true);
                     break;
 
             }
@@ -144,86 +179,298 @@ uint8_t Game::getActionFromStance(uint8_t stance) {
     }
 
 }
+                               // 0  1   2   3   4   5   6   7  8  9 10 11 12 13  14 15 16 17 18 19  20 21 22  23  24  25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  50  51  52  53  54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71,72,73 
+int8_t xEnemyHeads[] =          { 8, 8,  8,  8,  8,  8,  8, 14, 8, 8, 7, 8, 8, 8,  8,10, 8, 8, 8, 8,  8, 8, 8,  7,  8,  8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 6, 8, 6, 7, 0, 0,  0,  0,  0,  0,  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, };
 
+int8_t xPlayerOffset[] =        { 0, 5, -3, -1, -1, -2, -1, -7, 0, 0, 0, 0, 0, 0, -1, 0, 5, 5, 7, 5,  1, 1,-1, -2, -3, -3, 0, 2,-3, 2,-3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,-1,-1, 0,-1, 0,-3,-2,-2,-10,-11,-10,-10,-10,-10,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 0, 0, 0, 0, };
+int8_t yPlayerOffset[] =        { 5, 5,  5,  5,  5,  7,  5,  4, 5, 5, 5, 5, 5, 5,  5, 0, 5, 5, 5, 5,  5, 5, 5,  2,  3,  3, 3, 2, 3, 2, 3, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4,15,21,25,27,34,34, 21, 24, 22, 22, 16,  9,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 3, 5, };
+
+int8_t xEnemyOffset[] =       { 1,-2,  8,  0,  6, -5, -5, -4,-7,-7,-7,-7,-7,-7,  2,15, 2, 2, 2,-4,-2, 2, 0,   9,  3,  2, 5, 3, 2, 3, 2, 7,12, 0, 0, 0, 2, 3, 0, 0, 0, 3,14,10, 1, 0, 1,-4,-4,-4,  0,  0,  0,  0,  0,  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2,12,12, 0, 0, };
+int8_t yEnemyOffset[] =         { 5, 5,  5,  5,  5,  7,  4,  4, 5, 5, 5, 5, 5, 5,  5, 0, 5, 5, 5, 5,  5, 5, 5,  3,  3,  3, 3, 2, 3, 2, 3, 6, 0, 3, 3, 3, 3, 1, 2, 1, 3, 6, 1, 4,15,20,25,27,34,34, 21, 24, 22, 22, 16,  9,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 1, 4, 6 , 5, };
+
+
+int8_t yEagleOffset[] =  { 7, -2, 4,  0 };
 
 void Game::renderPlayerStance(int8_t x, int8_t y, uint8_t stance) {
 
-    RenderDetails head = { 0, 0, 127, false };
-    RenderDetails body = { 0, 0, 127, false };
-    RenderDetails leg = { 0, 0, 127, false };
+    x = x + 4 + xPlayerOffset[stance];
+    y = y - 5 + yPlayerOffset[stance];;
 
-    if (stance <= STANCE_ENTRANCE_6) {
+    switch (stance) {
 
-        head.xOffset = player_head[ (stance * 4) ];
-        head.yOffset = player_head[ (stance * 4) + 1];
-        head.index = player_head[ (stance * 4)  + 2];
-        head.rev = (player_head[ (stance * 4) + 3] == 1);
+        case STANCE_DEFAULT:
+            PD::drawBitmap(x, y - 40, Images::Player_Idle[this->player.getIdleFrame()]);
+            break;
+
+        default:
+            PD::drawBitmap(x, y - 40, Images::Player[stance]);
+            break;
+    }
+}
+
+
+void Game::renderEnemyStance(EntityType entityType, int8_t x, int8_t y, uint8_t stance) {
+
+    switch (entityType) {
+
+        case EntityType::EnemyOne:
+            {
+
+                x = x + 4 + xEnemyOffset[stance];
+                y = y - 5 + yEnemyOffset[stance];
+
+                switch (stance) {
+
+                    case STANCE_DEFAULT:
+                        PD::drawBitmap(x, y - 40 + (this->enemy.getIdleFrame() != 0 ? 1 : 0), Images::EnemyOne[stance]);
+                        y = y + xEnemyHeads[stance];
+                        PD::drawBitmap(x, y - 40, Images::EnemyCommon_Idle[this->enemy.getIdleFrame()]);
+                        break;
+                        
+                    case STANCE_STANDING_UPRIGHT_REV:
+// printf("e running 1\n");
+                        PD::drawBitmap(x, y - 40, Images::EnemyOne[STANCE_STANDING_UPRIGHT], NOROT, FLIPH);
+                        y = y + xEnemyHeads[STANCE_STANDING_UPRIGHT];
+                        PD::drawBitmap(x, y - 40, Images::EnemyCommon[STANCE_STANDING_UPRIGHT], NOROT, FLIPH);
+                        break;
+
+                    case STANCE_BOW_1_REV ... STANCE_BOW_2_REV:
+                        {
+// printf("e running 2\n");
+                            uint8_t altStance = stance - (STANCE_BOW_1_REV - STANCE_BOW_1);
+                            PD::drawBitmap(x, y - 40, Images::EnemyOne[altStance], NOROT, FLIPH);
+                            y = y + xEnemyHeads[altStance];
+                            PD::drawBitmap(x, y - 40, Images::EnemyCommon[altStance], NOROT, FLIPH);
+                        }
+                        break;
+
+                    case STANCE_RUNNING_1_REV ... STANCE_RUNNING_STRAIGHTEN_UP_REV:
+                        {
+// printf("e running 3\n");
+                            uint8_t altStance = stance - (STANCE_RUNNING_1_REV - STANCE_RUNNING_1);
+                            PD::drawBitmap(x, y - 40, Images::EnemyOne[altStance], NOROT, FLIPH);
+                            y = y + xEnemyHeads[altStance];
+                            PD::drawBitmap(x, y - 40, Images::EnemyCommon[altStance], NOROT, FLIPH);
+                        }
+                        break;
+
+                    case STANCE_DEATH_5 ... STANCE_DEATH_6:
+                        PD::drawBitmap(x, y - 40, Images::EnemyOne[stance]);
+                        break;
+
+                    default:
+// printf("e running 4\n");
+                        PD::drawBitmap(x, y - 40, Images::EnemyOne[stance]);
+                        y = y + xEnemyHeads[stance];
+                        PD::drawBitmap(x, y - 40, Images::EnemyCommon[stance]);
+                        break;
+
+                }
+
+            }
+
+            break;
+
+        case EntityType::EnemyTwo:
+            {
+
+                x = x + 4 + xEnemyOffset[stance];
+                y = y - 5 + yEnemyOffset[stance];
+                    
+                switch (stance) {
+
+                    case STANCE_DEFAULT:
+                        PD::drawBitmap(x, y - 40 + (this->enemy.getIdleFrame() != 0 ? 1 : 0), Images::EnemyTwo[stance]);
+                        y = y + xEnemyHeads[stance];
+                        PD::drawBitmap(x, y - 40, Images::EnemyCommon_Idle[this->enemy.getIdleFrame()]);
+                        break;
+
+                    case STANCE_STANDING_UPRIGHT_REV:
+                        PD::drawBitmap(x, y - 40, Images::EnemyTwo[STANCE_STANDING_UPRIGHT], NOROT, FLIPH);
+                        y = y + xEnemyHeads[STANCE_STANDING_UPRIGHT];
+                        PD::drawBitmap(x, y - 40, Images::EnemyCommon[STANCE_STANDING_UPRIGHT], NOROT, FLIPH);
+                        break;
+
+                    case STANCE_BOW_1_REV ... STANCE_BOW_2_REV:
+                        {
+                            uint8_t altStance = stance - (STANCE_BOW_1_REV - STANCE_BOW_1);
+                            PD::drawBitmap(x, y - 40, Images::EnemyTwo[altStance], NOROT, FLIPH);
+                            y = y + xEnemyHeads[altStance];
+                            PD::drawBitmap(x, y - 40, Images::EnemyCommon[altStance], NOROT, FLIPH);
+                        }
+                        break;
+
+                    case STANCE_RUNNING_1_REV ... STANCE_RUNNING_STRAIGHTEN_UP_REV:
+                        {
+                            uint8_t altStance = stance - (STANCE_RUNNING_1_REV - STANCE_RUNNING_1);
+                            PD::drawBitmap(x, y - 40, Images::EnemyTwo[altStance], NOROT, FLIPH);
+                            y = y + xEnemyHeads[altStance];
+                            PD::drawBitmap(x, y - 40, Images::EnemyCommon[altStance], NOROT, FLIPH);
+                        }
+                        break;
+
+                    case STANCE_DEATH_5 ... STANCE_DEATH_6:
+                        PD::drawBitmap(x, y - 40, Images::EnemyTwo[stance]);
+                        break;
+
+                    default:
+                        PD::drawBitmap(x, y - 40, Images::EnemyTwo[stance]);
+                        y = y + xEnemyHeads[stance];
+                        PD::drawBitmap(x, y - 40, Images::EnemyCommon[stance]);
+                        break;
+
+                }
+
+            }
+            break;
+
+        case EntityType::EnemyThree:
+            {
+
+                x = x + 4 + xEnemyOffset[stance];
+                y = y - 5 + yEnemyOffset[stance];
+                    
+                switch (stance) {
+
+                    case STANCE_DEFAULT:
+                        PD::drawBitmap(x, y - 40 + (this->enemy.getIdleFrame() != 0 ? 1 : 0), Images::EnemyThree[stance]);
+                        y = y + xEnemyHeads[stance];
+                        this->colourEnemyImage(Images::EnemyCommon_Idle[this->enemy.getIdleFrame()]);
+                        PD::drawBitmap(x, y - 40, this->imageToColour);
+                        break;
+
+                    case STANCE_STANDING_UPRIGHT_REV:
+                        PD::drawBitmap(x, y - 40, Images::EnemyThree[STANCE_STANDING_UPRIGHT], NOROT, FLIPH);
+                        y = y + xEnemyHeads[stance];
+                        this->colourEnemyImage(Images::EnemyCommon[stance]);
+                        PD::drawBitmap(x, y - 40, this->imageToColour);
+                        break;
+
+                    case STANCE_BOW_1_REV ... STANCE_BOW_2_REV:
+                        PD::drawBitmap(x, y - 40, Images::EnemyThree[stance - (STANCE_BOW_1_REV - STANCE_BOW_1)], NOROT, FLIPH);
+                        y = y + xEnemyHeads[stance];
+                        this->colourEnemyImage(Images::EnemyCommon[stance]);
+                        PD::drawBitmap(x, y - 40, this->imageToColour);
+                        break;
+
+                    case STANCE_RUNNING_1_REV ... STANCE_RUNNING_STRAIGHTEN_UP_REV:
+                        PD::drawBitmap(x, y - 40, Images::EnemyThree[stance - (STANCE_RUNNING_1_REV - STANCE_RUNNING_1)], NOROT, FLIPH);
+                        y = y + xEnemyHeads[stance];
+                        this->colourEnemyImage(Images::EnemyCommon[stance]);
+                        PD::drawBitmap(x, y - 40, this->imageToColour);
+                        break;
+
+                    case STANCE_DEATH_5 ... STANCE_DEATH_6:
+                        PD::drawBitmap(x, y - 40, Images::EnemyThree[stance]);
+                        break;
+
+                    default:
+                        PD::drawBitmap(x, y - 40, Images::EnemyThree[stance]);
+                        y = y + xEnemyHeads[stance];
+                        this->colourEnemyImage(Images::EnemyCommon[stance]);
+                        PD::drawBitmap(x, y - 40, this->imageToColour);
+                        break;
+
+                }
+
+            }
+
+            break;
+
+        case EntityType::Eagle:
+
+            switch (stance) {
+
+                case STANCE_EAGLE_1 ... STANCE_EAGLE_4:
+                    PD::drawBitmap(x, y + yEagleOffset[stance - STANCE_EAGLE_1], Images::Eagles[stance - STANCE_EAGLE_1]);
+                    break;
+
+                case STANCE_EAGLE_1_REV ... STANCE_EAGLE_4_REV:
+                    PD::drawBitmap(x, y + yEagleOffset[stance - STANCE_EAGLE_1_REV], Images::Eagles[stance - STANCE_EAGLE_1_REV], NOROT, FLIPH);
+                    break;
+
+            }
+
+            switch (this->player.getEagleAttack()) {
+
+                case EAGLE_LEVEL_LOW:
+                    PD::drawBitmap(x - 6, y + 12, Images::Bam);
+                    break;
+
+                case EAGLE_LEVEL_MED:
+                    PD::drawBitmap(x - 6, y + 12, Images::Bam);
+                    break;
+
+                case EAGLE_LEVEL_HIGH:
+                    PD::drawBitmap(x - 3, y + 10, Images::Bam);
+                    break;
+
+                default: break;
+
+            }
+
+            break;
+
+        case EntityType::Princess:
+
+            switch (stance) {
+                
+                case STANCE_PRINCESS_SITTING:
+                    PD::drawBitmap(x, y - 59, Images::Princess_Sitting_Body);
+                    PD::drawBitmap(x, y - 30, Images::Princess_Sitting_LookingUp);
+                    break;
+
+                case STANCE_PRINCESS_STANDING:
+                    PD::drawBitmap(x, y - 59, Images::Princess_Standing);
+                    break;                
+
+                case STANCE_PRINCESS_KISSING:
+                    PD::drawBitmap(x, y - 59, Images::Princess_Kissing);
+                    break;                
+                
+            }
+
+            break;
 
     }
-
-    if (stance <= STANCE_DEATH_2) {
-
-        body.xOffset = player_body[ (stance * 4) ];
-        body.yOffset = player_body[ (stance * 4) + 1];
-        body.index = player_body[ (stance * 4)  + 2];
-        body.rev = (player_body[ (stance * 4) + 3] == 1);
-
-    }
-
-    leg.xOffset = player_legs[ (stance * 4) ];
-    leg.yOffset = player_legs[ (stance * 4) + 1];
-    leg.index = player_legs[ (stance * 4)  + 2];
-    leg.rev = (player_legs[ (stance * 4) + 3] == 1);  
-
-    // if (leg.index != 127) arduboy.drawCompressedMirror(x + leg.xOffset, y + leg.yOffset, masks_leg[leg.index], BLACK, leg.rev);
-    // if (leg.index != 127) arduboy.drawCompressedMirror(x + leg.xOffset, y + leg.yOffset, imgs_leg[leg.index], WHITE, leg.rev);
-    // if (body.index != 127) arduboy.drawCompressedMirror(x + body.xOffset, y + body.yOffset, imgs_body[body.index], WHITE, body.rev);
-    // if (head.index != 127) arduboy.drawCompressedMirror(x + head.xOffset, y + head.yOffset, imgs_head[head.index], WHITE, head.rev);
-
-    if (leg.index != 127)       PD::drawBitmap(x + leg.xOffset, y + leg.yOffset, Images::imgs_leg[leg.index], NOROT, leg.rev ? FLIPH : 0);
-    if (body.index != 127)      PD::drawBitmap(x + body.xOffset, y + body.yOffset, Images::imgs_body[body.index], NOROT, body.rev ? FLIPH : 0);
-    if (head.index != 127)      PD::drawBitmap(x + head.xOffset, y + head.yOffset, Images::imgs_head[head.index], NOROT, head.rev ? FLIPH : 0);
 
 }
 
 
-void Game::renderEnemyStance(int8_t x, int8_t y, uint8_t stance) {
+void Game::renderEnemyShadow(EntityType entityType, int8_t x, int8_t y) {
 
-    RenderDetails head = { 0, 0, 127, false };
-    RenderDetails body = { 0, 0, 127, false };
-    RenderDetails leg = { 0, 0, 127, false };
+    switch (entityType) {
 
-    if (stance <= STANCE_DEATH_4) {
+        case EntityType::Eagle:
+            PD::drawBitmap(x, 74, Images::Eagle_Shadow);
+            break;
 
-        head.xOffset = enemy_head[ (stance * 4) ];
-        head.yOffset = enemy_head[ (stance * 4) + 1];
-        head.index = enemy_head[ (stance * 4)  + 2];
-        head.rev = (enemy_head[ (stance * 4) + 3 ] == 1);
+        default:
+            break;
 
     }
 
-    if (stance <= STANCE_DEATH_2) {
+}
 
-        body.xOffset = enemy_body[ (stance * 4) ];
-        body.yOffset = enemy_body[ (stance * 4) + 1];
-        body.index = enemy_body[ (stance * 4)  + 2];
-        body.rev = (enemy_body[ (stance * 4) + 3] == 1);
 
+void Game::renderPrincessStance(int8_t x, int8_t y, uint8_t stance) {
+
+    switch (stance) {
+        
+        case STANCE_PRINCESS_SITTING:
+            PD::drawBitmap(x, y - 27, Images::Princess_Sitting_Body);
+            PD::drawBitmap(x + 10, y - 36, Images::Princess_Sitting_LookingUp);
+            break;
+
+        case STANCE_PRINCESS_STANDING:
+            PD::drawBitmap(x - 2, y - 43, Images::Princess_Standing);
+            break;                
+
+        case STANCE_PRINCESS_KISSING:
+            PD::drawBitmap(x - 6, y - 44, Images::Princess_Kissing);
+            break;                
+        
     }
-
-    leg.xOffset = enemy_legs[ (stance * 4) ];
-    leg.yOffset = enemy_legs[ (stance * 4) + 1];
-    leg.index = enemy_legs[ (stance * 4) + 2];
-    leg.rev = (enemy_legs[ (stance * 4) + 3] == 1);  
-
-    // if (leg.index != 127) arduboy.drawCompressedMirror(x + leg.xOffset, y + leg.yOffset, masks_leg[leg.index], BLACK, leg.rev);
-    // if (leg.index != 127) arduboy.drawCompressedMirror(x + leg.xOffset, y + leg.yOffset, imgs_leg[leg.index], WHITE, leg.rev);
-    // if (body.index != 127) arduboy.drawCompressedMirror(x + body.xOffset, y + body.yOffset, imgs_body[body.index], WHITE, body.rev);
-    // if (head.index != 127) arduboy.drawCompressedMirror(x + head.xOffset, y + head.yOffset, imgs_head[head.index], WHITE, head.rev);
-
-    if (leg.index != 127)       PD::drawBitmap(x + leg.xOffset, y + leg.yOffset, Images::imgs_leg[leg.index], NOROT, leg.rev ? FLIPH : 0);
-    if (body.index != 127)      PD::drawBitmap(x + body.xOffset, y + body.yOffset, Images::imgs_body[body.index], NOROT, body.rev ? FLIPH : 0);
-    if (head.index != 127)      PD::drawBitmap(x + head.xOffset, y + head.yOffset, Images::imgs_head[head.index], NOROT, head.rev ? FLIPH : 0);
 
 }
 
@@ -240,4 +487,198 @@ void Game::drawHorizontalDottedLine(int x1, int x2, int y) {
         PD::drawPixel(z, y);
     }
   
+}
+
+void Game::playSoundEffect(SoundEffect soundEffect) {
+
+    switch (soundEffect) {
+
+        case SoundEffect::EagleApproaching:
+            {
+                auto &music = Audio::play<1>(Sounds::sfx_karate08);
+            }
+            break;
+
+        case SoundEffect::EagleAttacking:
+            {
+                // auto &music = Audio::play<1>(Sounds::sfx_karate09);
+                if (soundEffectFile.openRO("music/karate09.raw")) {
+                    auto &music = Audio::play<1>(soundEffectFile);
+                    music.setLoop(false);
+                }                 
+            }
+            break;
+
+        case SoundEffect::Kick:
+            {
+                auto &music = Audio::play<1>(Sounds::sfx_karate10);
+            }
+            break;
+
+        case SoundEffect::Kiai:
+            {
+                // auto &music = Audio::play<1>(Sounds::sfx_karate11);
+                if (soundEffectFile.openRO("music/karate11.raw")) {
+                    auto &music = Audio::play<1>(soundEffectFile);
+                    music.setLoop(false);
+                }                 
+            }
+            break;
+
+        case SoundEffect::Punch:
+            {
+                auto &music = Audio::play<1>(Sounds::sfx_karate12);
+            }
+            break;
+
+        case SoundEffect::PlayerFootsteps:
+            {
+                auto &music = Audio::play<1>(Sounds::sfx_karate13);
+            }
+            break;
+
+        case SoundEffect::EnemyFootsteps:
+            {
+                auto &music = Audio::play<1>(Sounds::sfx_karate14);
+            }
+            break;
+
+        case SoundEffect::MissedPunch:
+            {
+                auto &music = Audio::play<1>(Sounds::sfx_karate15);
+            }
+            break;
+
+    }
+
+}
+
+void Game::playTheme(SoundTheme theme) {
+
+    char sounds[12][19] = { "music/karate00.raw", "music/karate16.raw", "music/karate01.raw", "music/karate02.raw", "music/karate03.raw", "music/karate04.raw", "music/karate05.raw", "music/karate06.raw", "music/karate07.raw", "music/karate18.raw", "music/karate19.raw", "music/karate20.raw" };
+
+    if (this->theme != theme) {
+
+        if (mainThemeFile.openRO(sounds[ static_cast<uint8_t>(theme) ])) {
+            auto &music = Audio::play<0>(mainThemeFile);
+            music.setLoop(false);
+        } 
+
+    }
+
+    this->theme = theme;
+
+}
+
+
+
+void Game::renderPrincess() {
+
+    switch (this->princess.getFrame()) {
+
+        case 0:
+        case 2:
+            PD::drawBitmap(this->princess.getXPos() + 2, this->princess.getYPos() - 21, Images::Princess_Walking_00, NOROT, FLIPH);
+            PD::drawBitmap(this->princess.getXPos(), this->princess.getYPos() - 43, Images::Princess_Walking_Top, NOROT, FLIPH);
+            break;
+
+        case 1:
+            PD::drawBitmap(this->princess.getXPos() + 3, this->princess.getYPos() - 21, Images::Princess_Walking_01, NOROT, FLIPH);
+            PD::drawBitmap(this->princess.getXPos(), this->princess.getYPos() - 43, Images::Princess_Walking_Top, NOROT, FLIPH);
+            break;
+
+        case 3:
+            PD::drawBitmap(this->princess.getXPos() + 2, this->princess.getYPos() - 21, Images::Princess_Walking_02, NOROT, FLIPH);
+            PD::drawBitmap(this->princess.getXPos(), this->princess.getYPos() - 43, Images::Princess_Walking_Top, NOROT, FLIPH);
+            break;
+
+    }
+
+}
+
+void Game::colourEnemyImage(const uint8_t * image) {
+
+    uint8_t w = image[0];
+    uint8_t h = image[1];
+    uint16_t imageSize = 2 + ((w*h) / 2);
+
+    memcpy(imageToColour, image, imageSize);
+
+    for (uint16_t i = 2; i<  imageSize; i++) {
+
+        if ((imageToColour[i] & 0x0F) == 0x07)  imageToColour[i] = (imageToColour[i] & 0xF0) | 0x09;            
+        if ((imageToColour[i] & 0xF0) == 0x70)  imageToColour[i] = (imageToColour[i] & 0x0F) | 0x90;
+        if ((imageToColour[i] & 0x0F) == 0x0C)  imageToColour[i] = (imageToColour[i] & 0xF0) | 0x0F;            
+        if ((imageToColour[i] & 0xF0) == 0xC0)  imageToColour[i] = (imageToColour[i] & 0x0F) | 0xF0;
+
+    }            
+
+}
+
+#define DISTANCE_BETWEEN_MINIMUM 30
+#define DISTANCE_TRAVELLED_TINY 5
+#define DISTANCE_TRAVELLED_SML 6
+#define DISTANCE_TRAVELLED_MED 29
+#define DISTANCE_TRAVELLED_LRG 71
+
+const uint8_t distBetweenLookup[] = { 
+    DISTANCE_BETWEEN_MINIMUM + DISTANCE_TRAVELLED_TINY, 
+    DISTANCE_BETWEEN_MINIMUM + DISTANCE_TRAVELLED_SML,  // 12
+    DISTANCE_BETWEEN_MINIMUM + DISTANCE_TRAVELLED_MED,  // 18
+    DISTANCE_BETWEEN_MINIMUM + DISTANCE_TRAVELLED_LRG,  // 24
+    DISTANCE_BETWEEN_MINIMUM + DISTANCE_TRAVELLED_TINY,  // 30
+    DISTANCE_BETWEEN_MINIMUM + DISTANCE_TRAVELLED_TINY,  // 30
+};
+
+
+bool Game::canMoveCloser(Movement moverMovement, Entity entity, uint16_t distBetween) {
+    return (distBetweenLookup[static_cast<uint8_t>(moverMovement)] + enemy.getDistToMove() <= distBetween);
+}
+
+
+Movement Game::getLargestMove(Entity entity, uint16_t distBetween) {
+
+//printf("{getLargestMove %i %i ", entity.getDistToMove(), distBetween);
+
+    for (uint8_t i = 6; i > 0; i--) {
+
+        uint8_t lookup = distBetweenLookup[ i - 1 ];
+        
+        if (lookup + entity.getDistToMove() < distBetween) {
+            return static_cast<Movement>(i - 1);
+        }
+
+    }
+
+    return Movement::None;
+
+}
+
+void Game::readImage(uint8_t *buffer, ImageName imageName) {
+
+    File file;
+
+    switch (imageName) {
+
+        case ImageName::Title:
+                // printf("title\n");
+            if (file.openRO("music/karate01.img")) {
+                file.read(buffer, 2 + ((110 * 88) / 2));
+            }
+            break;
+
+        case ImageName::Castle:
+            if (file.openRO("music/karate02.img")) {
+                file.read(buffer, 2 + ((110 * 88) / 2));
+            }
+            break;
+
+        case ImageName::PPOT:
+            if (file.openRO("music/karate03.img")) {
+                file.read(buffer, 2 + ((110 * 88) / 2));
+            }
+            break;
+
+    }
+
 }

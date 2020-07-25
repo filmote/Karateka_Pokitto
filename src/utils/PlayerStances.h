@@ -7,7 +7,7 @@
 using PC = Pokitto::Core;
 using PD = Pokitto::Display;
 
-const int8_t PROGMEM player_head[] = {
+const int8_t player_head[] = {
 14, -39, 0, 0,        // STANCE_DEFAULT
 14, -39, 0, 0,        // STANCE_DEFAULT_LEAN_BACK
 3, -39, 0, 0,         // STANCE_KICK_READY
@@ -76,7 +76,7 @@ const int8_t PROGMEM player_head[] = {
 */
 };
     
-const int8_t PROGMEM player_body[] = {
+const int8_t player_body[] = {
 9, -31, 0, 0,         // STANCE_DEFAULT
 9, -31, 0, 0,         // STANCE_DEFAULT_LEAN_BACK
 0, -31, 1, 0,         // STANCE_KICK_READY
@@ -145,7 +145,7 @@ const int8_t PROGMEM player_body[] = {
 */
 };
 
-const int8_t PROGMEM player_legs[] = {
+const int8_t player_legs[] = {
 -1, -18, 0, 0,        // STANCE_DEFAULT
 5, -18, 1, 0,         // STANCE_DEFAULT_LEAN_BACK
 7, -22, 2, 0,         // STANCE_KICK_READY

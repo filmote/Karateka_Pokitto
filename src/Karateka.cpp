@@ -18,7 +18,7 @@ using PD = Pokitto::Display;
 
 void Game::gameSetup() {
   
-  gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+  this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
 
 }
 
@@ -30,40 +30,85 @@ void Game::gameSetup() {
 
 void Game::draw_background() {
 
-    const uint8_t *backdrop_img = (this->gameStateDetails.outside ? Images::Backdrop: Images::Backdrop2);
-    const uint8_t yOffset = (this->gameStateDetails.outside ? 18: 0);
+    const uint8_t *backdrop_img = nullptr;
+    uint8_t yOffset = 0;
+    uint8_t backgroundOffset = 0;
+    //(this->gameStateDetails.outside ? 15: 0);
 
-    // arduboy.drawFastHLine(0, 47, WIDTH, WHITE);
-    PD::drawLine(0, 67, 110, 67);
-    PD::drawLine(0, 79, 110, 79);
+    // // arduboy.drawFastHLine(0, 47, WIDTH, WHITE);
+    // PD::drawLine(0, 68, 110, 68);
+    // PD::drawLine(0, 80, 110, 80);
 
 
-    for (int i = 69; i < 78; i++) {
-        drawHorizontalDottedLine(i % 2, 110, i);
+    // for (int i = 70; i < 79; i++) {
+    //     drawHorizontalDottedLine(i % 2, 110, i);
+    // }
+
+    switch (this->gameStateDetails.background) {
+    
+        case Background::Outside:
+            backdrop_img = Images::Backdrop_00;
+            yOffset = 15;
+            break; 
+            
+        case Background::Inside:
+            backdrop_img = Images::Backdrop_01;
+            backgroundOffset = 16;
+            yOffset = 0;
+            break;
+
+        case Background::Dungeon:
+            backdrop_img = Images::Backdrop_02;
+            backgroundOffset = 16;
+            yOffset = 0;
+            break;
+
     }
 
-    if (gameStateDetails.showCrevice) {
-        // arduboy.drawCompressedMirror(-player.xPosOverall, 0, crevice_mask, BLACK, false);
-        // arduboy.drawCompressedMirror(-player.xPosOverall, 0, crevice, WHITE, false);
-        PD::drawBitmap(-player.xPosOverall, 20, Images::Crevice);
+    for (int i = 0; i < 110; i = i + 24) {
+
+        switch (this->gameStateDetails.background) { 
+    
+            case Background::Outside:
+                PD::drawBitmap(i, 68, Images::Floor_Brown);
+                break; 
+                
+            case Background::Inside:
+                PD::drawBitmap(i, 68, Images::Floor_Purple);
+                break;
+
+            case Background::Dungeon:
+                PD::drawBitmap(i, 68, Images::Floor_Blue);
+                break;
+
+        }
+
     }
 
-    //if (outside) {
+
+    if (this->gameStateDetails.showCrevice) {
+        PD::drawBitmap(-this->player.getXPosOverall() / 2, 21, Images::Crevice);
+    }
+
+    if (backdrop_img != nullptr) {
+
         PD::drawBitmap(0, 0, Images::Mountain);
-        PD::drawBitmap(mainSceneX, yOffset, backdrop_img);
-        PD::drawBitmap(mainSceneX + MAIN_SCENE_IMG_WIDTH, yOffset, backdrop_img);
-        PD::drawBitmap(mainSceneX + (2 * MAIN_SCENE_IMG_WIDTH), yOffset, backdrop_img);
-        PD::drawBitmap(mainSceneX + (3 * MAIN_SCENE_IMG_WIDTH), yOffset, backdrop_img);
-    //}
+        PD::drawBitmap(mainSceneX - backgroundOffset - MAIN_SCENE_IMG_WIDTH, yOffset, backdrop_img);
+        PD::drawBitmap(mainSceneX - backgroundOffset, yOffset, backdrop_img);
+        PD::drawBitmap(mainSceneX - backgroundOffset + MAIN_SCENE_IMG_WIDTH, yOffset, backdrop_img);
+        PD::drawBitmap(mainSceneX - backgroundOffset + (2 * MAIN_SCENE_IMG_WIDTH), yOffset, backdrop_img);
+        PD::drawBitmap(mainSceneX - backgroundOffset + (3 * MAIN_SCENE_IMG_WIDTH), yOffset, backdrop_img);
+    
+    }
 
 
     // Draw player triangles ..
 
     if (PC::frameCount % ANIMATION_FLASHING_TRIANGLES == 0) displayHealth = !displayHealth;
 
-    if (player.health > 27 || displayHealth) {
+    if (this->player.getHealth() > 27 || displayHealth) {
 
-        for (uint8_t i = 0; i < (player.health / 10); i++) {
+        for (uint8_t i = 0; i < (this->player.getHealth() / 10); i++) {
             PD::drawBitmap((i * 4), 82, Images::ArrowLeft);
         }
 
@@ -72,11 +117,11 @@ void Game::draw_background() {
 
     // Draw enemy triangles ..
 
-    if (gameStateDetails.enemyType == ENEMY_TYPE_PERSON) {
+    if (this->enemy.isNormalEnemy()) {
 
-        if (enemy.health > 27 || displayHealth) {
+        if (this->enemy.getHealth() > 27 || displayHealth) {
 
-            for (uint8_t i = (enemy.health / 10); i > 0; i--) {
+            for (uint8_t i = (this->enemy.getHealth() / 10); i > 0; i--) {
                 PD::drawBitmap(111 - (i * 4), 82, Images::ArrowRight);
             }
 
@@ -93,10 +138,113 @@ void Game::draw_background() {
 
 void Game::play_loop() {
 
-    draw_background();
-    if (gameStateDetails.hasDelay && gameStateDetails.delayInterval == 0 && playerStack.isEmpty())   { 
+    this->player.update();
+    this->player.incFrame(2);
+    this->enemy.update();
+    
 
-        gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); 
+/* --------
+//Test Positions..
+
+    if ((PC::buttons.pressed(BTN_UP) || PC::buttons.repeat(BTN_UP, 3)) && xxx > 0) {
+        xxx--;
+    }
+
+    if ((PC::buttons.pressed(BTN_DOWN) || PC::buttons.repeat(BTN_DOWN, 3)) && xxx < 100) {
+        xxx++;
+
+    }
+
+    PD::setColor(5);
+    for (uint8_t x= 0; x< 110;x=x+5){
+        PD::drawLine(x,0,x,88);
+        PD::drawLine(x,0,x,88);
+    }
+    PD::drawLine(0,80,110,80);
+    PD::setColor(6);
+    PD::drawLine(35,0,35,88);
+    PD::drawLine(75,0,75,88);
+
+    renderPlayerStance(20, 79, xxx);
+    renderEnemyStance(EntityType::EnemyThree, 58, 79, xxx);
+    PD::setCursor(0,0);
+    PD::print(xxx,10);
+
+    return;
+*/
+/* --------
+//Test Striking..
+
+// #define STANCE_KICK_MED_END                       5
+// #define STANCE_KICK_LOW_END                       6
+// #define STANCE_KICK_HIGH_END                      7
+
+// #define STANCE_PUNCH_MED_RH_END                   8
+// #define STANCE_PUNCH_MED_LH_END                   9 
+// #define STANCE_PUNCH_HIGH_RH_END                  10
+// #define STANCE_PUNCH_HIGH_LH_END                  11
+// #define STANCE_PUNCH_LOW_RH_END                   12
+// #define STANCE_PUNCH_LOW_LH_END                   13
+    if ((PC::buttons.pressed(BTN_A) || PC::buttons.repeat(BTN_A, 3)) && zzz > 5) {
+        zzz--;
+    }
+    if ((PC::buttons.pressed(BTN_B) || PC::buttons.repeat(BTN_B, 3)) && zzz < 13) {
+        zzz++;
+    }
+
+    if ((PC::buttons.pressed(BTN_LEFT) || PC::buttons.repeat(BTN_LEFT, 3)) && xxx > 0) {
+        xxx--;
+    }
+
+    if ((PC::buttons.pressed(BTN_RIGHT) || PC::buttons.repeat(BTN_RIGHT, 3)) && xxx < 100) {
+        xxx++;
+    }
+
+    if ((PC::buttons.pressed(BTN_UP) || PC::buttons.repeat(BTN_UP, 3)) && xxx > 0) {
+        yyy--;
+    }
+
+    if ((PC::buttons.pressed(BTN_DOWN) || PC::buttons.repeat(BTN_DOWN, 3)) && xxx < 100) {
+        yyy++;
+    }
+
+    PD::setColor(5);
+    for (uint8_t x= 0; x< 110;x=x+5){
+        PD::drawLine(x,0,x,88);
+        PD::drawLine(x,0,x,88);
+    }
+    PD::drawLine(0,80,110,80);
+    PD::setColor(15);
+    PD::drawLine(35,0,35,88);
+    PD::drawLine(75,0,75,88);
+    PD::setColor(6);
+
+    player.setXPos(xxx * 2);
+    player.setYPos(79);
+    renderPlayerStance(player.getXPosDisplay(), player.getYPos(), zzz);
+    enemy.setXPos(116);
+    enemy.setYPos(79);
+//    renderEnemyStance(EntityType::EnemyOne, 58, 79, yyy);
+    renderEnemyStance(EntityType::EnemyOne, enemy.getXPosDisplay(), enemy.getYPos(), yyy);
+    PD::setCursor(0,0);
+    PD::print("X: ");
+    PD::print(xxx,10);
+    PD::print(" Dist:");
+    int16_t distBetween = absT(enemy.getXPos() - player.getXPos());
+    PD::print(distBetween,10);
+    PD::setCursor(0,8);
+    PD::print("PS: ");
+    PD::print(zzz,10);
+    PD::print(" ES: ");
+    PD::print(yyy,10);
+
+    return;
+ */
+    draw_background();
+//printf("minX %i, xPos %i\n", this->gameStateDetails.minXTravel , this->player.getXPosOverall());
+    if (this->gameStateDetails.hasDelay && this->gameStateDetails.delayInterval == 0 && this->player.isEmpty() && (this->gameStateDetails.minXTravel == 0 || this->gameStateDetails.minXTravel < this->player.getXPosOverall()))   { 
+
+        this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); 
 
     }
     else {
@@ -105,13 +253,15 @@ void Game::play_loop() {
 
     }
 
-    switch (gameStateDetails.enemyType) {
+    switch (this->enemy.getEntityType()) {
 
-        case ENEMY_TYPE_PERSON:
+        case EntityType::EnemyOne:
+        case EntityType::EnemyTwo:
+        case EntityType::EnemyThree:
             enemyMovements();
             break;
 
-        case ENEMY_TYPE_EAGLE:
+        case EntityType::Eagle:
             eagleMovements();
             break;
 
@@ -121,161 +271,430 @@ void Game::play_loop() {
 
     // Has the player or enemy been hit ?
 
-    uint8_t player_BamX = 0;
-    uint8_t player_BamY = 0;
+    int16_t player_BamX = 0;
+    int16_t player_BamY = 0;
 
-    uint8_t enemy_BamX = 0;
-    uint8_t enemy_BamY = 0;
+    int16_t enemy_BamX = 0;
+    int16_t enemy_BamY = 0;
 
-    #ifdef USE_DIFFERENT_BAMS
-        const int8_t player_BamXPos[] = {  32,  31,  33,            33,  33,  34,  34,  29,  29 };
-        const int8_t enemy_BamXPos[] =  { -17, -17, -19,           -19, -19, -18, -18, -18, -18 };
-        const int8_t both_BamYPos[] =   { -30, -17, -42,           -37, -37, -41, -41, -27, -27 };
-    #endif
-    //                           Kick   M,   L,   H     Punch   MR,  ML,  HR,  HL,  LR,  LL     
-    #ifndef USE_DIFFERENT_BAMS
-        const int8_t player_BamXPos[] = {  27,  25,  30,            30,  30,  30,  30,  23,  23 };
-        const int8_t enemy_BamXPos[] =  { -20, -23, -19,           -22, -22, -18, -18, -24, -24 };
-        const int8_t both_BamYPos[] =   { -33, -21, -42,           -39, -39, -45, -45, -31, -31 };
-    #endif
+    //                                  0    1    2    3    4    5    6    7    8
+    const int8_t player_BamXPos[] = {  27,  29,  26,  28,  28,  28,  28,  28,  28 };
+    const int8_t enemy_BamXPos[] =  {  -7,  -7,  -6,  -8,  -8,  -8,  -8,  -8,  -9 }; // larger neg moves left, small neg moves right.
+    const int8_t both_BamYPos[] =   { -31, -18, -41, -36, -36, -41, -41, -28, -28 };  // negative moves up
+    
 
-    if (PC::frameCount % ANIMATION_NUMBER_OF_FRAMES == 0) {
+
+    // If the player runs through the gate, he may die!
+
+    if (this->gameStateDetails.arch == ARCH_RIGHT_HAND_GATE) {
+
+        if (this->player.getXPos() >= 114) {
+
+            if (this->gameStateDetails.archGateDirection == Direction::Down) {
+
+                switch (this->gameStateDetails.archGatePos) {
+
+                    case 22 ... 30:    
+                        this->gameStateDetails.archGatePos = 31;
+                        break;
+
+                    case 31 ... 39:    
+                        this->gameStateDetails.archGatePos = 40;
+                        break;
+
+                    case 40 ... 48:    
+                        this->gameStateDetails.archGatePos = 49;
+                        break;
+
+                    case 49 ... 57:    
+                        this->gameStateDetails.archGatePos = 58;
+                        break;
+
+                    case 58 ... 68:    
+                        this->gameStateDetails.archGatePos = 67;
+                        this->gameStateDetails.archGateDirection = Direction::Up;
+
+                        if (this->player.getXPos() > 122) {
+
+                            this->player.setHealth(0);
+
+                        }
+                        break;
+                        
+                }
+
+            }
+
+        }
+
+        if (this->gameStateDetails.archGateDirection == Direction::Up) {
+
+            if ((this->player.getStance() < STANCE_DEATH_1 || this->player.getStance() > STANCE_DEATH_6) && this->player.getHealth() > 0) {
+
+                if (this->gameStateDetails.archGatePos > 22 && (PC::frameCount % 4 == 0)) {
+                    
+                    this->gameStateDetails.archGatePos = this->gameStateDetails.archGatePos - 1;
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+    // Update the player and enemy stances from the stack ..
+
+    if (this->player.getStackFrame() == 0) {
+
+        if (!this->player.isEmpty()) {
+            this->player.setStance(this->player.pop());
+//printf("PLayer Stack %i\n", player.getStance());            
+        }
+        else {
+            this->player.setXPosDelta(0);
+        }
+
+    }
+
+    if (this->enemy.getStackFrame() == 0) {
+
+        if (!this->enemy.isEmpty()) {
+            this->enemy.setStance(this->enemy.pop());
+//printf("enemy stance: %i\n", this->enemy.getStance());            
+        }
+        else {
+            this->enemy.setXPosDelta(0);
+        }
+
+    }
+
+
+   if (PC::frameCount % ANIMATION_NUMBER_OF_FRAMES == 0) {
 
         enemyHit = 0;
         playerHit = 0;
 
-        if (gameStateDetails.hasDelay && gameStateDetails.delayInterval > 0)      { gameStateDetails.delayInterval--; }
+        if (this->gameStateDetails.hasDelay && this->gameStateDetails.delayInterval > 0)      { this->gameStateDetails.delayInterval--; }
 
 
-        // Update the player and enemy stances from the stack ..
-
-        if (!playerStack.isEmpty()) {
-            player.stance = playerStack.pop();
-        }
-        else {
-            player.xPosDelta = 0;
-        }
-
-        if (!enemyStack.isEmpty()) {
-            enemy.stance = enemyStack.pop();
-        }
-        else {
-            enemy.xPosDelta = 0;
-        }
 
 
         // If we are fighting, check to see if a strike has been made ..
 
-        if (gameStateDetails.enemyType != ENEMY_TYPE_NONE) {
+        if (this->enemy.getEntityType() != EntityType::None) {
 
             enemyImmediateAction = false;
 
-            if (player.stance >= STANCE_KICK_MED_END && player.stance <= STANCE_PUNCH_LOW_LH_END) {
+            if (this->player.getStance() >= STANCE_KICK_MED_END && this->player.getStance() <= STANCE_PUNCH_LOW_LH_END) {
 
-                enemyHit = inStrikingRange(getActionFromStance(player.stance), player.xPos, gameStateDetails.enemyType, enemy.stance, enemy.xPos);
+                enemyHit = inStrikingRange(getActionFromStance(this->player.getStance()), player, enemy);
+
+                switch (enemyHit) {
+
+                    case 0:
+                        this->playSoundEffect(SoundEffect::MissedPunch);
+                        break;
+
+                    case 1 ... 2:
+                        this->playSoundEffect(SoundEffect::Kick);
+                        break;
+
+                    case 3 ... 4:
+                        this->playSoundEffect(SoundEffect::Punch);
+                        break;
+
+
+                }
 
             }
 
-            if (enemy.stance >= STANCE_KICK_MED_END && enemy.stance <= STANCE_PUNCH_LOW_LH_END) {
+            if (this->enemy.getStance() >= STANCE_KICK_MED_END && this->enemy.getStance() <= STANCE_PUNCH_LOW_LH_END) {
+// printf("isr AC %i\n", (uint8_t)this->enemy.getEntityType());        
 
-                playerHit = inStrikingRange(getActionFromStance(enemy.stance), enemy.xPos, ENEMY_TYPE_PERSON, player.stance, player.xPos);
+                playerHit = inStrikingRange(getActionFromStance(this->enemy.getStance()), enemy, player);
 
-            }
-            if (playerHit > 0 || enemyHit > 0) {
-            //sounds
+                switch (playerHit) {
+
+                    case 0:
+                        this->playSoundEffect(SoundEffect::MissedPunch);
+                        break;
+
+                    case 1 ... 2:
+                        this->playSoundEffect(SoundEffect::Kick);
+                        break;
+
+                    case 3 ... 4:
+                        this->playSoundEffect(SoundEffect::Punch);
+                        break;
+
+                }
 
             }
 
         }
 
-    }
+        // Other sounds ..
 
+        if (this->player.getStance() == STANCE_RUNNING_3 || this->player.getStance() == STANCE_RUNNING_6 || this->player.getStance() == STANCE_RUNNING_6_REV) {
+            
+            this->playSoundEffect(SoundEffect::PlayerFootsteps);
+
+        }
+
+    }
 
     // Render the background, acrhes and the players ..
 
-    if (player.xPosDelta != 0) {
+    if (this->player.getXPosDelta() != 0) {
 
-    int16_t archXPos = gameStateDetails.archXPos;
+        int16_t archXPos = this->gameStateDetails.archXPos;
 
-    if ((gameStateDetails.extArch == 0 && gameStateDetails.intArch == 0) || 
-        (gameStateDetails.extArch == ARCH_RIGHT_HAND && archXPos > 96) ||
-        (gameStateDetails.intArch == ARCH_RIGHT_HAND && archXPos > 96) ||
-        (gameStateDetails.extArch == ARCH_LEFT_HAND && archXPos < 30) ||
-        (gameStateDetails.intArch == ARCH_LEFT_HAND && archXPos < 30)
-        ) {
+        if ((this->gameStateDetails.arch == 0) || 
+            (this->gameStateDetails.arch == ARCH_RIGHT_HAND_1 && archXPos > 76) ||
+            (this->gameStateDetails.arch == ARCH_RIGHT_HAND_2 && archXPos > 76) ||
+            (this->gameStateDetails.arch == ARCH_RIGHT_HAND_3 && archXPos > 76) ||
+            (this->gameStateDetails.arch == ARCH_RIGHT_HAND_4 && archXPos > 76) ||
+            (this->gameStateDetails.arch == ARCH_RIGHT_HAND_GATE && archXPos > 76) ||
+            (this->gameStateDetails.arch == ARCH_RIGHT_HAND_ENTR && archXPos > 76) ||
+            (this->gameStateDetails.arch == ARCH_RIGHT_HAND_DBLD && archXPos > 76) ||
+            (this->gameStateDetails.arch == ARCH_LEFT_HAND_1 && archXPos < 30) ||
+            (this->gameStateDetails.arch == ARCH_LEFT_HAND_2 && archXPos < 30) ||
+            (this->gameStateDetails.arch == ARCH_LEFT_HAND_3 && archXPos < 30) ||
+            (this->gameStateDetails.arch == ARCH_LEFT_HAND_4 && archXPos < 30) ||
+            (this->gameStateDetails.arch == ARCH_LEFT_HAND_GATE && archXPos < 30) ||
+            (this->gameStateDetails.arch == ARCH_LEFT_HAND_ENTR && archXPos < 30) ||
+            (this->gameStateDetails.arch == ARCH_LEFT_HAND_DBLD && archXPos < 30) ||
+            (this->gameStateDetails.arch == ARCH_LEFT_STAIRS && archXPos < 30) 
+            ) {
 
-        mainSceneX = mainSceneX + player.xPosDelta;
-        player.xPosOverall = player.xPosOverall - player.xPosDelta;
-        enemy.xPos = enemy.xPos + player.xPosDelta;
-        gameStateDetails.archXPos = archXPos + player.xPosDelta;
 
-        if (mainSceneX < -MAIN_SCENE_IMG_WIDTH) { mainSceneX = 0; }
-        if (mainSceneX > 0) { mainSceneX = mainSceneX - MAIN_SCENE_IMG_WIDTH; }
+            // printf("update mainSceneX %i .. %i \n", this->player.getXPosDelta(), this->player.getFrame() % 2);
+            if (absT(this->player.getXPosDelta()) == 1) {
+                if (this->player.getFrame() % 2 == 1) {
+                        mainSceneX = mainSceneX + this->player.getXPosDelta();
+                }
+            }
+            else {
+                    mainSceneX = mainSceneX + this->player.getXPosDelta() / 2;
+            }
+
+
+            switch (this->player.getMovement()) {
+
+                case Movement::Sidle_Forward_Tiny:
+                case Movement::Sidle_Forward_SML:
+                    if (this->player.getFrame() % 2 == 1) {
+//                        printf("a1\n");
+                //    printf(" XposOverall was %i ", this->player.getXPosOverall());
+                        this->player.setXPosOverall(this->player.getXPosOverall() - this->player.getXPosDelta());
+                        // printf(" now %i \n", this->player.getXPosOverall());
+                    }
+                    break;
+
+                default:
+                    // printf(" XposOverall was %i ", this->player.getXPosOverall());
+                        // printf("a2\n");
+                    this->player.setXPosOverall(this->player.getXPosOverall() - this->player.getXPosDelta());
+                    // printf(" now %i \n", this->player.getXPosOverall());
+                    break;
+
+            }
+         
+            this->enemy.setXPos(this->enemy.getXPos() + this->player.getXPosDelta());
+            // printf(">5\n");        
+
+            //this->gameStateDetails.archXPos = archXPos + this->player.getXPosDelta() / 2;
+
+            if (this->player.getXPosDelta() == 1) {
+                if (this->player.getFrame() % 2 == 1) {
+                        this->gameStateDetails.archXPos = archXPos + this->player.getXPosDelta();
+                }
+            }
+            else { 
+                    this->gameStateDetails.archXPos = archXPos + this->player.getXPosDelta() / 2;
+            }
+
+
+            if (mainSceneX < -MAIN_SCENE_IMG_WIDTH) { mainSceneX = 0; }
+            if (mainSceneX > 0) { mainSceneX = mainSceneX - MAIN_SCENE_IMG_WIDTH; }
+
+        }
+        else {
+
+            switch (this->player.getMovement()) {
+
+                case Movement::Sidle_Forward_Tiny:
+                case Movement::Sidle_Forward_SML:
+// printf("Movement\n");                
+                    if (this->player.getFrame() % 2 == 1) {
+                        // printf("a3\n");
+
+// printf("2 setXPos() %i - %i = %i\n", this->player.getXPos(), this->player.getXPosDelta(), this->player.getXPos() - this->player.getXPosDelta());                         
+                        this->player.setXPos(this->player.getXPos() - this->player.getXPosDelta());
+                    }
+                    break;
+
+                default:
+                        // printf("a4\n");
+
+// printf("3 setXPos() %i - %i = %i\n", this->player.getXPos(), this->player.getXPosDelta(), this->player.getXPos() - this->player.getXPosDelta());                         
+                    this->player.setXPos(this->player.getXPos() - this->player.getXPosDelta());
+                    break;
+
+            }
+
+            // printf(" XposOverall was %i ", this->player.getXPosOverall());
+                        // printf("a5\n");
+
+            this->player.setXPosOverall(this->player.getXPosOverall() - this->player.getXPosDelta());
+            // printf(" now %i \n", this->player.getXPosOverall());
+
+        }
 
     }
-    else {
 
-        player.xPos = player.xPos - player.xPosDelta;
-        player.xPosOverall = player.xPosOverall - player.xPosDelta;
+    switch (this->gameStateDetails.arch) {
+
+        case ARCH_LEFT_HAND_1:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 6, 2, Images::Arch_LH1, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_1:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 2, 17, Images::Arch_LH1);
+            break;
+
+        case ARCH_LEFT_HAND_2:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 17, 24, Images::Arch_LH2, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_2:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 5, 24, Images::Arch_LH2);
+            break;
+
+        case ARCH_LEFT_HAND_3:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 2, 7, Images::Arch_LH3, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_3:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 2, 7, Images::Arch_LH3);
+            break;
+
+        case ARCH_LEFT_HAND_4:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 17, 14, Images::Arch_LH4, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_4:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 5, 14, Images::Arch_LH4);
+            break;
+
+        case ARCH_LEFT_HAND_GATE:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 9, 2, Images::Arch_LH5, NOROT, FLIPH);
+            PD::drawBitmap(this->gameStateDetails.archXPos - 9, this->gameStateDetails.archGatePos, Images::Arch_LH5_Gates[this->gameStateDetails.archGatePos <= 26 ? 0 : (this->gameStateDetails.archGatePos - 18) / 9], NOROT, FLIPH);
+            this->drawArchwayPoles(true, true, this->gameStateDetails.archGatePos - 1);
+            break;
+
+        case ARCH_RIGHT_HAND_GATE:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 3, 2, Images::Arch_LH5);
+            PD::drawBitmap(this->gameStateDetails.archXPos + 7, this->gameStateDetails.archGatePos, Images::Arch_LH5_Gates[this->gameStateDetails.archGatePos <= 26 ? 0 : (this->gameStateDetails.archGatePos - 18) / 9]);
+            this->drawArchwayPoles(false, true, this->gameStateDetails.archGatePos - 1);
+            break;
+
+        case ARCH_LEFT_HAND_ENTR:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 10, 0, Images::Arch_LH6, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_ENTR:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 18, 0, Images::Arch_LH6);
+            break;
+
+        case ARCH_LEFT_HAND_DBLD:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 13, 0, Images::Arch_LH7, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_DBLD:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 70, 0, Images::Arch_LH7);
+            break;
+
+        case ARCH_LEFT_STAIRS:
+            PD::drawBitmap(this->gameStateDetails.archXPos, 12, Images::Stairs);
+            break;
 
     }
 
+    if (this->enemy.getXPosDelta() != 0 && PC::frameCount % 2 == 0) this->enemy.setXPos(this->enemy.getXPos() + this->enemy.getXPosDelta()); 
+    renderPlayerStance(this->player.getXPosDisplay(), this->player.getYPos(), this->player.getStance());
+    
+    if (this->enemy.getEntityType() != EntityType::None && this->enemy.getXPosDisplay() < 110) {
+        renderEnemyShadow(this->enemy.getEntityType(), this->enemy.getXPosDisplay(), this->enemy.getYPos());
+        renderEnemyStance(this->enemy.getEntityType(), this->enemy.getXPosDisplay(), this->enemy.getYPos(), this->enemy.getStance());
+    }
+    
+    if (this->gameStateDetails.prevState == GAME_STATE_GO_THROUGH_GATE) {
+        renderEnemyShadow(this->enemy.getEntityType(), this->enemy.getXPosDisplay(), this->enemy.getYPos());
+        renderEnemyStance(this->enemy.getEntityType(), this->enemy.getXPosDisplay(), this->enemy.getYPos(), STANCE_DEATH_6); 
     }
 
-    if (gameStateDetails.extArch == ARCH_RIGHT_HAND) {
-        PD::drawBitmap(gameStateDetails.archXPos - 19, 10, Images::ArchExterior_LH);
-        //printf("Arch 1\n");
+    switch (this->gameStateDetails.arch) {
+        
+        case ARCH_LEFT_HAND_1:
+            PD::drawBitmap(this->gameStateDetails.archXPos -4, -8, Images::Arch_RH1, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_1:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 18, 12, Images::Arch_RH1);
+            break;
+
+        case ARCH_LEFT_HAND_2:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 1, 20, Images::Arch_RH2, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_2:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 11, 20, Images::Arch_RH2);
+            break;
+
+        case ARCH_LEFT_HAND_3:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 6 + 9, 3, Images::Arch_RH3, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_3:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 13 + 9, 3, Images::Arch_RH3);
+            break;
+
+        case ARCH_LEFT_HAND_4:
+            PD::drawBitmap(this->gameStateDetails.archXPos +40, 0, Images::Arch_RH4, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_4:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 12, 4, Images::Arch_RH4);
+            break;
+
+        case ARCH_LEFT_HAND_GATE:        
+            PD::drawBitmap(this->gameStateDetails.archXPos - 31, 2, Images::Arch_RH5, NOROT, FLIPH);
+            PD::drawBitmap(this->gameStateDetails.archXPos - 19, this->gameStateDetails.archGatePos, Images::Arch_RH5_Gates[this->gameStateDetails.archGatePos <= 26 ? 0 : (this->gameStateDetails.archGatePos - 18) / 9], NOROT, FLIPH);
+            this->drawArchwayPoles(true, false, this->gameStateDetails.archGatePos - 1);
+            break;
+
+        case ARCH_RIGHT_HAND_GATE:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 13, 2, Images::Arch_RH5);
+            PD::drawBitmap(this->gameStateDetails.archXPos + 13, this->gameStateDetails.archGatePos, Images::Arch_RH5_Gates[this->gameStateDetails.archGatePos <= 26 ? 0 : (this->gameStateDetails.archGatePos - 18) / 9]);
+            this->drawArchwayPoles(false, false, this->gameStateDetails.archGatePos - 1);
+            break;
+    
+        case ARCH_LEFT_HAND_ENTR:
+            PD::drawBitmap(this->gameStateDetails.archXPos - 20, 2, Images::Arch_RH6, NOROT, FLIPH);
+            break;
+
+        case ARCH_RIGHT_HAND_ENTR:
+            PD::drawBitmap(this->gameStateDetails.archXPos + 22, 0, Images::Arch_RH6);
+            break;
+
     }
 
-    if (gameStateDetails.extArch == ARCH_LEFT_HAND) {
-        PD::drawBitmap(gameStateDetails.archXPos + 16, 10, Images::ArchExterior_LH, NOROT, FLIPH);
-        //printf("Arch 2\n");
-    }
 
-    if (gameStateDetails.extArch == ARCH_RIGHT_HAND_2) {
-        PD::drawBitmap(gameStateDetails.archXPos - 29 - 5, 14, Images::ArchExterior_LH2);
-        //printf("Arch 3\n");
-    }
+    PD::setColor(5);
 
-    if (gameStateDetails.extArch == ARCH_LEFT_HAND_2) {
-        PD::drawBitmap(gameStateDetails.archXPos + 16 + 1, 14, Images::ArchExterior_LH2, NOROT, FLIPH);
-        //printf("Arch 4\n");
-    }
-
-    if (gameStateDetails.intArch == ARCH_RIGHT_HAND) {
-        PD::drawBitmap(gameStateDetails.archXPos + 2 - 20, 7 - 1 + 10, Images::ArchInterior_RH, NOROT, FLIPH);
-        //printf("Arch 5\n");
-    }
-
-    if (enemy.xPosDelta != 0) { enemy.xPos = enemy.xPos + enemy.xPosDelta; }
-    renderPlayerStance(player.xPos, player.yPos, player.stance);
-    if (gameStateDetails.enemyType != ENEMY_TYPE_NONE && enemy.xPos < 128) renderEnemyStance(enemy.xPos, enemy.yPos, enemy.stance);
-    if (gameStateDetails.prevState == GAME_STATE_GO_THROUGH_GATE) renderEnemyStance(enemy.xPos, enemy.yPos, STANCE_DEATH_6); 
-
-    if (gameStateDetails.extArch == ARCH_RIGHT_HAND) {
-        PD::drawBitmap(gameStateDetails.archXPos + 17 - 20, 2, Images::ArchExterior_RH);
-        //printf("Arch 6\n");
-    }
-
-    if (gameStateDetails.extArch == ARCH_LEFT_HAND) {
-        PD::drawBitmap(gameStateDetails.archXPos - 6, 2, Images::ArchExterior_RH, NOROT, FLIPH);
-        //printf("Arch 7\n");
-    }
-
-    if (gameStateDetails.intArch == ARCH_RIGHT_HAND) {
-        PD::drawBitmap(gameStateDetails.archXPos + 16 - 20, 3 + 10, Images::ArchInterior_LH, NOROT, FLIPH);
-        // printf("Arch 8\n");
-    }
-
-    if (gameStateDetails.extArch == ARCH_RIGHT_HAND_2) {
-        PD::drawBitmap(gameStateDetails.archXPos + 17 - 30 - 4, 2 + 2, Images::ArchExterior_RH2);
-        // printf("Arch 9\n");
-    }
-
-    if (gameStateDetails.extArch == ARCH_LEFT_HAND_2) {
-        PD::drawBitmap(gameStateDetails.archXPos - 6, 4, Images::ArchExterior_RH2, NOROT, FLIPH);
-        // printf("Arch 10\n");
-    }
 
 
     //  If the player or enemy has previously been hit, then update their health and render ..
@@ -284,66 +703,93 @@ void Game::play_loop() {
 
         if (playerHit > 0) {
 
-            uint8_t index = (playerHit > 3 ? 2 : playerHit - 1);
+            int8_t imageIndex = this->enemy.getStance() - STANCE_KICK_MED_END;
 
-            player_BamX = (enemy.xPos + enemy_BamXPos[enemy.stance - STANCE_KICK_MED_END]); 
-            if (player_BamX > 128) { player_BamX = 0; }
-            player_BamY = enemy.yPos + both_BamYPos[enemy.stance - STANCE_KICK_MED_END]; 
+            if (imageIndex >= 0 && imageIndex <= 8) {
+                
+                player_BamX = (this->enemy.getXPosDisplay() + enemy_BamXPos[imageIndex]); 
+                player_BamY = this->enemy.getYPos() + both_BamYPos[imageIndex]; 
 
-            #ifndef DEBUG_HIDE_BAM
+                this->colourEnemyImage(Images::Bam);
+                PD::drawBitmap(player_BamX, player_BamY, Images::Bam);
+//printf("BAM 1 getStance() %i %i > %i, %i \n", this->enemy.getStance(), imageIndex, player_BamX, player_BamY);
 
-            #ifdef USE_DIFFERENT_BAMS
-                // arduboy.drawCompressedMirror(player_BamX, player_BamY, bam_masks[index], BLACK, false);
-                // arduboy.drawCompressedMirror(player_BamX, player_BamY, bam_images[index], WHITE, false);
-                PD::drawBitmap(player_BamX, player_BamY, bam_images[index], WHITE, false);
-            #endif
-
-            #ifndef USE_DIFFERENT_BAMS
-                // arduboy.drawCompressedMirror(player_BamX, player_BamY, bam3_mask, BLACK, false);
-                // arduboy.drawCompressedMirror(player_BamX, player_BamY, bam3, WHITE, false);
-                PD::drawBitmap(player_BamX, player_BamY, Images::Bam3);
-            #endif
-
-            #endif
-
-            player.health = (player.health - playerHit < 10 ? 0 : player.health - playerHit);
-            player.regain = 0;
+            }
+            this->player.setHealth(this->player.getHealth() - playerHit < 10 ? 0 : this->player.getHealth() - playerHit);
+            this->player.setRegain(0);
 
         }
 
         if (enemyHit > 0) {
 
-            uint8_t index = (enemyHit > 3 ? 2 : enemyHit - 1);
-            enemy_BamX = player.xPos + player_BamXPos[player.stance - STANCE_KICK_MED_END] ; enemy_BamY = player.yPos + both_BamYPos[player.stance - STANCE_KICK_MED_END]; 
+            int8_t imageIndex = this->player.getStance() - STANCE_KICK_MED_END;
+            //printf("BAM X: %i = %i, y: %i = %i\n", this->player.getStance() - STANCE_KICK_MED_END, player_BamXPos[this->player.getStance() - STANCE_KICK_MED_END], this->player.getStance() - STANCE_KICK_MED_END, both_BamYPos[this->player.getStance() - STANCE_KICK_MED_END]);
 
-            #ifdef USE_DIFFERENT_BAMS
-                // arduboy.drawCompressedMirror(enemy_BamX, enemy_BamY, bam_masks[index], BLACK, false);
-                // arduboy.drawCompressedMirror(enemy_BamX, enemy_BamY, bam_images[index], WHITE, false);
-                PD::drawBitmap(enemy_BamX, enemy_BamY, bam_images[index]);
-            #endif
 
-            #ifndef USE_DIFFERENT_BAMS
-                // arduboy.drawCompressedMirror(enemy_BamX, enemy_BamY, bam3_mask, BLACK, false);
-                // arduboy.drawCompressedMirror(enemy_BamX, enemy_BamY, bam3, WHITE, false);
-                PD::drawBitmap(enemy_BamX, enemy_BamY, Images::Bam3);
-            #endif
+            if (imageIndex >= 0 && imageIndex <= 8) {
 
-            if (gameStateDetails.enemyType == ENEMY_TYPE_PERSON) {
+                enemy_BamX = this->player.getXPosDisplay() + player_BamXPos[imageIndex] ; 
+                enemy_BamY = this->player.getYPos() + both_BamYPos[imageIndex]; 
 
-                enemy.health = (enemy.health - enemyHit < 10 ? 0 : enemy.health - enemyHit);
-                enemy.regain = 0;
+                PD::drawBitmap(enemy_BamX, enemy_BamY, Images::Bam);
+//printf("BAM 2 getStance() %i %i > %i, %i > %i %i \n", this->player.getStance(), imageIndex, enemy_BamX, enemy_BamY, this->player.getXPosDisplay(), this->player.getXPosOverall());
 
-                if (enemyStack.isEmpty()) {
+            }
 
-                    enemyImmediateAction = (random(0, 2) == 0);     // Should the enemy take an immediate action?
-                    enemyImmediateRetreat = (random(0, 3) == 0);    // Should the enemy retreat immediately?
+            if (this->enemy.isNormalEnemy()) {
+
+                this->enemy.setHealth(this->enemy.getHealth() - enemyHit < 10 ? 0 : this->enemy.getHealth() - enemyHit);
+                this->enemy.setRegain(0);
+
+                if (this->enemy.isEmpty()) {
+//ENEMYRANDOM - immediate action or retreat.
+                    enemyImmediateAction = (random(0, this->enemy.getImmediateAction()) == 0);     // Should the enemy take an immediate action?
+                    enemyImmediateRetreat = (random(0, this->enemy.getRetreatAction()) == 0);    // Should the enemy retreat immediately?
+
+                }
+
+                if (this->enemy.getHealth() == 0) {
+
+                   if (!this->player.contains(STANCE_VICTORY_1)) {
+
+                        this->player.clear();
+
+                        this->player.push(STANCE_DEFAULT, STANCE_DEFAULT, STANCE_DEFAULT, false);
+                        this->player.push(STANCE_DEFAULT, STANCE_DEFAULT, STANCE_DEFAULT, false);
+                        this->player.push(STANCE_VICTORY_2, STANCE_VICTORY_1, STANCE_VICTORY_1, false);
+                        this->player.push(STANCE_VICTORY_1, STANCE_VICTORY_1, STANCE_VICTORY_2, false);
+
+                        switch (this->player.getStance()) {
+
+                            case STANCE_KICK_HIGH_END:
+                            case STANCE_KICK_MED_END:
+                            case STANCE_KICK_LOW_END:
+                                this->player.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD, STANCE_KICK_READY, false);
+                                break;
+
+                            case STANCE_PUNCH_HIGH_LH_END:
+                            case STANCE_PUNCH_HIGH_RH_END:
+                            case STANCE_PUNCH_MED_LH_END:
+                            case STANCE_PUNCH_MED_RH_END:
+                            case STANCE_PUNCH_LOW_LH_END:
+                            case STANCE_PUNCH_LOW_RH_END:
+
+                                this->player.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD, STANCE_PUNCH_READY, false);
+                                break;
+
+                        }
+
+
+                   }
+
+                    this->playTheme(SoundTheme::DefeatEnemy);
 
                 }
 
             }
             else {
 
-                eagleMode = EAGLE_MODE_FLY_AWAY;
+                this->enemy.setMode(EAGLE_MODE_FLY_AWAY);
 
             }
 
@@ -355,89 +801,74 @@ void Game::play_loop() {
 
         // Let the player and enemy regain some health if they haven't been hit in a while ..
 
-        if (playerHit == 0) {
-
-            player.regain++;
-
-            if (player.regain >= HEALTH_REGAIN_LIMIT) {
-
-                player.health = (player.health + HEALTH_REGAIN_POINTS < player.regainLimit ? player.health + HEALTH_REGAIN_POINTS : player.regainLimit);
-                player.regain = 0;
-
-            }
-
-        }
-
-        if (enemyHit == 0) {
-
-            enemy.regain++;
-
-            if (enemy.regain >= HEALTH_REGAIN_LIMIT) {
-
-                enemy.health = (enemy.health + HEALTH_REGAIN_POINTS < enemy.regainLimit ? enemy.health + HEALTH_REGAIN_POINTS : enemy.regainLimit);
-                enemy.regain = 0;
-
-            }
-
-        }
+        if (playerHit == 0)     this->player.incRegain();
+        if (enemyHit == 0)      this->enemy.incRegain();
 
     }
 
 
     // Has the player died ?
 
-    if (!player.dead && player.health == 0) {
+    if (!this->player.isDead() && this->player.getHealth() == 0) {
 
-        playerStack.clear();
-        playerStack.push(STANCE_DEATH_6, STANCE_DEATH_5, STANCE_DEATH_4);
-        playerStack.push(STANCE_DEATH_3, STANCE_DEATH_2, STANCE_DEATH_1);
-        player.dead = true;
+        this->playTheme(SoundTheme::PrincessKillsPlayer);
 
-        if (eagleMode == EAGLE_MODE_NONE || eagleMode == EAGLE_MODE_FLY_INIT) {
+        this->player.clear();
+        this->player.push(STANCE_DEATH_6, STANCE_DEATH_5, STANCE_DEATH_4, true);
+        this->player.push(STANCE_DEATH_3, STANCE_DEATH_2, STANCE_DEATH_1, true);
+        this->player.setDead(true);
 
-            enemyStack.insert(STANCE_DEFAULT_LEAN_BACK);
+        if (this->enemy.getMode() == EAGLE_MODE_NONE || this->enemy.getMode() == EAGLE_MODE_FLY_INIT) {
+
+            this->enemy.insert(STANCE_DEFAULT_LEAN_BACK);
             for (int i = 0; i < 20; i++) {
-                enemyStack.insert(STANCE_STANDING_UPRIGHT);
+                this->enemy.insert(STANCE_STANDING_UPRIGHT);
             }
 
-            enemy.xPosDelta = 0;
+            this->enemy.setXPosDelta(0);
 
         }
 
-        player.xPosDelta = 0;
+        this->player.setXPosDelta(0);
 
     }
 
 
     // Has the enemy died ?
 
-    if (!enemy.dead && enemy.health == 0) {
+    if (!this->enemy.isDead() && this->enemy.getHealth() == 0) {
 
-        enemyStack.clear();
-        enemyStack.push(STANCE_DEATH_6, STANCE_DEATH_5, STANCE_DEATH_4);
-        enemyStack.push(STANCE_DEATH_3, STANCE_DEATH_2, STANCE_DEATH_1);
-        enemy.dead = true;
+        this->enemy.clear();
+        this->enemy.push(STANCE_DEATH_6, STANCE_DEATH_6, STANCE_DEATH_6, true);
+        this->enemy.push(STANCE_DEATH_6, STANCE_DEATH_5, STANCE_DEATH_4, true);
+        this->enemy.push(STANCE_DEATH_3, STANCE_DEATH_2, STANCE_DEATH_1, true);
+        this->enemy.setDead(true);
 
-        playerStack.insert(STANCE_DEFAULT_LEAN_BACK);
-        for (int i = 0; i < 15; i++) {
-            playerStack.insert(STANCE_STANDING_UPRIGHT);
-        }
+        // this->player.insert(STANCE_DEFAULT_LEAN_BACK);
+        // for (int i = 0; i < 15; i++) {
+        //     this->player.insert(STANCE_STANDING_UPRIGHT);
+        // }
 
-        player.xPosDelta = 0;
-        enemy.xPosDelta = 0;
+        this->player.setXPosDelta(0);
+        this->enemy.setXPosDelta(0);
 
     }
 
 
-    if (gameStateDetails.enemyType != ENEMY_TYPE_NONE && playerStack.isEmpty() && enemyStack.isEmpty() && player.dead)    { gameStateDetails.setCurrState(GAME_STATE_THE_END); }
-    if (gameStateDetails.enemyType == ENEMY_TYPE_PERSON && playerStack.isEmpty() && enemyStack.isEmpty() && enemy.dead)   { gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); }
+    if (this->enemy.getEntityType() != EntityType::None && this->player.isEmpty() && this->enemy.isEmpty() && this->player.isDead()) { 
+        this->gameStateDetails.setCurrState(GAME_STATE_THE_END); 
+    }
+    
+    if (this->enemy.isNormalEnemy() && this->player.isEmpty() && this->enemy.isEmpty() && this->enemy.isDead()) { 
+        this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); 
+    }
 
-    if (gameStateDetails.prevState == GAME_STATE_GO_THROUGH_GATE && player.xPos > 128 && playerStack.isEmpty()) {
-    gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+    if (this->gameStateDetails.prevState == GAME_STATE_GO_THROUGH_GATE && this->player.getXPosDisplay() > 110 && this->player.isEmpty()) {
+        this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
     }
 
     #ifdef DEBUG_ONSCREEN
-        // int16_t distBetween = absT(enemy.xPos - player.xPos);
+        // int16_t distBetween = absT(this->enemy.getXPos() - this->player.getXPos());
         // arduboy.fillRect(0, 0, 75, 10, BLACK);
         // arduboy.setCursor(1, 1);
         // arduboy.print(distBetween);
@@ -446,13 +877,13 @@ void Game::play_loop() {
         // arduboy.setCursor(35, 1);
         // arduboy.print(playerHit);
         // arduboy.setCursor(45, 1);
-        // arduboy.print(player.stance);
+        // arduboy.print(this->player.getStance());
         // arduboy.setCursor(60, 1);
-        // arduboy.print(enemy.stance);
+        // arduboy.print(this->enemy.getStance());
     #endif
 
     #ifdef DEBUG_HITS
-        // int16_t distBetween = absT(enemy.xPos - player.xPos);
+        // int16_t distBetween = absT(this->enemy.getXPos() - this->player.getXPos());
         // arduboy.fillRect(0, 0, WIDTH, 10, BLACK);
         // arduboy.setCursor(1, 1);
         // arduboy.print(_distBetween);
@@ -471,7 +902,7 @@ void Game::play_loop() {
     #endif
 
     #ifdef DEBUG_STRIKING_RANGE
-        // int16_t distBetween = absT(enemy.xPos - player.xPos);
+        // int16_t distBetween = absT(this->enemy.getXPos() - this->player.getXPos());
         // arduboy.fillRect(0, 0, WIDTH, 10, BLACK);
         // arduboy.setCursor(1, 1);
         // arduboy.print(_distBetween);
@@ -489,4 +920,57 @@ void Game::play_loop() {
         // arduboy.print(_action);
     #endif
   
+}
+
+void Game::drawArchwayPoles(bool leftSide, bool left, uint8_t y) { 
+
+    uint8_t i = 0;
+
+    if (leftSide) {
+
+        if (left) {
+
+            PD::setColor(9);
+            PD::drawLine(this->gameStateDetails.archXPos - 7, 18, this->gameStateDetails.archXPos - 7, y);
+            PD::setColor(10);
+            PD::drawLine(this->gameStateDetails.archXPos - 8, 18, this->gameStateDetails.archXPos - 8, y);
+
+        }
+        else {
+
+            for (uint8_t x = 20; x > 13; x = x - 3) {
+                PD::setColor(10);
+                PD::drawLine(this->gameStateDetails.archXPos - 31 + x, 16 - i, this->gameStateDetails.archXPos - 31 + x, y);
+                PD::setColor(9);
+                PD::drawLine(this->gameStateDetails.archXPos - 30 + x, 16 - i, this->gameStateDetails.archXPos - 30 + x, y);
+                i = i + 2;
+            }
+
+        }
+
+    }
+    else {
+
+        if (left) {
+
+            PD::setColor(9);
+            PD::drawLine(this->gameStateDetails.archXPos + 10, 18, this->gameStateDetails.archXPos + 10, y);
+            PD::setColor(10);
+            PD::drawLine(this->gameStateDetails.archXPos + 11, 18, this->gameStateDetails.archXPos + 11, y);
+
+        }
+        else {
+
+            for (uint8_t x = 13; x < 20; x = x + 3) {
+                PD::setColor(9);
+                PD::drawLine(this->gameStateDetails.archXPos + x, 16 - i, this->gameStateDetails.archXPos + x, y);
+                PD::setColor(10);
+                PD::drawLine(this->gameStateDetails.archXPos + x + 1, 16 - i, this->gameStateDetails.archXPos + x + 1, y);
+                i = i + 2;
+            }
+
+        }
+
+    }
+
 }

@@ -4,9 +4,9 @@
 #include <LibAudio>
 
 #include "utils/Enums.h"
-#include "utils/GameCookie.h"
 #include "utils/Stack.h"
 #include "utils/Structs.h"
+#include "utils/GameSequence.h"
 #include "images/images.h"
 
 
@@ -14,7 +14,7 @@ class Game {
     
     public:
 
-        void setup(GameCookie *cookie);
+        void setup();
         void loop();
 
     private:
@@ -41,28 +41,44 @@ class Game {
         void enemy_approach_init();
         void enemyMovements();
         void playerMovements();
+        void playerMovements_ContinueRunning(uint16_t distBetween);
+        void playerMovements_Punch();
         void drawPrincessBackground_1();
-        void drawPrincessBackground_2();
+        void drawPrincessBackground_2(bool drawDoor);
         void showScene();
         void finalScene();
 
-        uint8_t inStrikingRange(uint8_t action, int16_t attackerXPos, uint8_t targetType, uint8_t targetStance, int16_t targetXPos);
+        uint8_t inStrikingRange(uint8_t action, Entity attacker, Entity target);
         uint8_t getActionFromStance(uint8_t stance);
         void renderPlayerStance(int8_t x, int8_t y, uint8_t stance);
         void returnFromAction(uint8_t action, uint8_t returnAction);
-        void renderEnemyStance(int8_t x, int8_t y, uint8_t stance);
+        void renderEnemyStance(EntityType entityType, int8_t x, int8_t y, uint8_t stance);
+        void renderEnemyShadow(EntityType entityType, int8_t x, int8_t y);
+        void renderPrincessStance(int8_t x, int8_t y, uint8_t stance);
         void drawHorizontalDottedLine(int x1, int x2, int y);
+        void playSoundEffect(SoundEffect soundEffect);
+        void playTheme(SoundTheme theme);
+        void drawArchwayPoles(bool leftSide, bool left, uint8_t y);
+        void renderPrincess();
+        void colourEnemyImage(const uint8_t * image);
+        void introText();
+        void extroText();
+        // bool canMoveCloser(Movement moverMovement, Movement otherMovement, uint16_t distBetween);
+        // Movement getLargestMove(Movement otherMovement, uint16_t distBetween);
 
+        bool canMoveCloser(Movement moverMovement, Entity other, uint16_t distBetween);
+        Movement getLargestMove(Entity other, uint16_t distBetween);
+        void readImage(uint8_t *buffer, ImageName imageName);
 
     private:
 
-        GameState gameState = GameState::SplashScreen;
         SplashScreenVariables splashScreenVariables;
         TitleScreenVars titleScreenVars;
-        GameCookie *cookie;
-
+        IntroTextVariables introTextVariables;
+        
         Stack <uint8_t, 30> playerStack;
         Stack <uint8_t, 30> enemyStack;
+        Stack <uint8_t, 30> princessStack;
 
         int8_t mainSceneX = 0;
         bool displayHealth = false;
@@ -70,15 +86,17 @@ class Game {
         uint8_t enemyHit = 0;
         uint8_t playerHit = 0;
 
-        uint8_t eagleMode = EAGLE_MODE_NONE;
-        bool eagleWingUp = false;
+        uint16_t stateCounter = 0; // Generic
+        uint8_t titlePlayerY = 0;
+        uint8_t titlePlayerFrame = 0;
 
         uint8_t emperorMode = EMPEROR_MODE_INIT;
         uint8_t finalSceneMode = FINAL_SCENE_INACTIVE;
+        SoundTheme theme = SoundTheme::None;
+        SoundEffect soundEffect = SoundEffect::None;
 
-        #ifdef USE_DIFFERENT_BAMS
-        const uint8_t *bam_images[3] =               { Images::Bam1, Images::Bam2, Images::Bam3 };
-        #endif
+        File mainThemeFile;
+        File soundEffectFile;
 
         GameStateDetails gameStateDetails;
 
@@ -90,11 +108,21 @@ class Game {
         uint16_t _pos = 0;
         #endif
 
-        Entity player = { STANCE_DEFAULT, 10, 0, 0, 75, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
-        Entity enemy = { STANCE_DEFAULT, 153, 0, 0, 75, 0, HEALTH_STARTING_POINTS, 0, HEALTH_STARTING_POINTS, 0, true, true, false };
+        Entity player;
+        Entity enemy;
+        Entity princess;
 
         bool enemyImmediateAction = false;
         bool enemyImmediateRetreat = false;
+
+
+        uint8_t imageToColour[2000];
+
+        // uint8_t xxx = 0;
+        // uint8_t yyy = 10;
+        // uint8_t zzz = 5;
+
+        uint8_t imgBuffer[2 + ((110 * 88) / 2)];
 
 
 };

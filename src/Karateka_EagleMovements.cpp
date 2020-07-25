@@ -15,41 +15,41 @@ using PD = Pokitto::Display;
 // ---------------------------------------------------------------------------------------------------------------
 //  Enemy movements ..
 
-const uint8_t PROGMEM eagle_heights[] = { EAGLE_LEVEL_LOW, EAGLE_LEVEL_MED, EAGLE_LEVEL_HIGH };
+const uint8_t eagle_heights[] = { EAGLE_LEVEL_LOW, EAGLE_LEVEL_MED, EAGLE_LEVEL_HIGH };
 
 void Game::eagleMovements() {
 
-  if (enemyStack.isEmpty()) {
+  if (this->enemy.isEmpty()) {
 
-    switch (eagleMode) {
+    switch (this->enemy.getMode()) {
 
       case EAGLE_MODE_FLY_INIT:
 
-        enemy.yPos = eagle_heights[ random(0, 3) ];
-        enemyStack.push(STANCE_EAGLE_1);
-        enemy.xPosDelta = -MAIN_SCENE_X_EAGLE_FLYING_DELTA;
-        enemy.xPos = 150;
-        eagleMode++;
+        this->enemy.setYPos(eagle_heights[ random(0, 3) ]);
+        this->enemy.push(STANCE_EAGLE_1, true);
+        this->enemy.setXPosDelta(-MAIN_SCENE_X_EAGLE_FLYING_DELTA);
+        this->enemy.setXPos(300);
+        this->enemy.incMode();
         break;
 
       case EAGLE_MODE_FLY_TOWARDS:
         {
-          int16_t distanceBetween = absT(enemy.xPos - player.xPos);
-          uint8_t testDistance = 20;
+          int16_t distanceBetween = absT(this->enemy.getXPos() - this->player.getXPos());
+          uint8_t testDistance = 35;//20;
           
-          switch (player.stance) {
+          switch (this->player.getStance()) {
 
             case STANCE_KICK_READY:
 
-              switch (enemy.yPos) {
+              switch (this->enemy.getYPos()) {
 
                 case EAGLE_LEVEL_LOW:
                 case EAGLE_LEVEL_MED:
-                  testDistance = 40;
+                  testDistance = 49;//40;
                   break;
 
                 default:
-                  testDistance = 24;
+                  testDistance = 35;//24;
                   break;
 
               }
@@ -58,31 +58,31 @@ void Game::eagleMovements() {
           
             case STANCE_STANDING_UPRIGHT:
             case STANCE_STANDING_UPRIGHT_REV:
-              testDistance = 30;
+              testDistance = 40;//30;
               break;
 
             default:
-              testDistance = 40;
+              testDistance = 28;//30;
               break;
 
           }
-          
+
           if (distanceBetween > testDistance) {
 
-            if (eagleWingUp) {
-              enemyStack.push(STANCE_EAGLE_1);
+            if (this->enemy.getFrame() == EAGLE_WING_UP) {
+              this->enemy.push(STANCE_EAGLE_1, true);
             } 
             else {
-              enemyStack.push(STANCE_EAGLE_2);
+              this->enemy.push(STANCE_EAGLE_2, true);
             }
 
-            eagleWingUp = !eagleWingUp;
-            enemy.xPosDelta = -MAIN_SCENE_X_EAGLE_FLYING_DELTA;
+            this->enemy.incFrame(EAGLE_WING_FRAME_MAX);
+            this->enemy.setXPosDelta(-MAIN_SCENE_X_EAGLE_FLYING_DELTA);
             
           }
           else {
 
-            eagleMode++;
+            this->enemy.incMode();
             
           }
         
@@ -94,19 +94,19 @@ void Game::eagleMovements() {
         {
           int16_t deltaX = 0;
           
-          switch (player.stance) {
+          switch (this->player.getStance()) {
 
             case STANCE_KICK_READY:
 
-              switch (enemy.yPos) {
+              switch (this->enemy.getYPos()) {
 
                 case EAGLE_LEVEL_LOW:
                 case EAGLE_LEVEL_MED:
-                  deltaX = 20;
+                  deltaX = 40;
                   break;
 
                 case EAGLE_LEVEL_HIGH:
-                  deltaX = 5;
+                  deltaX = 10;
                   break;
 
               }
@@ -114,74 +114,82 @@ void Game::eagleMovements() {
           
             case STANCE_STANDING_UPRIGHT:
             case STANCE_STANDING_UPRIGHT_REV:
-              deltaX = 9;
+              deltaX = 18;
               break;
 
             default:
-              deltaX = 20;
+              deltaX = 40;
               break;
 
           }
 
-          switch (enemy.yPos) {
+          switch (this->enemy.getYPos()) {
 
             case EAGLE_LEVEL_LOW:
             case EAGLE_LEVEL_MED:
-              enemy.xPos = player.xPos + deltaX; 
-              enemyStack.push(STANCE_EAGLE_3);
+
+              this->enemy.setXPos(this->player.getXPos() + deltaX); 
+              this->enemy.push(STANCE_EAGLE_3, true);
               break;
 
             default:
-              enemy.xPos = player.xPos + deltaX; 
-              enemyStack.push(STANCE_EAGLE_4);
+
+              this->enemy.setXPos(this->player.getXPos() + deltaX); 
+              this->enemy.push(STANCE_EAGLE_4, true);
               break;
 
           } 
         
-          if (eagleMode == EAGLE_MODE_ATTACK_2) {
+          if (this->enemy.getMode() == EAGLE_MODE_ATTACK_2) {
           
-            switch (enemy.yPos) {
+            switch (this->enemy.getYPos()) {
 
               case EAGLE_LEVEL_LOW:
-                player.health = (player.health > EAGLE_LEVEL_LOW_HEALTH ? player.health - EAGLE_LEVEL_LOW_HEALTH : 0);
+                this->player.setEagleAttack(EAGLE_LEVEL_LOW);
+                this->player.setHealth(this->player.getHealth() > EAGLE_LEVEL_LOW_HEALTH ? this->player.getHealth() - EAGLE_LEVEL_LOW_HEALTH : 0);
                 break;
 
               case EAGLE_LEVEL_MED:
-                player.health = (player.health > EAGLE_LEVEL_MED_HEALTH ? player.health - EAGLE_LEVEL_MED_HEALTH : 0);
+                this->player.setEagleAttack(EAGLE_LEVEL_MED);
+                this->player.setHealth(this->player.getHealth() > EAGLE_LEVEL_MED_HEALTH ? this->player.getHealth() - EAGLE_LEVEL_MED_HEALTH : 0);
                 break;
 
               default:
-                player.health = (player.health > EAGLE_LEVEL_HIGH_HEALTH ? player.health - EAGLE_LEVEL_HIGH_HEALTH : 0);
+                this->player.setEagleAttack(EAGLE_LEVEL_HIGH);
+                this->player.setHealth(this->player.getHealth() > EAGLE_LEVEL_HIGH_HEALTH ? this->player.getHealth() - EAGLE_LEVEL_HIGH_HEALTH : 0);
                 break;
 
             }
+
+            this->playSoundEffect(SoundEffect::EagleAttacking);
 
           }
           
         }
 
-        enemy.xPosDelta = 0;
-        eagleMode++; 
+        this->enemy.setXPosDelta(0);
+        this->enemy.incMode(); 
+
         break;
  
       case EAGLE_MODE_FLY_AWAY:
       
         for (int i = 0; i < 5; i++) {
           
-          enemyStack.push(STANCE_EAGLE_1_REV);
-          enemyStack.push(STANCE_EAGLE_2_REV);
+          this->enemy.push(STANCE_EAGLE_1_REV, true);
+          this->enemy.push(STANCE_EAGLE_2_REV, true);
 
         }
         
-        enemy.xPosDelta = MAIN_SCENE_X_EAGLE_FLYING_DELTA;
-        eagleMode++; 
+        this->enemy.setXPosDelta(MAIN_SCENE_X_EAGLE_FLYING_DELTA);
+        this->enemy.incMode(); 
         break;     
 
       default:
       
-        eagleMode = EAGLE_MODE_FLY_INIT;
-        if (playerStack.isEmpty() && enemyStack.isEmpty()) {
-          gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+        this->enemy.setMode(EAGLE_MODE_FLY_INIT);
+        if (this->player.isEmpty() && this->enemy.isEmpty()) {
+          this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
         }
         break;     
      

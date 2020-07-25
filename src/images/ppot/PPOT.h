@@ -10,8 +10,7 @@ namespace Images {
     #include "Ppot_Arrow.h"
     #include "Ppot_Full.h"
 
-
-    const uint8_t * const PROGMEM Ppot[] = { 
+    const uint8_t * const Ppot[] = { 
         Ppot_00,
         Ppot_01,
         Ppot_02,

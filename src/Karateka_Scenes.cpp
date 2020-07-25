@@ -15,7 +15,7 @@ void Game::drawPrincessBackground_1() {
     const uint8_t groundX[] = { 48, 62, 
                                 38, 72, 
                                 28, 82, 
-                                8, 102, 
+                                16, 94, 
                                 28, 82, 
                                 38, 72, 
                                 48, 62 };
@@ -23,67 +23,207 @@ void Game::drawPrincessBackground_1() {
     uint8_t x = 0;
 
     for (int y = 70; y < 84; y = y + 2) {
-    // arduboy.drawFastHLine(x, y, WIDTH - x);    
         PD::drawLine(groundX[x], y, groundX[x + 1], y);
         x = x + 2;
-        // x = x + (y < 76 ? -20 : 20);
-        // printf("line %i %i %i %i\n", x, y, 110 - x, y);
     }
 
-    // arduboy.drawCompressedMirror(16, 7, arch_interior_rh_mask, BLACK, false);
-    // arduboy.drawCompressedMirror(16, 7, arch_interior_rh, WHITE, false);
-    // arduboy.drawCompressedMirror(89, 19, princess_seat_mask, BLACK, false);
-    // arduboy.drawCompressedMirror(89, 19, princess_seat, WHITE, false);
-    PD::drawBitmap(14, 17, Images::ArchInterior_RH);
-    PD::drawBitmap(73, 39, Images::Princess_Seat);
-
+    PD::drawBitmap(8, 17, Images::Arch_LH1, NOROT, FLIPH);
+    PD::drawBitmap(73, 43, Images::Princess_Seat);
 
 }
 
-void Game::drawPrincessBackground_2() {
+void Game::drawPrincessBackground_2(bool drawDoor) {
 
-    // arduboy.drawCompressedMirror(0, 3, arch_interior_lh_mask, BLACK, false);
-    // arduboy.drawCompressedMirror(0, 3, arch_interior_lh, WHITE, false);
-    PD::drawBitmap(0, 14, Images::ArchInterior_LH);
+    PD::drawBitmap(0, 12, Images::Arch_RH1, NOROT, FLIPH);
+    if (drawDoor) {
+
+        PD::drawBitmap(8, 20, Images::Arch_Door, NOROT, FLIPH);
+
+    }
 
 }
 
 void Game::showScene() {
+//printf("%i %i\n", this->gameStateDetails.delayInterval, this->stateCounter);
+    this->player.update();
+    this->enemy.update();
 
     if (PC::buttons.pressed(BTN_A)) {
         
-        if (gameStateDetails.getCurrState() == GAME_STATE_THE_END) {
-            gameStateDetails.sequence = 0;
+        if (this->gameStateDetails.getCurrState() == GAME_STATE_THE_END) {
+            this->gameStateDetails.sequence = 0;
         }     
 
-        enemyStack.clear();
-        gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+        this->enemy.clear();
+        this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
 
     }
     else {
         
-        switch (gameStateDetails.getCurrState()) {
+        switch (this->gameStateDetails.getCurrState()) {
 
             case GAME_STATE_TITLE_SCENE:
-                // arduboy.drawCompressedMirror(0, 0, title, WHITE, false);
-                PD::drawBitmap(0, 33, Images::Title);
+                //PD::drawBitmap(0, 0, Images::Title);
+                PD::drawBitmap(0, 0, this->imgBuffer);
                 break;
 
             case GAME_STATE_CASTLE_SCENE:
-                PD::drawBitmap(0, 0, Images::Castle);
+//                PD::drawBitmap(0, 0, Images::Castle);
+                PD::drawBitmap(0, 0, this->imgBuffer);
+
+                if (this->titlePlayerY > 40) {
+
+                    if (PC::frameCount % 8 == 0) {
+
+                        this->titlePlayerY = this->titlePlayerY - 2;
+                        this->titlePlayerFrame++;
+                        if (this->titlePlayerFrame == 3) this->titlePlayerFrame = 0;
+
+                    }
+
+                    PD::drawBitmap(23, this->titlePlayerY, Images::Characters[this->titlePlayerFrame]);
+                    
+                }
+
                 break;
             
             case GAME_STATE_THE_END:
-                PD::drawBitmap(25, 26, Images::TheEnd);
+                PD::drawBitmap(24, 38, Images::TheEnd);
                 break;
             
-            case GAME_STATE_PRINCESS:
+            case GAME_STATE_PRINCESS_SITTING:
 
+                if (this->stateCounter == 0) this->playTheme(SoundTheme::PrincessLookingUp);
+                if (this->stateCounter < 48) this->stateCounter++;
                 drawPrincessBackground_1();
-                drawPrincessBackground_2();
-                // arduboy.drawCompressedMirror(93, 19, princess_sitting_mask, BLACK, false);
-                // arduboy.drawCompressedMirror(93, 19, princess_sitting, WHITE, false);
-                PD::drawBitmap(77, 39, Images::Princess_Sitting);
+                drawPrincessBackground_2(true);
+                PD::drawBitmap(77, 49, Images::Princess_Sitting_Body);
+
+                if (this->stateCounter < 48) {
+                    PD::drawBitmap(84, 41, Images::Princess_Sitting_LookingDown);
+                }
+                else {
+                    PD::drawBitmap(88, 41, Images::Princess_Sitting_LookingUp);
+                }
+                
+                break;
+            
+            case GAME_STATE_PRINCESS_BANISHMENT:
+
+                this->stateCounter++;
+
+                switch (this->stateCounter) {
+
+                    case 0 ... 48:
+
+                        this->playTheme(SoundTheme::IntroPrincessToCell);
+                        this->princess.setXPos(50);
+                        this->princess.setYPos(76);
+                        
+                        for (int i = 0; i < 110; i = i + 24) {
+
+                            PD::drawBitmap(i, 68, Images::Floor_Purple);
+
+                        }
+
+                        PD::drawBitmap(80, 17, Images::Arch_LH1);
+                        PD::drawBitmap(96, 12, Images::Arch_RH1);
+                        PD::drawBitmap(0, 22, Images::Emperor, NOROT, FLIPH);
+                        PD::drawBitmap(27, 38, Images::EmperorArmNormal, NOROT, FLIPH);
+                        this->renderPrincess();
+                        break;
+
+
+                    case 49 ... 320:
+
+                        if (this->stateCounter > 100 && PC::frameCount % 8 == 0) {
+                            this->princess.incFrame(4);
+                            this->princess.setXPos(this->princess.getXPos() + 2);
+
+                        }
+
+                        for (int i = 0; i < 110; i = i + 24) {
+
+                            PD::drawBitmap(i, 68, Images::Floor_Purple);
+
+                        }
+
+                        PD::drawBitmap(80, 17, Images::Arch_LH1);
+                        this->renderPrincess();
+                        PD::drawBitmap(96, 12, Images::Arch_RH1);
+
+                        PD::drawBitmap(0, 22, Images::Emperor, NOROT, FLIPH);
+                        if (this->stateCounter < 160) {
+                            PD::drawBitmap(30, 38, Images::EmperorArmOut, NOROT, FLIPH);
+                        }
+                        else {
+                            PD::drawBitmap(27, 38, Images::EmperorArmNormal, NOROT, FLIPH);
+
+                        }
+
+                        break;
+
+                    case 321 ... 520:
+
+                        if (this->stateCounter == 321) {
+                            this->princess.setXPos(-10);
+                        }
+
+                        if (PC::frameCount % 8 == 0) {
+                            this->princess.incFrame(4);
+                            this->princess.setXPos(this->princess.getXPos() + 2);
+
+                        }
+
+                        this->drawPrincessBackground_1();
+                        this->renderPrincess();
+                        this->drawPrincessBackground_2(false);
+                        break;
+
+                    case 521 ... 525:
+                        this->drawPrincessBackground_1();
+                        this->renderPrincess();
+                        this->drawPrincessBackground_2(true);
+                        this->playTheme(SoundTheme::IntroPrincessCrying);
+                        break;
+
+                    case 526 ... 530:
+                        this->drawPrincessBackground_1();
+                        PD::drawBitmap(42, 33, Images::Princess_Turning);
+                        this->drawPrincessBackground_2(true);
+                        break;
+
+                    case 531 ... 590:
+                        this->drawPrincessBackground_1();
+                        PD::drawBitmap(42, 33, Images::Princess_Standing);
+                        this->drawPrincessBackground_2(true);
+                        break;
+
+                    case 591 ... 594:
+                        this->drawPrincessBackground_1();
+                        PD::drawBitmap(42, 40, Images::Princess_Falling_00);
+                        this->drawPrincessBackground_2(true);
+                        break;
+
+                    case 595 ... 598:
+                        this->drawPrincessBackground_1();
+                        PD::drawBitmap(34, 52, Images::Princess_Falling_01);
+                        this->drawPrincessBackground_2(true);
+                        break;
+
+                    case 599 ... 602:
+                        this->drawPrincessBackground_1();
+                        PD::drawBitmap(31, 60, Images::Princess_Falling_02);
+                        this->drawPrincessBackground_2(true);
+                        break;
+
+                    case 603 ... 1500:
+                        this->drawPrincessBackground_1();
+                        PD::drawBitmap(30, 66, Images::Princess_Lying);
+                        this->drawPrincessBackground_2(true);
+                        break;
+
+                }
                 
                 break;
 
@@ -93,14 +233,21 @@ void Game::showScene() {
             
                 //  Update player and enemy positions and stances ..
             
-                if (PC::frameCount % ANIMATION_NUMBER_OF_FRAMES == 0) {
+                if (this->enemy.getStackFrame() == 0) {
                     
-                    if (!enemyStack.isEmpty()) {
-                        enemy.stance = enemyStack.pop();
+                    if (!this->enemy.isEmpty()) {
+
+                        this->enemy.setStance(this->enemy.pop());
+
+                        if (this->enemy.getStance() == STANCE_RUNNING_3 || this->enemy.getStance() == STANCE_RUNNING_3_REV || this->enemy.getStance() == STANCE_RUNNING_6 || this->enemy.getStance() == STANCE_RUNNING_6_REV) {
+                            
+                            this->playSoundEffect(SoundEffect::EnemyFootsteps);
+                            
+                        }
                     }
                     else {
-                        player.xPosDelta = 0;
-                        gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+                        this->player.setXPosDelta(0);
+                        this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
                     }
                     
                 }
@@ -108,16 +255,19 @@ void Game::showScene() {
                 
                 // Move scenery if needed ..
             
-                if (player.xPosDelta != 0) {
+                if (this->player.getXPosDelta() != 0) {
             
-                    mainSceneX = mainSceneX + player.xPosDelta;
+                    mainSceneX = mainSceneX + this->player.getXPosDelta() / 2;
             
                     if (mainSceneX < -MAIN_SCENE_IMG_WIDTH) { mainSceneX = 0; }
                     if (mainSceneX > 0) { mainSceneX = mainSceneX - MAIN_SCENE_IMG_WIDTH; }
             
                 }
             
-                if (enemy.xPos < 128) renderEnemyStance(enemy.xPos, enemy.yPos, enemy.stance);
+                if (this->enemy.getXPosDisplay() < 110) {
+                    renderEnemyShadow(this->enemy.getEntityType(), this->enemy.getXPosDisplay(), this->enemy.getYPos());
+                    renderEnemyStance(this->enemy.getEntityType(), this->enemy.getXPosDisplay(), this->enemy.getYPos(), this->enemy.getStance());
+                }
 
                 break;
 
@@ -127,16 +277,16 @@ void Game::showScene() {
         
         if (PC::frameCount % ANIMATION_NUMBER_OF_FRAMES == 0) {
 
-            if (gameStateDetails.delayInterval > 0) {
+            if (this->gameStateDetails.delayInterval > 0) {
 
-                gameStateDetails.delayInterval--;
+                this->gameStateDetails.delayInterval--;
 
-                if (gameStateDetails.delayInterval == 0) { 
+                if (this->gameStateDetails.delayInterval == 0) { 
 
-                    // if (gameStateDetails.getCurrState() == GAME_STATE_THE_END) {  // Not relevant for 'The End' scene.
+                    // if (this->gameStateDetails.getCurrState() == GAME_STATE_THE_END) {  // Not relevant for 'The End' scene.
                     //   gameStateSeq = 0;
                     // }            
-                    gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); 
+                    this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); 
 
                 }
 
@@ -151,11 +301,14 @@ void Game::showScene() {
 
 
 void Game::finalScene() {
-    
+
+    this->player.update();
+    this->princess.update();
+
     if (PC::buttons.pressed(BTN_A)) {
         
-        enemyStack.clear();
-        gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+        this->princess.clear();
+        this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
 
     }
     else {
@@ -165,7 +318,7 @@ void Game::finalScene() {
 
         drawPrincessBackground_1();
 
-        if (enemyStack.isEmpty() && playerStack.isEmpty()) {
+        if (this->princess.isEmpty() && this->player.isEmpty()) {
 
             finalSceneMode++;
 
@@ -175,50 +328,52 @@ void Game::finalScene() {
 
                     for (int i = 0; i < 3; i++) {
 
-                        playerStack.push(STANCE_RUNNING_LF_END, STANCE_RUNNING_2, STANCE_RUNNING_7);
-                        playerStack.push(STANCE_RUNNING_4);
+                        this->player.push(STANCE_RUNNING_LF_END, STANCE_RUNNING_2, STANCE_RUNNING_7, true);
+                        this->player.push(STANCE_RUNNING_4, true);
 
-                        playerStack.push(STANCE_RUNNING_RF_END, STANCE_RUNNING_8, STANCE_RUNNING_5);
-                        playerStack.push(STANCE_RUNNING_4);
+                        this->player.push(STANCE_RUNNING_RF_END, STANCE_RUNNING_8, STANCE_RUNNING_5, true);
+                        this->player.push(STANCE_RUNNING_4, true);
 
                     }
 
-                    player.xPosDelta = 5;
-                    player.xPos = -64;
+                    this->player.setXPosDelta(10);
+                    this->player.setXPos(-130);
 
-                    enemyStack.push(STANCE_PRINCESS_STANDING);
+                    this->princess.push(STANCE_PRINCESS_STANDING, true);
                     for (int i = 0; i < 12; i++) {
-                        enemyStack.push(STANCE_PRINCESS_SITTING);
+                        this->princess.push(STANCE_PRINCESS_SITTING, true);
                     }
-                    enemy.xPos = 77;//93;
-                    enemy.yPos = 34;
+                    this->princess.setXPos(154);
+                    this->princess.setXPosDelta(0);
+                    this->princess.setYPos(76);
 
                     break;
 
                 case FINAL_SCENE_PAUSE:
-                    playerStack.push(STANCE_STANDING_UPRIGHT);
-                    playerStack.push(STANCE_RUNNING_STRAIGHTEN_UP);
+                    this->player.push(STANCE_STANDING_UPRIGHT, true);
+                    this->player.push(STANCE_RUNNING_STRAIGHTEN_UP, true);
                     break;
 
                 case FINAL_SCENE_PAUSE_2:
-                    player.xPosDelta = 0;
-                    enemy.xPosDelta = 0;
+                    this->player.setXPosDelta(0);
+                    this->princess.setXPosDelta(0);
                     for (int i = 0; i < 4; i++) {
-                    playerStack.push(STANCE_STANDING_UPRIGHT);
+                        this->player.push(STANCE_STANDING_UPRIGHT, true);
                     }
                     break;
 
                 case FINAL_SCENE_KISSING:
-                    enemy.xPos = 74;//90;
-                    enemy.yPos = 35;
-                    enemyStack.push(STANCE_PRINCESS_KISSING, STANCE_PRINCESS_KISSING, STANCE_PRINCESS_KISSING);
+                    this->princess.setXPos(154);
+                    this->princess.setYPos(76);
+                    this->princess.push(STANCE_PRINCESS_KISSING, STANCE_PRINCESS_KISSING, STANCE_PRINCESS_KISSING, true);
+                    this->princess.push(STANCE_PRINCESS_KISSING, STANCE_PRINCESS_KISSING, STANCE_PRINCESS_KISSING, true);
                     break;
 
                 case FINAL_SCENE_BREAK_UP:
-                    enemy.xPos = 77;//93;
-                    enemy.yPos = 35;
+                    this->princess.setXPos(154);
+                    this->princess.setYPos(76);
                     for (int i = 0; i < 18; i++) {
-                    enemyStack.push(STANCE_PRINCESS_STANDING);
+                        this->princess.push(STANCE_PRINCESS_STANDING, true);
                     }
                     break;
 
@@ -229,28 +384,33 @@ void Game::finalScene() {
 
         // Render screen ..
 
-        if (PC::frameCount % ANIMATION_NUMBER_OF_FRAMES == 0) {
+        if (this->princess.getStackFrame() == 0) {
 
-            if (!enemyStack.isEmpty()) {
-                enemy.stance = enemyStack.pop();
-                enemy.xPos = enemy.xPos + enemy.xPosDelta;
-            }
-
-            if (!playerStack.isEmpty()) {
-                player.stance = playerStack.pop();
-                player.xPos = player.xPos + player.xPosDelta;
+            if (!this->princess.isEmpty()) {
+                this->princess.setStance(this->princess.pop());
+                this->princess.setXPos(this->princess.getXPos() + this->princess.getXPosDelta());
             }
 
         }
 
-        renderPlayerStance(player.xPos, player.yPos, player.stance);
-        renderEnemyStance(enemy.xPos, enemy.yPos, enemy.stance);
+        if (this->player.getStackFrame() == 0) {
 
-        drawPrincessBackground_2();
+            if (!this->player.isEmpty()) {
+                this->player.setStance(this->player.pop());
+// printf("1 setXPos() %i + %i = %i\n", this->player.getXPos(), this->player.getXPosDelta(), this->player.getXPos() + this->player.getXPosDelta());                
+                this->player.setXPos(this->player.getXPos() + this->player.getXPosDelta());
+            }
 
-        if (finalSceneMode == FINAL_SCENE_BREAK_UP && enemyStack.isEmpty()) {
+        }
 
-            gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+        renderPlayerStance(this->player.getXPosDisplay(), this->player.getYPos(), this->player.getStance());
+        renderPrincessStance(this->princess.getXPosDisplay(), this->princess.getYPos(), this->princess.getStance());
+
+        drawPrincessBackground_2(false);
+
+        if (finalSceneMode == FINAL_SCENE_BREAK_UP && this->princess.isEmpty()) {
+
+            this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
 
         }
 

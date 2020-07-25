@@ -15,300 +15,438 @@ using PD = Pokitto::Display;
 
 void Game::enemyMovements() {
 
-  int16_t distanceBetween = absT(enemy.xPos - player.xPos);
+    int16_t distanceBetween = absT(this->enemy.getXPos() - this->player.getXPos());
+    //printf("dist %i\n", distanceBetween);
 
-  if (enemyStack.isEmpty()) {
+    if (this->enemy.isEmpty()) {
 
-    enemy.xPosDelta = 0;
+        this->enemy.setMovement(Movement::None);
 
-    switch (enemy.stance) {
 
-      case STANCE_DEFAULT:
 
-        switch (player.stance) {
+        // Update idle frame if in the default stance ..
 
-          case STANCE_STANDING_UPRIGHT:
-          
-            if (distanceBetween < 17) {
-              
-              returnFromAction(ACTION_HIGH_KICK, ACTION_RETURN_TO_DEFAULT);
-              enemyStack.push(STANCE_KICK_HIGH_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK);
+        if (this->enemy.getStance() == STANCE_DEFAULT) {
 
-#ifdef DEBUG_HITS 
-_action = 1; 
-#endif            
+            this->enemy.incIdleFrame();
+
+        }
+
+
+        // printf("Dist: %i, play x %i %i, enemy X %i %i\n", distanceBetween, this->player.getXPos(), this->player.getStance(), this->enemy.getXPos(), this->enemy.getStance());
+
+        this->enemy.setXPosDelta(0);
+        //printf("ES: %i, PS: %i, Dist: %i\n", this->enemy.getStance(), this->player.getStance(), distanceBetween);
+        switch (this->enemy.getStance()) {
+
+            case STANCE_DEFAULT:
+
+                switch (this->player.getStance()) {
+
+                    case STANCE_STANDING_UPRIGHT:
+
+                        if (distanceBetween <= 26) {
+
+                            returnFromAction(ACTION_HIGH_KICK, ACTION_RETURN_TO_DEFAULT);
+                            this->enemy.push(STANCE_KICK_HIGH_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK, true);
+
+                            #ifdef DEBUG_HITS 
+                            _action = 1; 
+                            #endif            
+
+                        }
+                        else if (distanceBetween > 14) { // Otherwise creep forward ..
+                            //printf("Move 1 creep 14\n");
+                            this->enemy.push(STANCE_DEFAULT, STANCE_SIDLING_3, STANCE_SIDLING_1, true);
+                            this->enemy.setXPosDelta(-MAIN_SCENE_X_SIDLING_2_DELTA);
+                            this->enemy.setMovement(Movement::Sidle_Forward_Tiny);
+
+                            #ifdef DEBUG_HITS 
+                            _action = 2;              
+                            #endif
+
+                        }
+
+                        break;
+
+                    case STANCE_RUNNING_1:
+                    case STANCE_RUNNING_2:
+                    case STANCE_RUNNING_3:
+                    case STANCE_RUNNING_4:
+                    case STANCE_RUNNING_5:
+                    case STANCE_RUNNING_6:
+                    case STANCE_RUNNING_7:
+                    case STANCE_RUNNING_8:
+                    case STANCE_RUNNING_STRAIGHTEN_UP:
+
+                        if (distanceBetween < 138) {
+
+                            returnFromAction(ACTION_HIGH_KICK, ACTION_RETURN_TO_DEFAULT);
+                            this->enemy.push(STANCE_KICK_HIGH_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK, true);
+
+                            #ifdef DEBUG_HITS 
+                            _action = 3;              
+                            #endif
+
+                        }
+                        else if (distanceBetween > 24) { // Otherwise creep forward ..
+                            //printf("Move 2 creep 24\n");
+
+                            this->enemy.push(STANCE_DEFAULT, STANCE_SIDLING_3, STANCE_SIDLING_1, true);
+                            this->enemy.setXPosDelta(-MAIN_SCENE_X_SIDLING_2_DELTA);
+                            this->enemy.setMovement(Movement::Sidle_Forward_Tiny);
+                            //printf("Enemy > distanceBetween > 14\n");
+                            #ifdef DEBUG_HITS 
+                            _action = 4;
+                            #endif
+
+                        }
+
+                        break;
+
+                    default:
+                        {
+                            uint8_t action = ACTION_NO_ACTION;
+                            uint8_t returnAction = 0;
+                            bool performActionRegardless = false;
+
+                            if (distanceBetween < 90) {
+
+                                if (enemyImmediateAction) {
+// printf("3 immedaite kick\n");
+                                    action = ACTION_MED_KICK;
+
+                                }
+                                else {
+
+                                    //ENEMYRANDOM - PERFORM kick or punch
+//printf("immediate %i\n", this->enemy.getActivity());
+                                    uint8_t rand = random(0, this->enemy.getActivity());
+
+                                    if (rand == 0) { // Should we even kick or punch ?
+// printf("0 kick or punch %i\n", rand);
+                                        action = random(0, 3);
+
+                                        switch (this->enemy.getActionPreference()) {
+
+                                            case ACTION_NO_PREF:
+
+                                                action = random(ACTION_MIN_KICK, ACTION_MAX_PUNCH + 1);
+                                                break;
+
+                                            case ACTION_KICK_PREF:
+
+                                                switch (action) {
+
+                                                    case 0:
+                                                        action = random(ACTION_MIN_PUNCH, ACTION_MAX_PUNCH + 1);
+                                                        break;
+
+                                                    default:
+                                                        action = random(ACTION_MIN_KICK, ACTION_MAX_KICK + 1);
+                                                        break;
+
+                                                }
+
+                                                break;
+
+                                            case ACTION_PUNCH_PREF:
+
+                                                switch (action) {
+
+                                                    case 0:
+                                                        action = random(ACTION_MIN_KICK, ACTION_MAX_KICK + 1);
+                                                        break;
+
+                                                    default:
+                                                        action = random(ACTION_MIN_PUNCH, ACTION_MAX_PUNCH + 1);
+                                                        break;
+
+                                                }
+
+                                                break;
+
+
+                                        }
+
+                                    }
+                                    // else {
+                                    //     printf("0 no kick or punch %i\n", rand);
+                                    // }
+
+                                }
+
+                                returnAction = random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_ACTION_READY + 1);
+                                //ENEMYRANDOM to action itseld
+
+                                // If an action was selected then perform it if it will strike the player or we are doing it regardless ..
+
+                                if (action <= ACTION_MAX && (inStrikingRange(action, enemy, player) > 0 || enemyImmediateAction)) {
+                                    //printf("Enemy inSR() %i, performActionRegardless %i\n", inStrikingRange(action, enemy, player), performActionRegardless);
+                                    returnFromAction(action, returnAction);
+// printf("5 kick - action = %i, inStrikingRange() = %i, enemyImmediateAction = %i\n", action ,inStrikingRange(action, enemy, player),enemyImmediateAction);
+                                    switch (action) {
+
+                                        case ACTION_HIGH_KICK:
+                                            this->enemy.push(STANCE_KICK_HIGH_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK, true);
+                                            break;
+
+                                        case ACTION_MED_KICK:
+                                            this->enemy.push(STANCE_KICK_MED_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK, true);
+                                            break;
+
+                                        case ACTION_LOW_KICK:
+                                            this->enemy.push(STANCE_KICK_LOW_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK, true);
+                                            break;
+
+                                        case ACTION_HIGH_PUNCH:
+                                            this->enemy.push(STANCE_PUNCH_HIGH_RH_END, STANCE_PUNCH_READY, STANCE_DEFAULT_LEAN_BACK, true);
+                                            break;
+
+                                        case ACTION_MED_PUNCH:
+                                            this->enemy.push(STANCE_PUNCH_MED_RH_END, STANCE_PUNCH_READY, STANCE_DEFAULT_LEAN_BACK, true);
+                                            break;
+
+                                        case ACTION_LOW_PUNCH:
+                                            this->enemy.push(STANCE_PUNCH_LOW_RH_END, STANCE_PUNCH_READY, STANCE_DEFAULT_LEAN_BACK, true);
+                                            break;
+
+                                    }
+
+                                    #ifdef DEBUG_HITS 
+                                    _action = 5;                  
+                                    #endif
+
+                                }
+                                else {
+
+// printf("5 no kick\n");
+
+                                    // Is the enemy too close to the player?  If so, should he move back ..
+
+                                    // ENEMYRANDOM - enemy immediate retreat or move
+                                    //                                         random(0, 10 + 1)
+                                    bool moveEnemy = enemyImmediateRetreat || (random(CHANCE_PERFORM_ACTION, this->enemy.getMovementFrequency() + 1) == CHANCE_PERFORM_ACTION);
+                                    //printf("moveEnemy: %i, enemyImmediateRetreat %i\n", moveEnemy, enemyImmediateRetreat);
+                                    if (moveEnemy && !enemyImmediateRetreat) {
+
+                                        if (distanceBetween < DISTANCE_TOO_CLOSE - 1) {
+
+                                            // printf("Enemy Move 3\n");
+                                            this->enemy.setMovement(Movement::Sidle_Backward);
+                                            this->enemy.push(STANCE_DEFAULT, STANCE_SIDLING_7, STANCE_DEFAULT_LEAN_FORWARD, true);
+                                            this->enemy.push(STANCE_SIDLING_6, STANCE_SIDLING_5, STANCE_SIDLING_4, true);
+                                            this->enemy.setXPosDelta(+MAIN_SCENE_X_SIDLING_2_DELTA);
+                                            break;
+
+                                        }
+                                        else {
+
+                                            Movement movement = this->getLargestMove(this->player, distanceBetween);
+
+                                            switch (movement) {
+
+                                                case Movement::Sidle_Forward_Tiny:
+                                                    // printf("Enemy Move 5\n");
+                                                    this->enemy.setMovement(Movement::Sidle_Forward_Tiny);
+                                                    this->enemy.push(STANCE_DEFAULT, STANCE_SIDLING_1, STANCE_DEFAULT_LEAN_FORWARD, true);                     
+                                                    this->enemy.setXPosDelta(-MAIN_SCENE_X_SIDLING_1_DELTA);
+                                                    break;
+
+                                                case Movement::Sidle_Forward_SML:
+                                                    // printf("Enemy Move 6\n");
+                                                    this->enemy.setMovement(Movement::Sidle_Forward_SML);
+                                                    this->enemy.push(STANCE_DEFAULT, STANCE_SIDLING_2, true);
+                                                    this->enemy.push(STANCE_SIDLING_1, STANCE_DEFAULT_LEAN_FORWARD, true);                    
+                                                    this->enemy.setXPosDelta(-MAIN_SCENE_X_SIDLING_2_DELTA);
+                                                    break;
+
+                                                case Movement::Sidle_Forward_MED:
+                                                    // printf("Enemy Move 7\n");
+                                                    this->enemy.setMovement(Movement::Sidle_Forward_MED);
+                                                    this->enemy.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK, STANCE_SIDLING_3, true);
+                                                    this->enemy.push(STANCE_SIDLING_1_1, STANCE_SIDLING_1, STANCE_DEFAULT_LEAN_FORWARD, true);
+                                                    this->enemy.setXPosDelta(-MAIN_SCENE_X_SIDLING_2_DELTA);
+                                                    break;
+
+                                                case Movement::Sidle_Forward_LRG:
+                                                    // printf("Enemy Move 8 - long\n");
+                                                    this->enemy.setMovement(Movement::Sidle_Forward_LRG);
+                                                    this->enemy.setXPosDelta(-MAIN_SCENE_X_SIDLING_2_DELTA);
+                                                    this->enemy.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK, STANCE_SIDLING_3, true);
+                                                    this->enemy.push(STANCE_SIDLING_2_1, STANCE_SIDLING_2, STANCE_SIDLING_1_2, true);
+                                                    this->enemy.push(STANCE_SIDLING_1_1, STANCE_SIDLING_1, STANCE_DEFAULT_LEAN_FORWARD, true);
+                                                    break;
+
+                                            }
+
+                                            // printf("Enemy Enemy < DISTANCE_TOO_CLOSE\n");
+
+                                            #ifdef DEBUG_HITS 
+                                            _action = 6;
+                                            #endif
+
+                                        }
+
+                                    }
+                                    else if (enemyImmediateRetreat) {
+
+                                        this->enemy.setMovement(Movement::Sidle_Backward);
+                                        this->enemy.push(STANCE_DEFAULT, STANCE_SIDLING_7, STANCE_DEFAULT_LEAN_FORWARD, true);
+                                        this->enemy.push(STANCE_SIDLING_6, STANCE_SIDLING_5, STANCE_SIDLING_4, true);
+                                        this->enemy.setXPosDelta(+MAIN_SCENE_X_SIDLING_2_DELTA);
+                                        break;
+
+                                    }
+
+                                }
+
+                            }
+                            else {
+                                // printf("Enemy Move 8 - long\n");
+
+                                // Move a long way ..
+
+                                this->enemy.setXPosDelta(-MAIN_SCENE_X_SIDLING_2_DELTA);
+                                this->enemy.setMovement(Movement::Sidle_Forward_LRG);
+                                this->enemy.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK, STANCE_SIDLING_3, false);
+                                this->enemy.push(STANCE_SIDLING_2_1, STANCE_SIDLING_2, STANCE_SIDLING_1_2, false);
+                                this->enemy.push(STANCE_SIDLING_1_1, STANCE_SIDLING_1, STANCE_DEFAULT_LEAN_FORWARD, false);
+                                //printf("Enemy else\n");
+                                #ifdef DEBUG_HITS 
+                                _action = 8;
+                                #endif
+
+                            }
+
+                        }
+
+                    break;
+
+                }
+
+                break;
+
+        case STANCE_KICK_READY:
+            {
+//ENEMYRANDOM - perform kick
+//                                                       0                 random(0, 2 + 1)
+                uint8_t action = (enemyImmediateAction ? ACTION_MED_KICK : random(ACTION_MIN_KICK, ACTION_MAX_KICK + 1));
+                uint8_t returnAction = random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_ACTION_READY + 1);
+                // printf("isr AA %i\n", (uint8_t)this->enemy.getEntityType());     
+
+// printf("ISR kick %i\n", this->enemy.getActivityForRepeatAction());
+                if (inStrikingRange(action, enemy, player) > 0 && random(0, this->enemy.getActivityForRepeatAction() + 1) == 0) {
+// printf("ISR kick\n");
+                    returnFromAction(action, returnAction);
+// printf("1 kick \n");
+                    switch (action) {
+
+                        case ACTION_HIGH_KICK:
+                            this->enemy.push(STANCE_KICK_READY, STANCE_KICK_HIGH_END, true);
+                            break;
+
+                        case ACTION_MED_KICK:
+                            this->enemy.push(STANCE_KICK_READY, STANCE_KICK_MED_END, true);
+                            break;
+
+                        case ACTION_LOW_KICK:
+                            this->enemy.push(STANCE_KICK_READY, STANCE_KICK_LOW_END, true);
+                            break;
+
+                    }
+
+                    #ifdef DEBUG_HITS 
+                    _action = 9;
+                    #endif
+
+                }
+                else {
+// printf("1 no kick \n");
+
+
+                    // Should we return to the default standing position ?
+
+                    // ENEMYRANDOM - return to default.
+                    //  random(6, 7+1) 
+                    if (random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_ACTION_READY + 1) == ACTION_RETURN_TO_DEFAULT) {
+                        this->enemy.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD, true);
+                    }
+
+                    #ifdef DEBUG_HITS 
+                    _action = 10;           
+                    #endif
+
+                }
 
             }
-            else if (distanceBetween > 14) { // Otherwise creep forward ..
-              
-              enemyStack.push(STANCE_DEFAULT, STANCE_SIDLING_3, STANCE_SIDLING_1);
-              enemy.xPosDelta = -MAIN_SCENE_X_SIDLING_1_DELTA;
-
-#ifdef DEBUG_HITS 
-_action = 2;              
-#endif
-
-            }
-
             break;
 
-          case STANCE_RUNNING_1:
-          case STANCE_RUNNING_2:
-          case STANCE_RUNNING_3:
-          case STANCE_RUNNING_4:
-          case STANCE_RUNNING_5:
-          case STANCE_RUNNING_6:
-          case STANCE_RUNNING_7:
-          case STANCE_RUNNING_8:
-          case STANCE_RUNNING_STRAIGHTEN_UP:
-          
-            if (distanceBetween < 79) {
-        
-              returnFromAction(ACTION_HIGH_KICK, ACTION_RETURN_TO_DEFAULT);
-              enemyStack.push(STANCE_KICK_HIGH_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK);
-
-#ifdef DEBUG_HITS 
-_action = 3;              
-#endif
-
-            }
-            else if (distanceBetween > 14) { // Otherwise creep forward ..
-              
-              enemyStack.push(STANCE_DEFAULT, STANCE_SIDLING_3, STANCE_SIDLING_1);
-              enemy.xPosDelta = -MAIN_SCENE_X_SIDLING_1_DELTA;
-
-#ifdef DEBUG_HITS 
-_action = 4;
-#endif
-
-            }
-
-            break;
-
-          default:
+        case STANCE_PUNCH_READY:
             {
 
-              uint8_t action = 0;
-              uint8_t returnAction = 0;
-              bool performActionRegardless = false;
+                // ENEMYRANDOM  PUNCH from punch_READY
+                //                                                          random(3, 5 + 1)
+                uint8_t action = (enemyImmediateAction ? ACTION_MED_PUNCH : random(ACTION_MIN_PUNCH, ACTION_MAX_PUNCH + 1));
+                uint8_t returnAction = random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_ACTION_READY + 1);
+                // printf("isr AB %i\n", (uint8_t)this->enemy.getEntityType());        
+// printf("ISR punch %i\n", this->enemy.getActivityForRepeatAction());
+                if (inStrikingRange(action, enemy, player) > 0 && random(0, this->enemy.getActivityForRepeatAction() + 1) == 0) {
+// printf("ISR punch\n");
 
-              if (distanceBetween < 50) {
+                    returnFromAction(action, returnAction);
+// printf("2 punch \n");
 
-                if (enemyImmediateAction) {
+                    switch (action) {
 
-                  action = ACTION_MED_KICK;
+                        case ACTION_HIGH_PUNCH:
+                            this->enemy.push(STANCE_PUNCH_READY, (this->enemy.getRightPunch() ? STANCE_PUNCH_HIGH_RH_END : STANCE_PUNCH_HIGH_LH_END), true);
+                            break;
 
-                }
-                else {
-                  action = random(ACTION_MIN_KICK, ACTION_MAX_PUNCH + gameStateDetails.activity);
-                }
+                        case ACTION_MED_PUNCH:
+                            this->enemy.push(STANCE_PUNCH_READY, (this->enemy.getRightPunch() ? STANCE_PUNCH_MED_RH_END : STANCE_PUNCH_MED_LH_END), true);
+                            break;
 
-                returnAction = random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_ACTION_READY + 1);
-                performActionRegardless = random(CHANCE_PERFORM_ACTION, CHANCE_PERFORM_ACTION_REGARDLESS_MAX) == CHANCE_PERFORM_ACTION;
-                
+                        case ACTION_LOW_PUNCH:
+                            this->enemy.push(STANCE_PUNCH_READY, (this->enemy.getRightPunch() ? STANCE_PUNCH_LOW_RH_END : STANCE_PUNCH_LOW_LH_END), true);
+                            break;
 
-                // If an action was selected then perform it if it will strike the player or we are doing it regardless ..
+                    }
 
-                if (action <= ACTION_MAX && (inStrikingRange(action, enemy.xPos, ENEMY_TYPE_PERSON, player.stance, player.xPos) > 0 || performActionRegardless)) {
+                    this->enemy.setRightPunch(!this->enemy.getRightPunch());
 
-                  returnFromAction(action, returnAction);
-
-                  switch (action) {
-
-                    case ACTION_HIGH_KICK:
-                      enemyStack.push(STANCE_KICK_HIGH_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK);
-                      break;
-
-                    case ACTION_MED_KICK:
-                      enemyStack.push(STANCE_KICK_MED_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK);
-                      break;
-
-                    case ACTION_LOW_KICK:
-                      enemyStack.push(STANCE_KICK_LOW_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK);
-                      break;
-
-                    case ACTION_HIGH_PUNCH:
-                      enemyStack.push(STANCE_PUNCH_HIGH_RH_END, STANCE_PUNCH_READY, STANCE_DEFAULT_LEAN_BACK);
-                      break;
-
-                    case ACTION_MED_PUNCH:
-                      enemyStack.push(STANCE_PUNCH_MED_RH_END, STANCE_PUNCH_READY, STANCE_DEFAULT_LEAN_BACK);
-                      break;
-
-                    case ACTION_LOW_PUNCH:
-                      enemyStack.push(STANCE_PUNCH_LOW_RH_END, STANCE_PUNCH_READY, STANCE_DEFAULT_LEAN_BACK);
-                      break;
-                      
-                  }
-
-#ifdef DEBUG_HITS 
-_action = 5;                  
-#endif
+                    #ifdef DEBUG_HITS 
+                    _action = 11;
+                    #endif
 
                 }
                 else {
-                      
-                    
-                  // Is the enemy too close to the player?  If so, should he move back ..
 
-                  bool moveEnemy = enemyImmediateRetreat || (random(CHANCE_PERFORM_ACTION, CHANCE_MOVE_ENEMY_MAX + 1) == CHANCE_PERFORM_ACTION);
+// printf("2 no punch \n");
 
-                  if (moveEnemy && distanceBetween < DISTANCE_TOO_CLOSE) {
+                    // Should we return to the default standing position ?
 
-                    enemyStack.push(STANCE_DEFAULT, STANCE_SIDLING_7, STANCE_DEFAULT_LEAN_FORWARD);
-                    enemyStack.push(STANCE_SIDLING_6, STANCE_SIDLING_5, STANCE_SIDLING_4);
-                    enemy.xPosDelta = +MAIN_SCENE_X_SIDLING_1_DELTA;
+                    // ENEMYRANDOM - retun to default.
+                    if (random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_ACTION_READY + 1) == ACTION_RETURN_TO_DEFAULT) {
+                        this->enemy.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD, true);
 
-#ifdef DEBUG_HITS 
-_action = 6;
-#endif
+                        #ifdef DEBUG_HITS 
+                        _action = 12;
+                        #endif
 
-                  }
-
-
-                  // Are the player and enemy too far apart?  If so, should he move forward ..
-                  
-                  else if (moveEnemy && distanceBetween > DISTANCE_TOO_FAR) {
-                    
-                    enemyStack.push(STANCE_DEFAULT, STANCE_SIDLING_3, STANCE_SIDLING_1);
-                    enemy.xPosDelta = -MAIN_SCENE_X_SIDLING_1_DELTA;
-
-#ifdef DEBUG_HITS 
-_action = 7;
-#endif
-
-                  }
+                    }
 
                 }
-
-              }
-              else {
-
-                enemyStack.push(STANCE_DEFAULT, STANCE_SIDLING_3, STANCE_SIDLING_1);
-                enemy.xPosDelta = -MAIN_SCENE_X_SIDLING_1_DELTA;
-
-#ifdef DEBUG_HITS 
-_action = 8;
-#endif
-
-              }
 
             }
 
             break;
-                        
-        }
-
-        break;
-    
-      case STANCE_KICK_READY:
-        {
-          
-          uint8_t action = (enemyImmediateAction ? ACTION_MED_KICK : random(ACTION_MIN_KICK, ACTION_MAX_KICK + 1));
-          uint8_t returnAction = random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_ACTION_READY + 1);
-        
-          if (inStrikingRange(action, enemy.xPos, ENEMY_TYPE_PERSON, player.stance, player.xPos) > 0) {
-
-            returnFromAction(action, returnAction);
-            
-            switch (action) {
-
-              case ACTION_HIGH_KICK:
-                enemyStack.push(STANCE_KICK_READY, STANCE_KICK_HIGH_END);
-                break;
-
-              case ACTION_MED_KICK:
-                enemyStack.push(STANCE_KICK_READY, STANCE_KICK_MED_END);
-                break;
-
-              case ACTION_LOW_KICK:
-                enemyStack.push(STANCE_KICK_READY, STANCE_KICK_LOW_END);
-                break;
-                
-            }
-
-#ifdef DEBUG_HITS 
-_action = 9;
-#endif
-
-          }
-          else {
-
-
-            // Should we return to the default standing position ?
-
-            if (random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_DEFAULT + 1) == ACTION_RETURN_TO_DEFAULT) {
-              enemyStack.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD);
-            }
-
-#ifdef DEBUG_HITS 
-_action = 10;           
-#endif
-
-          }
 
         }
-
-        break;
-
-      case STANCE_PUNCH_READY:
-        {
-          
-          uint8_t action = (enemyImmediateAction ? ACTION_MED_PUNCH : random(ACTION_MIN_PUNCH, ACTION_MAX_PUNCH + 1));
-          uint8_t returnAction = random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_ACTION_READY + 1);
-        
-          if (inStrikingRange(action, enemy.xPos, ENEMY_TYPE_PERSON, player.stance, player.xPos) > 0) {
-
-            returnFromAction(action, returnAction);
-            
-            switch (action) {
-
-              case ACTION_HIGH_PUNCH:
-                enemyStack.push(STANCE_PUNCH_READY, (enemy.rightPunch ? STANCE_PUNCH_HIGH_RH_END : STANCE_PUNCH_HIGH_LH_END));
-                break;
-
-              case ACTION_MED_PUNCH:
-                enemyStack.push(STANCE_PUNCH_READY, (enemy.rightPunch ? STANCE_PUNCH_MED_RH_END : STANCE_PUNCH_MED_LH_END));
-                break;
-
-              case ACTION_LOW_PUNCH:
-                enemyStack.push(STANCE_PUNCH_READY, (enemy.rightPunch ? STANCE_PUNCH_LOW_RH_END : STANCE_PUNCH_LOW_LH_END));
-                break;
-                
-            }
-            
-            enemy.rightPunch = !enemy.rightPunch;
-
-#ifdef DEBUG_HITS 
-_action = 11;
-#endif
-
-          }
-          else {
-
-            
-            // Should we return to the default standing position ?
-
-            if (random(ACTION_RETURN_TO_DEFAULT, ACTION_RETURN_TO_DEFAULT + 1) == ACTION_RETURN_TO_DEFAULT) {
-              enemyStack.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD);
-
-#ifdef DEBUG_HITS 
-_action = 12;
-#endif
-
-            }
-            
-          }
-
-        }
-
-        break;
 
     }
 
-  }
-
-  enemyImmediateAction = false;
-  enemyImmediateRetreat = false;
+    enemyImmediateAction = false;
+    enemyImmediateRetreat = false;
 
 }

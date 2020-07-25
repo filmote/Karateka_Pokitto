@@ -20,7 +20,7 @@ void Game::splashScreen() {
 
     if (justPressed > 0) {
 
-        this->gameState = GameState::Game; 
+        this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); 
 
     }
     
@@ -39,7 +39,7 @@ void Game::splashScreen() {
 
     //  Render the state ..
 
-    PD::drawBitmap(22, 27, Images::Ppot_Full);
+    PD::drawBitmap(0, 0, imgBuffer);
     PD::drawBitmap(32, 38, Images::Ppot[splashScreenVariables.counter]);
 
     if (splashScreenVariables.counter < 2) PD::drawBitmap(82, 36, Images::Ppot_Arrow);

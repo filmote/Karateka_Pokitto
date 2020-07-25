@@ -1,10 +1,8 @@
 #pragma once
 
 #include <stdint.h>
+#include "Enums.h"
 
-//
-// Declaration
-//
 
 template< typename Type, uint8_t Capacity >
 class Stack
@@ -23,6 +21,7 @@ public:
 private:
 	ItemType items[Capacity];
 	IndexType next;
+	uint8_t frame;
 
 public:
 	Stack(void);
@@ -36,10 +35,9 @@ public:
 	ItemType & peek(void); // O(1)
 	const ItemType & peek(void) const; // O(1)
 	bool insert(const ItemType & item); // O(1)
-	bool push(const ItemType & item); // O(1)
-	bool push(ItemType && item); // O(1)
-	bool push(ItemType && item1, ItemType && item2); // O(1)
-	bool push(ItemType && item1, ItemType && item2, ItemType && item3); // O(1)
+	bool push(ItemType && item, bool resetFrame); // O(1)
+	bool push(ItemType && item1, ItemType && item2, bool resetFrame); // O(1)
+	bool push(ItemType && item1, ItemType && item2, ItemType && item3, bool resetFrame); // O(1)
 	ItemType & pop(void); // O(1)
 
 	void drop(void); // O(1)
@@ -52,6 +50,8 @@ public:
 
 	ItemType & operator [] (const IndexType index); // O(1)
 	const ItemType & operator [] (const IndexType index) const; // O(1)
+	void update();
+	uint8_t getFrame() const;
 };
 
 
@@ -59,10 +59,28 @@ public:
 // Definition
 //
 
+
 template< typename Type, uint8_t Capacity >
 Stack< Type, Capacity >::Stack(void)
 	: items(), next(0)
 {
+}
+
+template< typename Type, uint8_t Capacity >
+void Stack< Type, Capacity >::update() 
+{
+	if (this->frame != 0) {
+		this->frame--;
+	}
+	else {
+		this->frame = ANIMATION_NUMBER_OF_FRAMES;
+	}
+}
+
+template< typename Type, uint8_t Capacity >
+uint8_t Stack< Type, Capacity >::getFrame() const 
+{
+	return this->frame;
 }
 
 template< typename Type, uint8_t Capacity >
@@ -127,19 +145,9 @@ bool Stack< Type, Capacity >::insert(const typename Stack< Type, Capacity >::Ite
 }
 
 template< typename Type, uint8_t Capacity >
-bool Stack< Type, Capacity >::push(const typename Stack< Type, Capacity >::ItemType & item) // O(1)
+bool Stack< Type, Capacity >::push(typename Stack< Type, Capacity >::ItemType && item, bool resetFrame) // O(1)
 {
-	if (this->isFull())
-		return false;
-
-	this->items[this->next] = item;
-	++this->next;
-	return true;
-}
-
-template< typename Type, uint8_t Capacity >
-bool Stack< Type, Capacity >::push(typename Stack< Type, Capacity >::ItemType && item) // O(1)
-{
+	if (this->isEmpty() && resetFrame) this->frame = ANIMATION_NUMBER_OF_FRAMES;
 	if (this->isFull())
 		return false;
 
@@ -149,8 +157,9 @@ bool Stack< Type, Capacity >::push(typename Stack< Type, Capacity >::ItemType &&
 }
 
 template< typename Type, uint8_t Capacity >
-bool Stack< Type, Capacity >::push(typename Stack< Type, Capacity >::ItemType && item1, typename Stack< Type, Capacity >::ItemType && item2) // O(1)
+bool Stack< Type, Capacity >::push(typename Stack< Type, Capacity >::ItemType && item1, typename Stack< Type, Capacity >::ItemType && item2, bool resetFrame) // O(1)
 {
+	if (this->isEmpty() && resetFrame) this->frame = ANIMATION_NUMBER_OF_FRAMES;
 	if (this->isFull()) return false;
 
 	this->items[this->next] = item1; // ought to be std::move
@@ -164,9 +173,10 @@ bool Stack< Type, Capacity >::push(typename Stack< Type, Capacity >::ItemType &&
 }
 
 template< typename Type, uint8_t Capacity >
-bool Stack< Type, Capacity >::push(typename Stack< Type, Capacity >::ItemType && item1, typename Stack< Type, Capacity >::ItemType && item2, typename Stack< Type, Capacity >::ItemType && item3) // O(1)
+bool Stack< Type, Capacity >::push(typename Stack< Type, Capacity >::ItemType && item1, typename Stack< Type, Capacity >::ItemType && item2, typename Stack< Type, Capacity >::ItemType && item3,  bool resetFrame) // O(1)
 {
 
+	if (this->isEmpty() && resetFrame) this->frame = ANIMATION_NUMBER_OF_FRAMES;
 	if (this->isFull()) return false;
 	this->items[this->next] = item1; // ought to be std::move
 	++this->next;
@@ -180,6 +190,7 @@ bool Stack< Type, Capacity >::push(typename Stack< Type, Capacity >::ItemType &&
 	++this->next;
 	return true;
 }
+
 template< typename Type, uint8_t Capacity >
 void Stack< Type, Capacity >::drop(void) // O(1)
 {

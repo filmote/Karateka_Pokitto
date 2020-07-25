@@ -14980,6 +14980,7383 @@
 		},
 		"\\Images\\~$Karateka.xlsx": {
 			"sdcard": false
+		},
+		"/Images": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.1.h": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.1.gif": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.2.gif": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.2.png": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.1.png": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.3.h": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.2.h": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.3.png": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.4.h": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.4.png": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.eeprom": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.elf": {
+			"sdcard": false
+		},
+		"/LICENSE": {
+			"sdcard": false
+		},
+		"/distibutable": {
+			"sdcard": false
+		},
+		"/Images/Karateka.xlsx": {
+			"sdcard": false
+		},
+		"/Images/Seq.xlsx": {
+			"sdcard": false
+		},
+		"/Images/image001.h": {
+			"sdcard": false
+		},
+		"/Images/image001.png": {
+			"sdcard": false
+		},
+		"/Images/image002.png": {
+			"sdcard": false
+		},
+		"/Images/image002.h": {
+			"sdcard": false
+		},
+		"/Images/Title.xcf": {
+			"sdcard": false
+		},
+		"/distibutable/Karateka.arduboy.zip": {
+			"sdcard": false
+		},
+		"/distibutable/Karateka.hex": {
+			"sdcard": false
+		},
+		"/distibutable/banner.h": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot00.h": {
+			"sdcard": false
+		},
+		"/distibutable/banner.png": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot00.png": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot01.h": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot01.png": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot02.h": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot02.png": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot03.h": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot03.png": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot04.h": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot04.png": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot05.h": {
+			"sdcard": false
+		},
+		"/distibutable/screenshot05.png": {
+			"sdcard": false
+		},
+		"/src/Karateka.cpp": {
+			"sdcard": false
+		},
+		"/src/Karateka_EagleMovements.cpp": {
+			"sdcard": false
+		},
+		"/src/Karateka_Emperor.cpp": {
+			"sdcard": false
+		},
+		"/src/Karateka_EnemyApproach.cpp": {
+			"sdcard": false
+		},
+		"/src/Karateka_EnemyMovements.cpp": {
+			"sdcard": false
+		},
+		"/src/Karateka_PlayerMovements.cpp": {
+			"sdcard": false
+		},
+		"/src/Karateka_Scenes.cpp": {
+			"sdcard": false
+		},
+		"/src/Karateka_Utils.cpp": {
+			"sdcard": false
+		},
+		"/src/images/ArrowLeft.h": {
+			"sdcard": false
+		},
+		"/src/images/ArrowLeft.png": {
+			"sdcard": false
+		},
+		"/src/images/ArrowRight.h": {
+			"sdcard": false
+		},
+		"/src/images/ArrowRight.png": {
+			"sdcard": false
+		},
+		"/src/images/Heart.h": {
+			"sdcard": false
+		},
+		"/src/images/Heart.png": {
+			"sdcard": false
+		},
+		"/src/images/archway": {
+			"sdcard": false
+		},
+		"/src/images/eagle": {
+			"sdcard": false
+		},
+		"/src/images/bam": {
+			"sdcard": false
+		},
+		"/src/images/emperor": {
+			"sdcard": false
+		},
+		"/src/images/images.h": {
+			"sdcard": false
+		},
+		"/src/images/princess": {
+			"sdcard": false
+		},
+		"/src/images/scenery": {
+			"sdcard": false
+		},
+		"/src/utils/EnemyStances.h": {
+			"sdcard": false
+		},
+		"/src/utils/PlayerStances.h": {
+			"sdcard": false
+		},
+		"/src/utils/Stack.h": {
+			"sdcard": false
+		},
+		"/src/utils/Utils.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchExterior_LH.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchExterior_LH.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchExterior_LH2.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchExterior_LH2.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchExterior_RH.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchExterior_RH.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchExterior_RH2.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchExterior_RH2.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchInterior2_LH.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchInterior2_LH.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchInterior2_RH.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchInterior2_RH.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchInterior_LH.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchInterior_LH.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchInterior_RH.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Archways.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/ArchInterior_RH.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle1.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle1.png": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle3.png": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle2.png": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle2.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle4.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle3.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagles.h": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam1.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle4.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam1.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam2.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam3.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam2.h": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam3.h": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam3Outline.h": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam3Outline.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bams.h": {
+			"sdcard": false
+		},
+		"/src/images/emperor/Emperor.h": {
+			"sdcard": false
+		},
+		"/src/images/emperor/EmperorArmNormal.h": {
+			"sdcard": false
+		},
+		"/src/images/emperor/Emperor.png": {
+			"sdcard": false
+		},
+		"/src/images/emperor/EmperorArmNormal.png": {
+			"sdcard": false
+		},
+		"/src/images/emperor/EmperorArmOut.h": {
+			"sdcard": false
+		},
+		"/src/images/emperor/EmperorArmOut.png": {
+			"sdcard": false
+		},
+		"/src/images/emperor/Emperors.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body1.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body1.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body10.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body10.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body11.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body11.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body12.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body13.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body12.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body13.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body14.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body14.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body16.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body16.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body17.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body17.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body15.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body18.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body15.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body18.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body19.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body2.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body2.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body19.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body20.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body20.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body21.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body21.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body23.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body22.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body23.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body24.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body24.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body25.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body25.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body22.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body3.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body3.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body4.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body4.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body5.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body5.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body6.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body6.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body7.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body7.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body8.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body8.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Body9.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Body9.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody1.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody1.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody10.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody10.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody2.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody2.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody3.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody3.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody4.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody4.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody5.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody6.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody7.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody5.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody6.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody7.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody8.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody8.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody9.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody9.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Head1.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Head2.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Head2.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Head3.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Head1.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Head4.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Head4.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Head3.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg1.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg10.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg1.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg10.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg11.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg11.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg12.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg13.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg13.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg12.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg14.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg14.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg15.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg16.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg15.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg16.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg17.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg17.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg18.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg18.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg19.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg19.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg2.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg2.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg20.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg20.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg21.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg22.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg22.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg23.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg21.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg24.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg23.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg25.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg24.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg25.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg26.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg27.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg26.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg28.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg28.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg27.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg29.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg29.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg3.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg4.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg3.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg4.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg5.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg6.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg6.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg5.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg7.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg7.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg8.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg8.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg9.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Leg9.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Pricesses.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Background.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Background.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Background2.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Background2.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Kissing.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Kissing.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Seat.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Seat.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Standing.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Standing.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Castle.h": {
+			"sdcard": false
+		},
+		"/src/images/title/TheEnd.h": {
+			"sdcard": false
+		},
+		"/src/images/title/Castle.png": {
+			"sdcard": false
+		},
+		"/src/images/title/TheEnd.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Title.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Titles.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Bacdrop2.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Bacdrop2.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop2.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop3.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop2.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop4.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop3.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop4.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backgrounds.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop5.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Crevice.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Mountain.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Crevice.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Mountain.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop5.h": {
+			"sdcard": false
+		},
+		"/src/sound": {
+			"sdcard": false
+		},
+		"/src/sound/StartOfScene.raw": {
+			"sdcard": false
+		},
+		"/src/sound/Kick.raw": {
+			"sdcard": false
+		},
+		"/src/sound/IntroPrincessToCell.raw": {
+			"sdcard": false
+		},
+		"/src/sound/EagleAttack.raw": {
+			"sdcard": false
+		},
+		"/src/sound/EagleApproaching.raw": {
+			"sdcard": false
+		},
+		"/src/sound/DefeatEmperor.raw": {
+			"sdcard": false
+		},
+		"/src/sound/PrincessKillsPlayer.raw": {
+			"sdcard": false
+		},
+		"/src/sound/PrincessNormalEnd.raw": {
+			"sdcard": false
+		},
+		"/src/sound/PrincessNormalEndShort.raw": {
+			"sdcard": false
+		},
+		"/src/sound/TheEnd.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE01 - IntroPrincessToCell.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE03 - PrincessNormalEnd.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE02 - PrincessKillsPlayer.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE03 - PrincessNormalEndShort.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE04 - StartOfScene.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE05 - TheEnd.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE06 - EagleApproaching.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE07 - .raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE08 - DefeatEmperor.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE09 - .raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE07 - EagleAttacking.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE06 - DefeatEmperor.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE07 - EagleApproaching.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE08 - EagleAttack.raw": {
+			"sdcard": false
+		},
+		"/src/sound/KARATE09 - Kick.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate2 - PrincessKillsPlayer.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate02 - PrincessKillsPlayer.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate01 - PrincessKillsPlayer.raw": {
+			"sdcard": false
+		},
+		"/distibutable/untitled folder": {
+			"sdcard": false
+		},
+		"/distibutable/usic": {
+			"sdcard": false
+		},
+		"/distibutable/music": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate00 - IntroPrincessToCell.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate01 - PrincessKillsPlayer.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate02 - PrincessNormalEnd.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate03 - PrincessNormalEndShort.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate04 - StartOfScene.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate05 - TheEnd.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate07 - EagleApproaching.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate08 - EagleAttack.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate09 - Kick.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate06 - DefeatEmperor.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate00 .raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate00.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate01.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate02.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate03.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate04.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate05.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate06.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate07.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate08.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate09.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate10 - Kiai.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate11 - Punch.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate12 - KillNormal.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate13 - PlayerFootstep.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate14 - EnemyFootstep.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate15 - MissedPunch.raw": {
+			"sdcard": false
+		},
+		"/src/sound/rawtobin.js": {
+			"sdcard": false
+		},
+		"/src/sound/karate00 - IntroPrincessToCell.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate06 - DefeatEmperor.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate07 - EagleApproaching.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate08 - EagleAttack.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate09 - Kick.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate10 - Kiai.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate11 - Punch.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate12 - KillNormal.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate13 - PlayerFootstep.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate14 - EnemyFootstep.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate15 - MissedPunch.h": {
+			"sdcard": false
+		},
+		"/src/sound/sounds.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate06.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate07.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate08.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate09.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate10.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate11.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate13.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate14.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate15.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate12.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate06.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate08.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate07.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate09.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate10.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate11.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate13.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate14.h": {
+			"sdcard": false
+		},
+		"/src/sound/Karate15.h": {
+			"sdcard": false
+		},
+		"/src/sound/Sounds.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate00 - IntroPrincessToCell.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate02 - PrincessNormalEnd.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate03 - PrincessNormalEndShort.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate04 - StartOfScene.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate05 - TheEnd.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate06 - DefeatEmperor.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate07 - EagleApproaching.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate08 - EagleAttack.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate09 - Kick.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate15 - MissedPunch.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate11 - Punch.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate10 - Kiai.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate12 - KillNormal.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate13 - PlayerFootstep.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate14 - EnemyFootstep.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate10 .raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate10.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate11.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate12.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate13.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate14.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate15.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate07 - KillNormal.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate12 - Punch.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate11 - Kiai.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate10 - Kick.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate09 - EagleAttack.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate08 - EagleApproaching.raw": {
+			"sdcard": false
+		},
+		"/src/sound/Karate12_07.h": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate07 - KillNormal.raw": {
+			"sdcard": false
+		},
+		"/Images/~$Karateka.xlsx": {
+			"sdcard": false
+		},
+		"/Karateka_CutDown.bin": {
+			"sdcard": false
+		},
+		"/Karateka_Full.bin": {
+			"sdcard": false
+		},
+		"/src/sound/karate00 - IntroPrincessToCel_Fulll.raw": {
+			"sdcard": false
+		},
+		"/distibutable/Karateka_Full.bin": {
+			"sdcard": false
+		},
+		"/distibutable/Karateka_CutDown.bin": {
+			"sdcard": false
+		},
+		"/distibutable/Archive.zip": {
+			"sdcard": false
+		},
+		"/distibutable/Karateka.zip": {
+			"sdcard": false
+		},
+		"/Karateka_Shadows.bin": {
+			"sdcard": false
+		},
+		"\\Karateka_CutDown.bin": {
+			"sdcard": false
+		},
+		"\\Karateka_Full.bin": {
+			"sdcard": false
+		},
+		"\\Karateka_Shadows.bin": {
+			"sdcard": false
+		},
+		"\\distibutable\\Karateka_CutDown.bin": {
+			"sdcard": false
+		},
+		"\\distibutable\\Karateka_Full.bin": {
+			"sdcard": false
+		},
+		"\\distibutable\\music": {
+			"sdcard": false
+		},
+		"\\distibutable\\Karateka.zip": {
+			"sdcard": false
+		},
+		"\\src\\sound": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate00.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate01.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate02.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate03.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate04.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate05.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate06.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate07.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate00 - IntroPrincessToCell.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate00 - IntroPrincessToCel_Fulll.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate02 - PrincessNormalEnd.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate01 - PrincessKillsPlayer.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate03 - PrincessNormalEndShort.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate04 - StartOfScene.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate05 - TheEnd.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate06 - DefeatEmperor.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate06.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate07 - KillNormal.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate08 - EagleApproaching.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate07.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate08.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate09.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate09 - EagleAttack.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate10 - Kick.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate10.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate11 - Kiai.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate11.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate12 - Punch.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate12.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate13 - PlayerFootstep.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate13.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate14 - EnemyFootstep.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate14.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\karate15 - MissedPunch.raw": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Karate15.h": {
+			"sdcard": false
+		},
+		"\\src\\sound\\rawtobin.js": {
+			"sdcard": false
+		},
+		"\\src\\sound\\Sounds.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchExterior_LH - Copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchInterior_Gate.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchExterior_RH - Copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchInterior_Gate (2).png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchInterior_Gate_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchInterior_Gate_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchInterior_Gate_LH.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchInterior_Gate_RH.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchExterior_LH3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\ArchInterior_LH1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch2_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH2.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH2.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH4.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH4.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH2.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH3.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH2.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH3.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH4.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH4.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH1111.png": {
+			"sdcard": false
+		},
+		"\\Karateka_Pokitto.bin.5.png": {
+			"sdcard": false
+		},
+		"\\Karateka_Pokitto.bin.6.png": {
+			"sdcard": false
+		},
+		"\\Karateka_Player_frames_recolored.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Karateka_House_Archway.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Karateka_House_Archway - Copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH6.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH6.png": {
+			"sdcard": false
+		},
+		"\\Karateka_Pokitto.bin.5.h": {
+			"sdcard": false
+		},
+		"\\Karateka_Player_frames_recolored.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH6.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH6.h": {
+			"sdcard": false
+		},
+		"\\Karateka_Pokitto.bin.6.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH7.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH7.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\New folder": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Karateka_Player_frames_recolored.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_00 - Copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_00 - Copy (2).png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_00 - Copy (3).png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_00 - Copy (4).png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_00 - Copy (5).png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_04.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Orig_05.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_04.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_06.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_07.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_08.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_09.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_30.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_42.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_43.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_44.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_45.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_46.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_47.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_48.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_48 - Copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_49.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_31.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_11.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_08.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_06.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_09.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_13.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_05.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_07.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_12.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_17.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_15.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_14.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_21.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_23.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_16.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_22.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_20.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_18.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_19.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_25.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_27.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_28.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_29.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_30.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_24.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_42.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_45.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_43.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_46.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_49.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_48.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_47.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_26.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_31.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\player\\single\\Player_44.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body11.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body12.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body13.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body14.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body15.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body17.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body16.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body18.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body19.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body2.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body20.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body2.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body21.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body22.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body23.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body24.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body25.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body3.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body4.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body4.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body5.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body6.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body5.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body7.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body6.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body7.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body8.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body8.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body9.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Body9.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody2.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody2.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody3.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody4.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody4.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody5.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody6.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody5.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody7.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody6.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody7.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody8.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody8.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody9.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Head1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Fullbody9.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Head1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Head2.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Head2.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Head3.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Head4.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Head4.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Head3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg11.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg12.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg13.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg14.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg15.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg16.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg17.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg18.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg19.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg2.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg2.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg20.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg22.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg21.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg23.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg24.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg25.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg26.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg27.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg28.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg29.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg3.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg4.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg4.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg5.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg6.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg5.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg6.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg7.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg7.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg8.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg9.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg8.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Leg9.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\Players.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_04.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_05.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Orig_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_04.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_05.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_06.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_06.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_07.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_08.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_08.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_07.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_09.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_09.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_11.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_12.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_13.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_14.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_16.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_15.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_17.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_18.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_19.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_20.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_21.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_23.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_22.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_24.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_25.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_26.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_27.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_28.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_29.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_30.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_31.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_30.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_31.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_42.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_42.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_43.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_43.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_44.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_44.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_46.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_45.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_45.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_47.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_46.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_47.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_48.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_48.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_49.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_49.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\New folder": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Karateka_Enemy_lv1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_49.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_06.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_07.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_08.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_09.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_30.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_31.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_42.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_43.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_44.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_45.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_46.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_47.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Player_48.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_06.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_07.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_08.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_09.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_30.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_31.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_42.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_43.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_44.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_45.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_46.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_49.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_47.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_48.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Karateka_Enemy_lv1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_06.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_05.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_07.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_08.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_04.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_09.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_11.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_12.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_14.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_15.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_13.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_19.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_23.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_17.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_16.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_22.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_20.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_18.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_21.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_25.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_24.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_29.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_26.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_30.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_42.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_28.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_31.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_44.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_49.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_43.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_45.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_27.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_46.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_47.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_48.h": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate11 - Kiai.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate09 - EagleAttack.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate09.raw": {
+			"sdcard": false
+		},
+		"\\distibutable\\music\\karate11.raw": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_04.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_05.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_06.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_06.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_07.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_07.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_08.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_08.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_09.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_09.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_11.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_12.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_13.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_14.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_15.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_16.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_17.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_18.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_19.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_20.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_21.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_22.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_23.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_24.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_25.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_26.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_27.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_28.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_29.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_30.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_30.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_31.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_31.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_42.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_42.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_43.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_43.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_44.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_44.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_45.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_45.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_46.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_46.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_47.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_47.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_48.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_49.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_49.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\Karateka_Enemy_lv2.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\Karateka_Enemy_lv2.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Castle - Copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Castle_BOT.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Castle_TOP.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Castle_BOT.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_48.png": {
+			"sdcard": false
+		},
+		"\\distibutable\\Karateka_Pokitto.bin.1.png": {
+			"sdcard": false
+		},
+		"\\distibutable\\Karateka_Pokitto.bin.2.png": {
+			"sdcard": false
+		},
+		"\\distibutable\\Karateka_Pokitto.bin.3.png": {
+			"sdcard": false
+		},
+		"\\distibutable\\Karateka_Pokitto.bin.3.h": {
+			"sdcard": false
+		},
+		"\\distibutable\\Karateka_Pokitto.bin.2.h": {
+			"sdcard": false
+		},
+		"\\distibutable\\Karateka_Pokitto.bin.1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Castle_TOP.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle1 - Copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_Shadow.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_Shadow.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\eagle\\Eagle_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_67.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_32.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_67.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_68.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_68.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_69.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\EnemyOne_69.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_67.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_67.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_68.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_68.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_69.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyTwo\\EnemyTwo_69.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_33.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_34.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_35.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_67.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_67.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_68.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_68.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_69.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\player\\Player_69.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_Full.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_Full.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5 copy.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5 copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_2.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_2.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5 copy.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5 copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Castle_Top.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_04.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_05.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_06.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_06.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_07.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_07.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_08.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_08.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_09.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_09.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_11.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_12.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_13.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_14.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_15.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_16.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_17.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_18.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_19.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_20.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_21.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_22.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_23.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_24.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_25.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_26.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_27.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_28.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_29.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_30.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_30.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_31.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_31.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_42.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_42.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_43.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_43.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_44.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_44.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_45.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_45.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_46.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_46.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_47.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_47.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_48.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_48.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_49.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_49.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_67.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_67.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_68.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_68.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_69.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\EnemyOne_69.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\Karateka_Enemy_lv1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne - Copy\\Karateka_Enemy_lv1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_04.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_05.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_06.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_06.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_07.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_07.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_08.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_08.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_09.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_09.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_11.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_12.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_13.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_14.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_15.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_16.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_17.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_18.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_19.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_20.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_21.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_22.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_23.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_24.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_26.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_27.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_28.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_29.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_25.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_30.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_30.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_31.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_31.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_42.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_42.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_43.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_43.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_44.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_44.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_45.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_45.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_46.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_46.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_47.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_47.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_48.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_48.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_49.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_49.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_67.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_67.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_68.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_68.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_69.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\EnemyOne_69.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\Karateka_Enemy_lv1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\enemyOne\\Karateka_Enemy_lv1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_69.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_06.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_07.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_08.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_09.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_30.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_31.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_42.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_43.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_44.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_45.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_46.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_47.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_48.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_49.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_67.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyBase\\EnemyTwo_68.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_03.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_04.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_05.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_06.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_07.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_08.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_09.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_10.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_12.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_11.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_13.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_14.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_15.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_16.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_17.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_18.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_19.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_20.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_21.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_22.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_23.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_24.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_25.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_26.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_27.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_28.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_29.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_30.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_31.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_42.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_43.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_44.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_45.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_46.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_47.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_48.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_49.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_67.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_68.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_69.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_03.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_04.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_06.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_05.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_07.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_08.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_09.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_10.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_11.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_12.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_13.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_14.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_15.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_16.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_18.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_17.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_19.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_20.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_21.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_22.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_23.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_24.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_25.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_26.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_27.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_29.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_30.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_28.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_31.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_42.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_43.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_44.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_45.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_46.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_47.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_48.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_49.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_67.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_68.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyCommon\\EnemyCommon_69.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_Full_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_Full_LH - Copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_1_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_2_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_3_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_4_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_5_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_6_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_6_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_1_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_2_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_4_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_3_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_5_LH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_1_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_2_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_3_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_4_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_5_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\fighters\\enemyOne\\Arch_5_6_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_6_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_1_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_2_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_3_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_4_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_5_Full_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_1_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_2_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_3_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_4_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_5_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_6_RH.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_1.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_2.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_4.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_4.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_5.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_5.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_6.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_6.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Castle_v3.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_Full_LH.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_Full_RH.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_1.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_2.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_3.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_3.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_4.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_5.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_4.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_5.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_LH5_6.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_RH5_6.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Arch_5_5_LH.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\scenery\\Floor_Brown.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\scenery\\Floor_Purple.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\scenery\\Floor_Brown.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\scenery\\Floor_Purple.h": {
+			"sdcard": false
+		},
+		"\\Karateka_GateDead.gif": {
+			"sdcard": false
+		},
+		"\\Karateka_GateOK.gif": {
+			"sdcard": false
+		},
+		"\\Karateka_Pokitto.bin.3.gif": {
+			"sdcard": false
+		},
+		"\\src\\Fred.txt": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\CharacterClimbingFromAfarFrames.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\CharacterClimbingFromAfarFrames - Copy.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Character_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Character_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Character_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Character_02.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Character_00.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Character_01.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\KaratekaIntroPreview.gif": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Character_02.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Character_00.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\title\\Character_01.h": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Karateka_ArchwayFinal.png": {
+			"sdcard": false
+		},
+		"\\src\\images\\archway\\Karateka_ArchwayFinal.h": {
+			"sdcard": false
+		},
+		"/src/Fred.txt": {
+			"sdcard": false
+		},
+		"/src/images/fighters": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_5_5_LH.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_5_5_LH.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_5_Full_LH.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_5_Full.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_5_Full_RH.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH1.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_5_Full_RH.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH1.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH2.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH2.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH3.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH3.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH4.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH4.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_1.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_1.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_2.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_2.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_3.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_3.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_4.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_4.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_5.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_5.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_6.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH6.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH5_6.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH6.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH7.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH1.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_LH7.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH1.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH2.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH3.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH3.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH2.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH4.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH4.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_1.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_1.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_2.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_2.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_3.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_4.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_3.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_4.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_5.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_5.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_6.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH5_6.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH6.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_RH6.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_00.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_00.png": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_01.png": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_01.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_02.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_03.png": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_02.png": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_03.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_Shadow.h": {
+			"sdcard": false
+		},
+		"/src/images/eagle/Eagle_Shadow.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody10.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody10.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody5.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody5.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody6.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody6.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody7.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody7.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody8.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody8.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody9.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Fullbody9.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon": {
+			"sdcard": false
+		},
+		"/src/images/fighters/Players.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Floor_Brown.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Floor_Purple.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Floor_Purple.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Floor_Brown.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Castle_BOT.h": {
+			"sdcard": false
+		},
+		"/src/images/title/Castle_BOT.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Castle_TOP.h": {
+			"sdcard": false
+		},
+		"/src/images/title/Castle_TOP.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Character_00.h": {
+			"sdcard": false
+		},
+		"/src/images/title/Character_00.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Character_01.h": {
+			"sdcard": false
+		},
+		"/src/images/title/Character_01.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Character_02.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Character_02.h": {
+			"sdcard": false
+		},
+		"/src/images/title/KaratekaIntroPreview.gif": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_01.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_01.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_02.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_02.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_03.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_03.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_04.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_04.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_05.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_05.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_06.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_06.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_07.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_07.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_08.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_08.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_09.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_09.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_10.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_10.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_11.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_12.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_11.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_13.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_12.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_13.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_14.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_14.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_15.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_15.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_16.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_17.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_17.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_16.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_18.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_19.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_18.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_20.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_19.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_20.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_21.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_21.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_22.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_22.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_23.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_23.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_24.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_24.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_25.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_25.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_26.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_26.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_27.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_27.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_28.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_28.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_29.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_30.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_29.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_30.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_31.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_31.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_42.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_42.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_43.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_43.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_44.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_44.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_45.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_45.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_46.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_46.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_47.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_47.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_48.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_48.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_49.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_49.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_67.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_67.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_68.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_68.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_69.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_69.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_01.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_02.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_02.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_01.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_03.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_04.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_04.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_03.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_05.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_05.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_06.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_06.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_07.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_07.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_08.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_08.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_09.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_09.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_10.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_10.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_11.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_12.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_12.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_11.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_13.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_13.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_14.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_14.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_15.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_15.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_16.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_16.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_17.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_17.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_18.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_18.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_19.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_19.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_20.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_20.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_21.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_21.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_22.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_22.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_23.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_23.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_24.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_24.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_25.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_25.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_26.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_26.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_27.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_27.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_28.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_28.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_29.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_29.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_30.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_30.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_31.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_31.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_42.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_42.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_43.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_43.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_44.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_44.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_45.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_45.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_46.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_46.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_47.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_47.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_48.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_48.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_49.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_49.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_67.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_67.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_68.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_68.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_69.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyOne/EnemyOne_69.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_01.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_01.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_02.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_02.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_03.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_03.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_04.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_04.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_05.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_05.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_06.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_06.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_07.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_07.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_08.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_08.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_09.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_09.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_10.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_10.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_11.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_11.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_12.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_12.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_13.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_13.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_14.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_15.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_14.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_15.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_16.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_16.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_17.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_17.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_18.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_18.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_19.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_19.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_20.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_20.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_21.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_21.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_22.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_22.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_23.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_23.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_24.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_24.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_25.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_25.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_26.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_26.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_27.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_27.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_28.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_28.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_29.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_29.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_30.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_30.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_31.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_31.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_42.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_43.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_42.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_43.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_44.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_44.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_45.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_45.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_46.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_46.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_47.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_48.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_48.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_47.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_49.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_49.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_67.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_67.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_68.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_68.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_69.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyTwo/EnemyTwo_69.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Orig_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Orig_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_01.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_01.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_02.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_02.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_03.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_03.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_04.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_04.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_05.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_05.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_06.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_06.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_07.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_07.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_08.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_08.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_09.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_09.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_10.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_10.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_11.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_11.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_12.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_12.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_13.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_13.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_14.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_14.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_15.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_15.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_16.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_16.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_17.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_17.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_18.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_18.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_19.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_19.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_20.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_20.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_21.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_21.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_22.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_22.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_23.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_23.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_24.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_24.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_25.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_25.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_26.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_26.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_27.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_27.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_28.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_28.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_29.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_29.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_30.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_30.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_31.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_31.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_32.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_33.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_34.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_35.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_42.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_42.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_43.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_43.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_44.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_44.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_45.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_45.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_46.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_46.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_47.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_47.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_48.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_48.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_49.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_49.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_67.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_67.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_68.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_68.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_69.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_69.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam1_Old.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam2_Old.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam3_Old.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam1_Orig.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam2_Orig.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam3_Orig.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting2.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Standing2.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/PrincessKissing2.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Kissing2.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/KaratekaDoorFrame.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_Door.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam1_Orig.h": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam2_Orig.h": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam3_Orig.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/KaratekaDoorFrame.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Arch_Door.h": {
+			"sdcard": false
+		},
+		"/src/images/Princess_Sitting.png": {
+			"sdcard": false
+		},
+		"/src/images/Princess_Sitting2.png": {
+			"sdcard": false
+		},
+		"/src/images/Princess_Sitting_Body.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting_Body.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting_H.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting_LookingDown.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting_LookingUp.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princesses.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting_Body.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting_LookingDown.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Sitting_LookingUp.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Lying.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Standing copy.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking2.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking2 copy.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking3.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking copy.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking_Top.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking1.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking_00.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking_01.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking_02.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Kissing copy.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Turning.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Lying.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking_Top.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking_00.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking_01.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Walking_02.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Turning.h": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.1 copy.gif": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.1 copy 2.gif": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.1 copy 3.gif": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.1 copy 4.gif": {
+			"sdcard": false
+		},
+		"/Ani-Princess.gif": {
+			"sdcard": false
+		},
+		"/Ani_Princess-2.gif": {
+			"sdcard": false
+		},
+		"/Ani-Fighter_entering.gif": {
+			"sdcard": false
+		},
+		"/Ani-Princess-2.gif": {
+			"sdcard": false
+		},
+		"/Ani-Fighter-Eentering.gif": {
+			"sdcard": false
+		},
+		"/Ani-Fighter-Entering.gif": {
+			"sdcard": false
+		},
+		"/Ani-TheBigKiss.gif": {
+			"sdcard": false
+		},
+		"/Princess_Sitting_LookingDown.png": {
+			"sdcard": false
+		},
+		"/Princess_Falling_1.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Falling_1.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Falling_2.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Lying copy.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Falling_3.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Falling_00.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Falling_01.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Falling_02.png": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Falling_01.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Falling_00.h": {
+			"sdcard": false
+		},
+		"/src/images/princess/Princess_Falling_02.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Karateka_Player_frames_recolored.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Karateka_Player_frames_recolored copy.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody11.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody12.png": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody11.h": {
+			"sdcard": false
+		},
+		"/src/images/player/Fullbody12.h": {
+			"sdcard": false
+		},
+		"/Princess_Seat.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam.h": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam copy.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam copy.h": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam_CrossHairs.png": {
+			"sdcard": false
+		},
+		"/src/images/bam/Bam_CrossHairs.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/Karateka_Emperor.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/Karateka_Emperor.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_01.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_01.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_05.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_05.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_06.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_09.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_08.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_09.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_10.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_10.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_12.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_13.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_13.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_14.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_20.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_20.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_21.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_21.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_22.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_22.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_23.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_23.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_24.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_25.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_24.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_25.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_26.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_26.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_27.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_27.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_28.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_28.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_29.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_29.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_30.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_30.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_31.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_31.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_42.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_42.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_43.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_68.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_68.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_69.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_04.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_06.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_07.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_07.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_08.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_44.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_44.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_43.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_45.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_45.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_46.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_46.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_47.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_47.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_48.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_48.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_49.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_49.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_67.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_67.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyTwo_69.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_01.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_01.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_02.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_02.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_03.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_03.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_04.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_04.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_05.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_05.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_06.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_06.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_07.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_07.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_08.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_08.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_09.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_09.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_10.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_10.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_11.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_11.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_12.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_13.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_12.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_13.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_14.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_14.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_15.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_15.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_16.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_16.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_17.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_17.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_18.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_18.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_19.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_19.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_20.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_20.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_21.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_21.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_22.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_22.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_23.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_23.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_24.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_24.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_25.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_25.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_26.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_26.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_27.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_27.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_28.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_28.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_29.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_29.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_30.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_30.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_31.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_31.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_42.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_42.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_43.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_43.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_44.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_44.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_45.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_45.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_46.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_46.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_47.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_47.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_48.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_48.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_49.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_49.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_67.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_67.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_68.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_68.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_69.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_69.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyThree/EnemyThree_48 copy.png": {
+			"sdcard": false
+		},
+		"/src/sound/PrincessCrying.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karateka16 - IntroPrincessCrying.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karateka16 - IntroPrincessCrying.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate16.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate16 - IntroPrincessCrying.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate17 - Kissing Scene.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate18 - PrincessLookingUp.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate18 - SendOutGuard.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate16 - IntroPrincessCrying.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate17 - Kissing Scene.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate18 - PrincessLookingUp.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate17.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate18.raw": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate19.raw": {
+			"sdcard": false
+		},
+		"/src/sound/karate19 - SendOutGuard.raw": {
+			"sdcard": false
+		},
+		"/src/images/archway/Stairs.png": {
+			"sdcard": false
+		},
+		"/src/images/archway/Stairs copy.png": {
+			"sdcard": false
+		},
+		"/src/images/font": {
+			"sdcard": false
+		},
+		"/src/utils/GameSequence.h": {
+			"sdcard": false
+		},
+		"/src/images/archway/Stairs.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_b.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_border.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_a.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_Spacer.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_c.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_colon.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_comma.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_d.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_dash.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_e.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_f.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_g.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_h.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_i.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_m.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_j.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_l.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_n.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_o.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_k.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_period.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_p.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_q.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_s.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_r.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_t.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_u.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_v.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_w.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_y.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_z.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_x.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars.h": {
+			"sdcard": false
+		},
+		"/src/images/font/font.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters": {
+			"sdcard": false
+		},
+		"/src/images/ppot/ConvertImg.js": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_a.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_a.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_b.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_b.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_border.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_border.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_c.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_c.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_colon.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_colon.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_comma.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_comma.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_d.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_d.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_dash.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_dash.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_e.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_e.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_f.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_f.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_g.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_g.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_h.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_h.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_i.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_j.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_i.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_j.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_k.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_k.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_l.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_l.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_m.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_m.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_n.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_n.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_o.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_o.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_p.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_p.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_period.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_period.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_q.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_q.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_r.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_r.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_s.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_s.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_spacer.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_spacer.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_t.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_t.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_u.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_u.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_v.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_v.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_w.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_w.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_x.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_x.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_y.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_y.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_z.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/Char_z.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/font.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Characters/font.png": {
+			"sdcard": false
+		},
+		"/src/Karateka_IntroText.cpp": {
+			"sdcard": false
+		},
+		"/src/images/font/untitled folder": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_a.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_b.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_colon.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_c.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_border.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_comma.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_d.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_dash.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_e.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_f.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_g.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_i.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_h.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_j.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_k.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_l.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_m.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_n.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_o.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_period.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_p.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_q.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_r.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_s.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_Spacer.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_t.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_u.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_v.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/font.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_spacer.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_a.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_b.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_border.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_c.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_colon.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_comma.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_d.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_dash.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_e.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_f.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_g.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_h.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_i.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_k.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_j.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_l.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_m.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_n.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_o.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_p.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_period.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_r.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_q.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_s.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_spacer.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_t.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_u.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_v.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_w.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_x.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_y.png": {
+			"sdcard": false
+		},
+		"/src/images/font/Char_z.png": {
+			"sdcard": false
+		},
+		"/src/images/font/font.png": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate01.img": {
+			"sdcard": false
+		},
+		"/distibutable/music/karate02.img": {
+			"sdcard": false
+		},
+		"/src/images/title/ConvertImg.js": {
+			"sdcard": false
+		},
+		"/src/images/title/karate01.img": {
+			"sdcard": false
+		},
+		"/src/images/title/karate02.img": {
+			"sdcard": false
+		},
+		"/src/images/title/package-lock.json": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_x.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_z.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_w.h": {
+			"sdcard": false
+		},
+		"/src/images/font/Chars8bpp/Char_y.h": {
+			"sdcard": false
+		},
+		"/music/karate00.raw": {
+			"sdcard": true
+		},
+		"/music/karate01.img": {
+			"sdcard": true
+		},
+		"/music/karate01.raw": {
+			"sdcard": true
+		},
+		"/music/karate02.img": {
+			"sdcard": true
+		},
+		"/music/karate02.raw": {
+			"sdcard": true
+		},
+		"/music/karate03.raw": {
+			"sdcard": true
+		},
+		"/music/karate04.raw": {
+			"sdcard": true
+		},
+		"/music/karate05.raw": {
+			"sdcard": true
+		},
+		"/music/karate06.raw": {
+			"sdcard": true
+		},
+		"/music/karate07.raw": {
+			"sdcard": true
+		},
+		"/music/karate16.raw": {
+			"sdcard": true
+		},
+		"/music/karate17.raw": {
+			"sdcard": true
+		},
+		"/music/karate18.raw": {
+			"sdcard": true
+		},
+		"/music/karate19.raw": {
+			"sdcard": true
+		},
+		"/src/images/title/Character_00 copy.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Test.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Test.gfx": {
+			"sdcard": false
+		},
+		"/src/images/title/Title.gfx": {
+			"sdcard": false
+		},
+		"/src/images/title/Castle.gfx": {
+			"sdcard": false
+		},
+		"/src/images/title/karate02.ing": {
+			"sdcard": false
+		},
+		"/music/karate02.ing": {
+			"sdcard": false
+		},
+		"/src/images/title/katate01.img": {
+			"sdcard": false
+		},
+		"/music/katate01.img": {
+			"sdcard": false
+		},
+		"/src/images/title/Test.h": {
+			"sdcard": false
+		},
+		"/src/images/title/karate01.gfx": {
+			"sdcard": false
+		},
+		"/src/images/title/ConvertImg copy.js": {
+			"sdcard": false
+		},
+		"/src/images/title/ConvertImg2.js": {
+			"sdcard": false
+		},
+		"/src/images/title/Ppot_Full.png": {
+			"sdcard": false
+		},
+		"/src/images/title/Ppot_Full.gfx": {
+			"sdcard": false
+		},
+		"/src/images/title/karate03.img": {
+			"sdcard": false
+		},
+		"/music/Ppot_Full.png": {
+			"sdcard": false
+		},
+		"/music/karate03.img": {
+			"sdcard": true
+		},
+		"/src/images/title/Ppot_Full.h": {
+			"sdcard": false
+		},
+		"/src/sound/karate20 - EOG.raw": {
+			"sdcard": false
+		},
+		"/src/Karateka_IntroExtroText.cpp": {
+			"sdcard": false
+		},
+		"/music/karate20 - EOG.raw": {
+			"sdcard": false
+		},
+		"/music/karate20.raw": {
+			"sdcard": false
+		},
+		"/Karateka_EOG.bin": {
+			"sdcard": false
+		},
+		"/Karateka_Normal.bin": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto copy.bin": {
+			"sdcard": false
+		},
+		"/Karateka_NoDeath.bin": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Karateka_NormalArchwayPreviewV3.gif": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Karateka_NormalArchwayPreviewV3 copy.gif": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Karateka_NormalArchwayPreviewV3 copy 2.gif": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Karateka_NormalArchwayPreviewV3 copy 3.gif": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_a.gif": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_b.gif": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_c.gif": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_d.gif": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_a.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_b.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_c.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_d.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_Idle_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_Idle_01.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_Idle_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Player_00_Idle_01.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Fullbody11.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Fullbody11.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Fullbody12.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/player/Fullbody12.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/Player_00_Idle_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/Player_00_Idle_01.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_00_Idle_00.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_00_Idle_01.h": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/Player_00_Idle_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/Player_00_Idle_01.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_00_Idle_00.png": {
+			"sdcard": false
+		},
+		"/src/images/fighters/enemyCommon/EnemyCommon_00_Idle_01.png": {
+			"sdcard": false
+		},
+		"/ezgif-6-37eb33c1951f.gif": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Floor_Purple copy.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Floor_Blue.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Floor_Blue.h": {
+			"sdcard": false
+		},
+		"/distibutable/Karateka_Pokitto.bin": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop2 copy.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop_01.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop_00.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop_02.png": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop_01.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop_00.h": {
+			"sdcard": false
+		},
+		"/src/images/scenery/Backdrop_02.h": {
+			"sdcard": false
 		}
 	},
 	"BUILDFlags": {

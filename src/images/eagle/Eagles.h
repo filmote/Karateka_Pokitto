@@ -2,9 +2,17 @@
 
 namespace Images {
 
-    #include "Eagle1.h"
-    #include "Eagle2.h"
-    #include "Eagle3.h"
-    #include "Eagle4.h"
+    #include "Eagle_00.h"
+    #include "Eagle_01.h"
+    #include "Eagle_02.h"
+    #include "Eagle_03.h"
+    #include "Eagle_Shadow.h"
   
+    const uint8_t * const Eagles[] = { 
+        Eagle_00,
+        Eagle_01,
+        Eagle_02,
+        Eagle_03,
+    };
+
 };

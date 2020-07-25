@@ -1,54 +1,56 @@
 #include "Pokitto.h"
 #include <LibAudio>
 #include "src/Game.h"
-#include "src/utils/GameCookie.h"
 
 using PC = Pokitto::Core;
 using PD = Pokitto::Display;
 
 
 Game game;
-GameCookie cookie;
-
 
 Audio::Sink<4, PROJ_AUD_FREQ> audio;
 
-void init() {
+// void init() {
 
 
-    // Initialise pokitto ..
+//     // Initialise pokitto ..
 
-    cookie.begin("Karateka", sizeof(cookie), (char*)&cookie);
+//     PD::loadRGBPalette(palettePico);   
+//     PD::persistence = true;
+//     PD::setColor(5);
+//     PD::setInvisibleColor(14);
+//     PC::setFrameRate(30);
+//     PD::setFont(fontKoubit);
 
+//     game.setup();
+
+// }
+
+
+// void update() {
+
+//     game.loop();
+
+// }
+
+
+int main(){
+    
+    PC::begin();
     PD::loadRGBPalette(palettePico);   
     PD::persistence = true;
     PD::setColor(5);
     PD::setInvisibleColor(14);
-    PC::setFrameRate(45);
+    PC::setFrameRate(40);
     PD::setFont(fontKoubit);
 
-    if (cookie.initialised != COOKIE_INITIALISED) {
-
-        cookie.initialise();
-
-    }
-
+    game.setup();
     
-    // Kick off the random number generator ..
+    while( PC::isRunning() ){
 
-    game.setup(&cookie);
-
+            game.loop();
+//        PD::drawBitmap(rand()%(PD::width-32), rand()%(PD::height-32), Smile);
+    }
+    
+    return 0;
 }
-
-
-void update() {
-
-    game.loop();
-
-}
-//https://felipemanga.github.io/PokittoEmu/?url=https://github.com/filmote/RogueBoy_Pokitto/raw/master/RogueBoy_Pokitto.bin
-/*
-2 LeverPull.raw
-3 OpenChest.raw
-4 PickUpCoin.raw
-*/

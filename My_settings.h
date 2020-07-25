@@ -6,7 +6,7 @@
 #define PROJ_AUD_FREQ 16000
 
 #define DEBUG
-
+//#define PROJ_SCREENMODE TASMODE
 
 //--------------------------------------------
 // Confgurable Settings

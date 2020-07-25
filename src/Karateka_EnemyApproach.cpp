@@ -12,17 +12,18 @@ using PD = Pokitto::Display;
 
 void Game::enemy_approach_init() {
 
-  for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 2; i++) {
 
-    enemyStack.push(STANCE_RUNNING_RF_END, STANCE_RUNNING_8, STANCE_RUNNING_5);
-    enemyStack.push(STANCE_RUNNING_4, STANCE_RUNNING_LF_END, STANCE_RUNNING_2);
-    enemyStack.push(STANCE_RUNNING_7, STANCE_RUNNING_4);
-    
-  }
+        this->enemy.push(STANCE_RUNNING_RF_END, STANCE_RUNNING_8, STANCE_RUNNING_5, true);
+        this->enemy.push(STANCE_RUNNING_4, STANCE_RUNNING_LF_END, STANCE_RUNNING_2, true);
+        this->enemy.push(STANCE_RUNNING_7, STANCE_RUNNING_4, true);
 
-  player.xPosDelta = MAIN_SCENE_X_SIDLING_2_DELTA;
-  gameStateDetails.setCurrState(GAME_STATE_ENEMY_APPROACH);
+    }
 
-  enemy.xPos = 48;
+    this->player.setXPosDelta(MAIN_SCENE_X_SIDLING_4_DELTA);
+    this->gameStateDetails.setCurrState(GAME_STATE_ENEMY_APPROACH);
+
+    this->enemy.setXPos(96);
+    this->enemy.setYPos(76);
 
 }
