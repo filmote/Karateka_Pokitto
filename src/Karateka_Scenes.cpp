@@ -44,11 +44,11 @@ void Game::drawPrincessBackground_2(bool drawDoor) {
 }
 
 void Game::showScene() {
-//printf("%i %i\n", this->gameStateDetails.delayInterval, this->stateCounter);
+
     this->player.update();
     this->enemy.update();
 
-    if (PC::buttons.pressed(BTN_A)) {
+    if (PC::buttons.pressed(BTN_A) || PC::buttons.pressed(BTN_C)) {
         
         if (this->gameStateDetails.getCurrState() == GAME_STATE_THE_END) {
             this->gameStateDetails.sequence = 0;
@@ -63,12 +63,10 @@ void Game::showScene() {
         switch (this->gameStateDetails.getCurrState()) {
 
             case GAME_STATE_TITLE_SCENE:
-                //PD::drawBitmap(0, 0, Images::Title);
                 PD::drawBitmap(0, 0, this->imgBuffer);
                 break;
 
             case GAME_STATE_CASTLE_SCENE:
-//                PD::drawBitmap(0, 0, Images::Castle);
                 PD::drawBitmap(0, 0, this->imgBuffer);
 
                 if (this->titlePlayerY > 40) {
@@ -283,9 +281,6 @@ void Game::showScene() {
 
                 if (this->gameStateDetails.delayInterval == 0) { 
 
-                    // if (this->gameStateDetails.getCurrState() == GAME_STATE_THE_END) {  // Not relevant for 'The End' scene.
-                    //   gameStateSeq = 0;
-                    // }            
                     this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); 
 
                 }
@@ -397,7 +392,6 @@ void Game::finalScene() {
 
             if (!this->player.isEmpty()) {
                 this->player.setStance(this->player.pop());
-// printf("1 setXPos() %i + %i = %i\n", this->player.getXPos(), this->player.getXPosDelta(), this->player.getXPos() + this->player.getXPosDelta());                
                 this->player.setXPos(this->player.getXPos() + this->player.getXPosDelta());
             }
 

@@ -18,7 +18,7 @@ using PD = Pokitto::Display;
 
 void Game::gameSetup() {
   
-  this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+    this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
 
 }
 
@@ -33,16 +33,6 @@ void Game::draw_background() {
     const uint8_t *backdrop_img = nullptr;
     uint8_t yOffset = 0;
     uint8_t backgroundOffset = 0;
-    //(this->gameStateDetails.outside ? 15: 0);
-
-    // // arduboy.drawFastHLine(0, 47, WIDTH, WHITE);
-    // PD::drawLine(0, 68, 110, 68);
-    // PD::drawLine(0, 80, 110, 80);
-
-
-    // for (int i = 70; i < 79; i++) {
-    //     drawHorizontalDottedLine(i % 2, 110, i);
-    // }
 
     switch (this->gameStateDetails.background) {
     
@@ -240,8 +230,20 @@ void Game::play_loop() {
 
     return;
  */
+
+
+    // Skip to next scene ..
+
+    if (PC::buttons.pressed(BTN_C)) {
+
+        this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
+        this->player.setStance(STANCE_DEFAULT);
+
+    }
+
+
     draw_background();
-//printf("minX %i, xPos %i\n", this->gameStateDetails.minXTravel , this->player.getXPosOverall());
+
     if (this->gameStateDetails.hasDelay && this->gameStateDetails.delayInterval == 0 && this->player.isEmpty() && (this->gameStateDetails.minXTravel == 0 || this->gameStateDetails.minXTravel < this->player.getXPosOverall()))   { 
 
         this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE); 
@@ -258,6 +260,7 @@ void Game::play_loop() {
         case EntityType::EnemyOne:
         case EntityType::EnemyTwo:
         case EntityType::EnemyThree:
+        case EntityType::Emperor:
             enemyMovements();
             break;
 
@@ -350,7 +353,6 @@ void Game::play_loop() {
 
         if (!this->player.isEmpty()) {
             this->player.setStance(this->player.pop());
-//printf("PLayer Stack %i\n", player.getStance());            
         }
         else {
             this->player.setXPosDelta(0);
@@ -362,7 +364,6 @@ void Game::play_loop() {
 
         if (!this->enemy.isEmpty()) {
             this->enemy.setStance(this->enemy.pop());
-//printf("enemy stance: %i\n", this->enemy.getStance());            
         }
         else {
             this->enemy.setXPosDelta(0);
@@ -411,7 +412,6 @@ void Game::play_loop() {
             }
 
             if (this->enemy.getStance() >= STANCE_KICK_MED_END && this->enemy.getStance() <= STANCE_PUNCH_LOW_LH_END) {
-// printf("isr AC %i\n", (uint8_t)this->enemy.getEntityType());        
 
                 playerHit = inStrikingRange(getActionFromStance(this->enemy.getStance()), enemy, player);
 
@@ -470,7 +470,6 @@ void Game::play_loop() {
             ) {
 
 
-            // printf("update mainSceneX %i .. %i \n", this->player.getXPosDelta(), this->player.getFrame() % 2);
             if (absT(this->player.getXPosDelta()) == 1) {
                 if (this->player.getFrame() % 2 == 1) {
                         mainSceneX = mainSceneX + this->player.getXPosDelta();
@@ -486,18 +485,12 @@ void Game::play_loop() {
                 case Movement::Sidle_Forward_Tiny:
                 case Movement::Sidle_Forward_SML:
                     if (this->player.getFrame() % 2 == 1) {
-//                        printf("a1\n");
-                //    printf(" XposOverall was %i ", this->player.getXPosOverall());
                         this->player.setXPosOverall(this->player.getXPosOverall() - this->player.getXPosDelta());
-                        // printf(" now %i \n", this->player.getXPosOverall());
                     }
                     break;
 
                 default:
-                    // printf(" XposOverall was %i ", this->player.getXPosOverall());
-                        // printf("a2\n");
                     this->player.setXPosOverall(this->player.getXPosOverall() - this->player.getXPosDelta());
-                    // printf(" now %i \n", this->player.getXPosOverall());
                     break;
 
             }
@@ -527,29 +520,19 @@ void Game::play_loop() {
 
                 case Movement::Sidle_Forward_Tiny:
                 case Movement::Sidle_Forward_SML:
-// printf("Movement\n");                
-                    if (this->player.getFrame() % 2 == 1) {
-                        // printf("a3\n");
 
-// printf("2 setXPos() %i - %i = %i\n", this->player.getXPos(), this->player.getXPosDelta(), this->player.getXPos() - this->player.getXPosDelta());                         
+                    if (this->player.getFrame() % 2 == 1) {
                         this->player.setXPos(this->player.getXPos() - this->player.getXPosDelta());
                     }
                     break;
 
                 default:
-                        // printf("a4\n");
-
-// printf("3 setXPos() %i - %i = %i\n", this->player.getXPos(), this->player.getXPosDelta(), this->player.getXPos() - this->player.getXPosDelta());                         
                     this->player.setXPos(this->player.getXPos() - this->player.getXPosDelta());
                     break;
 
             }
 
-            // printf(" XposOverall was %i ", this->player.getXPosOverall());
-                        // printf("a5\n");
-
             this->player.setXPosOverall(this->player.getXPosOverall() - this->player.getXPosDelta());
-            // printf(" now %i \n", this->player.getXPosOverall());
 
         }
 
@@ -710,9 +693,7 @@ void Game::play_loop() {
                 player_BamX = (this->enemy.getXPosDisplay() + enemy_BamXPos[imageIndex]); 
                 player_BamY = this->enemy.getYPos() + both_BamYPos[imageIndex]; 
 
-                this->colourEnemyImage(Images::Bam);
                 PD::drawBitmap(player_BamX, player_BamY, Images::Bam);
-//printf("BAM 1 getStance() %i %i > %i, %i \n", this->enemy.getStance(), imageIndex, player_BamX, player_BamY);
 
             }
             this->player.setHealth(this->player.getHealth() - playerHit < 10 ? 0 : this->player.getHealth() - playerHit);
@@ -723,8 +704,6 @@ void Game::play_loop() {
         if (enemyHit > 0) {
 
             int8_t imageIndex = this->player.getStance() - STANCE_KICK_MED_END;
-            //printf("BAM X: %i = %i, y: %i = %i\n", this->player.getStance() - STANCE_KICK_MED_END, player_BamXPos[this->player.getStance() - STANCE_KICK_MED_END], this->player.getStance() - STANCE_KICK_MED_END, both_BamYPos[this->player.getStance() - STANCE_KICK_MED_END]);
-
 
             if (imageIndex >= 0 && imageIndex <= 8) {
 
@@ -732,7 +711,6 @@ void Game::play_loop() {
                 enemy_BamY = this->player.getYPos() + both_BamYPos[imageIndex]; 
 
                 PD::drawBitmap(enemy_BamX, enemy_BamY, Images::Bam);
-//printf("BAM 2 getStance() %i %i > %i, %i > %i %i \n", this->player.getStance(), imageIndex, enemy_BamX, enemy_BamY, this->player.getXPosDisplay(), this->player.getXPosOverall());
 
             }
 
@@ -742,7 +720,7 @@ void Game::play_loop() {
                 this->enemy.setRegain(0);
 
                 if (this->enemy.isEmpty()) {
-//ENEMYRANDOM - immediate action or retreat.
+
                     enemyImmediateAction = (random(0, this->enemy.getImmediateAction()) == 0);     // Should the enemy take an immediate action?
                     enemyImmediateRetreat = (random(0, this->enemy.getRetreatAction()) == 0);    // Should the enemy retreat immediately?
 
@@ -844,18 +822,12 @@ void Game::play_loop() {
         this->enemy.push(STANCE_DEATH_3, STANCE_DEATH_2, STANCE_DEATH_1, true);
         this->enemy.setDead(true);
 
-        // this->player.insert(STANCE_DEFAULT_LEAN_BACK);
-        // for (int i = 0; i < 15; i++) {
-        //     this->player.insert(STANCE_STANDING_UPRIGHT);
-        // }
-
         this->player.setXPosDelta(0);
         this->enemy.setXPosDelta(0);
 
     }
 
-
-    if (this->enemy.getEntityType() != EntityType::None && this->player.isEmpty() && this->enemy.isEmpty() && this->player.isDead()) { 
+    if ((this->enemy.getEntityType() != EntityType::None || this->gameStateDetails.arch == ARCH_RIGHT_HAND_GATE) && this->player.isEmpty() && this->enemy.isEmpty() && this->player.isDead()) { 
         this->gameStateDetails.setCurrState(GAME_STATE_THE_END); 
     }
     
@@ -866,59 +838,6 @@ void Game::play_loop() {
     if (this->gameStateDetails.prevState == GAME_STATE_GO_THROUGH_GATE && this->player.getXPosDisplay() > 110 && this->player.isEmpty()) {
         this->gameStateDetails.setCurrState(GAME_STATE_FOLLOW_SEQUENCE);
     }
-
-    #ifdef DEBUG_ONSCREEN
-        // int16_t distBetween = absT(this->enemy.getXPos() - this->player.getXPos());
-        // arduboy.fillRect(0, 0, 75, 10, BLACK);
-        // arduboy.setCursor(1, 1);
-        // arduboy.print(distBetween);
-        // arduboy.setCursor(25, 1);
-        // arduboy.print(enemyHit);
-        // arduboy.setCursor(35, 1);
-        // arduboy.print(playerHit);
-        // arduboy.setCursor(45, 1);
-        // arduboy.print(this->player.getStance());
-        // arduboy.setCursor(60, 1);
-        // arduboy.print(this->enemy.getStance());
-    #endif
-
-    #ifdef DEBUG_HITS
-        // int16_t distBetween = absT(this->enemy.getXPos() - this->player.getXPos());
-        // arduboy.fillRect(0, 0, WIDTH, 10, BLACK);
-        // arduboy.setCursor(1, 1);
-        // arduboy.print(_distBetween);
-        // arduboy.setCursor(15, 1);
-        // arduboy.print(_distTest);
-        // arduboy.setCursor(30, 1);
-        // arduboy.print(enemyHit);
-        // arduboy.setCursor(40, 1);
-        // arduboy.print(playerHit);
-        // arduboy.setCursor(50, 1);
-        // arduboy.print(_targetStance);
-        // arduboy.setCursor(65, 1);
-        // arduboy.print(_pos);
-        // arduboy.setCursor(85, 1);
-        // arduboy.print(_action);
-    #endif
-
-    #ifdef DEBUG_STRIKING_RANGE
-        // int16_t distBetween = absT(this->enemy.getXPos() - this->player.getXPos());
-        // arduboy.fillRect(0, 0, WIDTH, 10, BLACK);
-        // arduboy.setCursor(1, 1);
-        // arduboy.print(_distBetween);
-        // arduboy.setCursor(15, 1);
-        // arduboy.print(_distTest);
-        // arduboy.setCursor(30, 1);
-        // arduboy.print(enemyHit);
-        // arduboy.setCursor(40, 1);
-        // arduboy.print(playerHit);
-        // arduboy.setCursor(50, 1);
-        // arduboy.print(_targetStance);
-        // arduboy.setCursor(65, 1);
-        // arduboy.print(_pos);
-        // arduboy.setCursor(85, 1);
-        // arduboy.print(_action);
-    #endif
   
 }
 

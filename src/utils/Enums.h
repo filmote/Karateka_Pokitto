@@ -1,14 +1,5 @@
 #pragma once
 
-#define _DEBUG
-#define _DEBUG_SERIAL
-#define _DEBUG_ONSCREEN
-#define _DEBUG_HITS
-#define _DEBUG_HIDE_BAM
-#define _DEBUG_STRIKING_RANGE
-
-#define USE_DIFFERENT_BAMS
-
 #define IMMEDIATE_ACTION_FREQUENT                 3
 #define IMMEDIATE_ACTION_NORMAL                   7
 #define IMMEDIATE_ACTION_INFREQUENT               10
@@ -44,6 +35,7 @@
 #define GAME_STATE_PRINCESS_BANISHMENT            16
 #define GAME_STATE_PRINCESS_SITTING               17
 #define GAME_STATE_FINAL_SCENE                    18
+#define GAME_STATE_FINAL_SCENE_INIT               248
 #define GAME_STATE_SPLASH_SCREEN                  255
 #define GAME_STATE_SPLASH_SCREEN_INIT             251
 #define GAME_STATE_INTRO_TEXT                     254
@@ -69,6 +61,7 @@ enum class EntityType : uint8_t {
     EnemyOne,
     EnemyTwo,
     EnemyThree,
+    Emperor,
     Eagle,
     Princess,
     Player,

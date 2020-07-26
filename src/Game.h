@@ -60,11 +60,9 @@ class Game {
         void playTheme(SoundTheme theme);
         void drawArchwayPoles(bool leftSide, bool left, uint8_t y);
         void renderPrincess();
-        void colourEnemyImage(const uint8_t * image);
+        void colourEnemyImage(const uint8_t * image, EntityType entityType);
         void introText();
         void extroText();
-        // bool canMoveCloser(Movement moverMovement, Movement otherMovement, uint16_t distBetween);
-        // Movement getLargestMove(Movement otherMovement, uint16_t distBetween);
 
         bool canMoveCloser(Movement moverMovement, Entity other, uint16_t distBetween);
         Movement getLargestMove(Entity other, uint16_t distBetween);
@@ -100,14 +98,6 @@ class Game {
 
         GameStateDetails gameStateDetails;
 
-        #ifdef DEBUG_HITS
-        int16_t _distBetween = 0;
-        int16_t _distTest = 0;
-        uint8_t _targetStance = 0;
-        uint8_t _action = 0;
-        uint16_t _pos = 0;
-        #endif
-
         Entity player;
         Entity enemy;
         Entity princess;
@@ -115,13 +105,7 @@ class Game {
         bool enemyImmediateAction = false;
         bool enemyImmediateRetreat = false;
 
-
         uint8_t imageToColour[2000];
-
-        // uint8_t xxx = 0;
-        // uint8_t yyy = 10;
-        // uint8_t zzz = 5;
-
         uint8_t imgBuffer[2 + ((110 * 88) / 2)];
 
 

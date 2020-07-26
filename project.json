@@ -22357,6 +22357,12 @@
 		},
 		"/src/images/scenery/Backdrop_02.h": {
 			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.12.png": {
+			"sdcard": false
+		},
+		"/Karateka_Pokitto.bin.12.h": {
+			"sdcard": false
 		}
 	},
 	"BUILDFlags": {

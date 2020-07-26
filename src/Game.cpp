@@ -57,18 +57,13 @@ void Game::loop() {
         }
         else {
 
-            // if (this->gameStateDetails.arch % 2 == 1) {
-            //     this->gameStateDetails.archXPos = gameSequence[ (this->gameStateDetails.sequence * GAME_STATE_SEQ_SIZE) + 3];
-            // }
-            // else {
-            //     this->gameStateDetails.archXPos = (uint16_t)128 - (uint16_t)gameSequence[ (this->gameStateDetails.sequence * GAME_STATE_SEQ_SIZE) + 3];
-            // }
             if (this->gameStateDetails.arch % 2 == 1) {
                 this->gameStateDetails.archXPos = 0;
             }
             else {
                 this->gameStateDetails.archXPos = (uint16_t)128;
             }
+            
         }
 
 
@@ -256,6 +251,10 @@ void Game::loop() {
             this->player.setXPosOverall(-60);
             this->gameStateDetails.setCurrState(GAME_STATE_PLAY);
             break;
+        
+        case GAME_STATE_FINAL_SCENE_INIT:
+            this->princess.setXPos(154);
+            [[fallthrough]];
         
         case GAME_STATE_FINAL_SCENE:
             finalScene();

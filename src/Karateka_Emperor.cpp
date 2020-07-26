@@ -24,17 +24,6 @@ void Game::emperor_loop() {
         
         this->enemy.update();
 
-        // Draw background ..
-
-        // PD::drawLine(0, 72, 110, 72);
-
-        // for (int i=74; i< 84; i+=2) {
-
-        //     drawHorizontalDottedLine(i % 2, 110, i);
-
-        // }
-
-
         for (int i = 0; i < 110; i = i + 24) {
 
             PD::drawBitmap(i, 68, Images::Floor_Purple);

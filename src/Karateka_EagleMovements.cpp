@@ -35,7 +35,7 @@ void Game::eagleMovements() {
       case EAGLE_MODE_FLY_TOWARDS:
         {
           int16_t distanceBetween = absT(this->enemy.getXPos() - this->player.getXPos());
-          uint8_t testDistance = 35;//20;
+          uint8_t testDistance = 35;
           
           switch (this->player.getStance()) {
 
@@ -45,11 +45,11 @@ void Game::eagleMovements() {
 
                 case EAGLE_LEVEL_LOW:
                 case EAGLE_LEVEL_MED:
-                  testDistance = 49;//40;
+                  testDistance = 49;
                   break;
 
                 default:
-                  testDistance = 35;//24;
+                  testDistance = 35;
                   break;
 
               }
@@ -58,11 +58,11 @@ void Game::eagleMovements() {
           
             case STANCE_STANDING_UPRIGHT:
             case STANCE_STANDING_UPRIGHT_REV:
-              testDistance = 40;//30;
+              testDistance = 40;
               break;
 
             default:
-              testDistance = 28;//30;
+              testDistance = 28;
               break;
 
           }

@@ -237,7 +237,7 @@ struct Entity {
 
         bool isNormalEnemy() {
 
-            return this->getEntityType() == EntityType::EnemyOne || this->getEntityType() == EntityType::EnemyTwo || this->getEntityType() == EntityType::EnemyThree;
+            return this->getEntityType() == EntityType::EnemyOne || this->getEntityType() == EntityType::EnemyTwo || this->getEntityType() == EntityType::EnemyThree || this->getEntityType() == EntityType::Emperor;
             
         }
 

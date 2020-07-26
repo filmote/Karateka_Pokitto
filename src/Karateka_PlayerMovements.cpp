@@ -11,8 +11,6 @@
 using PC = Pokitto::Core;
 using PD = Pokitto::Display;
 
-#define _DEBUG_PLAYER_MOVE
-
 
 // ---------------------------------------------------------------------------------------------------------------
 //  Player movements ..
@@ -20,7 +18,7 @@ using PD = Pokitto::Display;
 void Game::playerMovements() {
 
     uint16_t distBetween = (this->enemy.getEntityType() != EntityType::None ? absT(this->enemy.getXPos() - this->player.getXPos()) : 9999);
-//printf("Dist > %i\n", distBetween);
+
     if (this->player.isEmpty()) {
 
         this->enemy.setMovement(Movement::None);
@@ -37,8 +35,6 @@ void Game::playerMovements() {
 
         // Process movements ..
 
-// printf("player frame %i\n", this->player.getFrame());
-// printf("XPos() getXPosOverall() %i %i\n", player.getXPos(), player.getXPosOverall());
         this->player.setMovement(Movement::None);
         this->player.setXPosDelta(0);
 
@@ -48,7 +44,6 @@ void Game::playerMovements() {
 
                 case STANCE_STANDING_UPRIGHT:
                     this->player.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK, true);
-                    // this->player.setMovement(Movement::None);
                     this->playSoundEffect(SoundEffect::Kiai);
                     break;
 
@@ -61,8 +56,6 @@ void Game::playerMovements() {
                         this->player.push(STANCE_KICK_READY, STANCE_DEFAULT_LEAN_BACK, true);
                         this->player.setActionsBeforeReturn(random(PLAYER_KICK_ACTIONS_MIN, PLAYER_KICK_ACTIONS_MAX));
 
-                        // this->player.setMovement(Movement::None);
-
                     }
                     else {
 
@@ -70,17 +63,14 @@ void Game::playerMovements() {
 
                         if (PC::buttons.pressed(BTN_RIGHT))  {             // Medium kick ..
                             this->player.push(STANCE_KICK_MED_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK, true);
-                            // this->player.setMovement(Movement::None);
                         }
 
                         else if (PC::buttons.pressed(BTN_UP))  {           // High kick ..
                             this->player.push(STANCE_KICK_HIGH_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK, true);
-                            // this->player.setMovement(Movement::None);
                         }
 
                         else if (PC::buttons.pressed(BTN_DOWN))  {         // Low kick ..
                             this->player.push(STANCE_KICK_LOW_END, STANCE_KICK_STANDING_TRANSITION, STANCE_DEFAULT_LEAN_BACK, true);
-                            // this->player.setMovement(Movement::None);
                         }
 
                     }
@@ -296,37 +286,25 @@ void Game::playerMovements() {
                     case STANCE_PUNCH_LOW_RH_END:
 
                         this->player.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_FORWARD, STANCE_PUNCH_READY, true);
-                        // this->player.setMovement(Movement::None);
                         break;
 
                     case STANCE_DEFAULT:
 
                         if (PC::buttons.pressed(BTN_UP))  { // Stand upright again ..
                             this->player.push(STANCE_STANDING_UPRIGHT, STANCE_DEFAULT_LEAN_BACK, true);
-                            // this->player.setMovement(Movement::None);
                         }
-//SIDLE
+
                         else if (PC::buttons.pressed(BTN_RIGHT) || PC::buttons.repeat(BTN_RIGHT, 1))  { // Sidle forward ..
 
                             if (this->gameStateDetails.arch == ARCH_RIGHT_HAND_GATE && this->player.getXPos() >= 114 && this->gameStateDetails.archGatePos > 30) {
                             }
                             else {
-// #ifdef DEBUG_PLAYER_MOVE
-// printf("Player Move 1 %i - ", distBetween);              
-// #endif
+
                                 if (this->canMoveCloser(Movement::Sidle_Forward_Unknown, this->enemy, distBetween)) {
-// #ifdef DEBUG_PLAYER_MOVE
-// printf("- yes\n");
-// #endif
+
                                     this->player.setXPosDelta(-MAIN_SCENE_X_SIDLING_1_DELTA); 
                                     this->player.setMovement(Movement::Sidle_Forward_Unknown);
                                     this->player.push(STANCE_DEFAULT_LEAN_FORWARD, true);
-
-                                }
-                                else {
-// #ifdef DEBUG_PLAYER_MOVE
-// printf("- no\n");
-// #endif
 
                                 }
 
@@ -335,9 +313,7 @@ void Game::playerMovements() {
                         }
 
                         else if ((PC::buttons.pressed(BTN_LEFT) || PC::buttons.repeat(BTN_LEFT, 1)) && this->player.getXPosOverall() > 16)  { // Sidle backward ..
-// #ifdef DEBUG_PLAYER_MOVE
-// printf("Player Move 2 BCK\n"); 
-// #endif
+
                             this->player.setMovement(Movement::Sidle_Backward);
                             this->player.setXPosDelta(MAIN_SCENE_X_SIDLING_2_DELTA); 
                             this->player.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK, STANCE_SIDLING_3, true);
@@ -353,13 +329,11 @@ void Game::playerMovements() {
                         this->player.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK, true);
                         this->player.push(STANCE_STANDING_UPRIGHT, STANCE_BOW_1, true);
                         this->player.push(STANCE_BOW_2, STANCE_BOW_1, true);
-                        // this->player.setMovement(Movement::None);
                         this->playSoundEffect(SoundEffect::Kiai);
                     }
 
                     if (PC::buttons.pressed(BTN_DOWN))  { // If standing upright, move to the fighting position ..
                         this->player.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK, true);
-                        // this->player.setMovement(Movement::None);
                         this->playSoundEffect(SoundEffect::Kiai);
                     }
 
@@ -396,32 +370,21 @@ void Game::playerMovements() {
             
             case Movement::Sidle_Forward_Unknown:
 
-// printf("Peek %i\n", this->player.peek());
-
-
                 switch (this->player.peek()) {
 
                     case STANCE_DEFAULT_LEAN_FORWARD:
                     
                         if (this->player.getCount() == 1) {
-// printf("STANCE_DEFAULT_LEAN_FORWARD > INIT\n");
 
-// #ifdef DEBUG_PLAYER_MOVE
-// printf("Player Move 3 %i - ", distBetween); 
-// #endif
                             if ((PC::buttons.pressed(BTN_RIGHT) || PC::buttons.repeat(BTN_RIGHT, 1)) && 
                                 (!PC::buttons.pressed(BTN_A) || PC::buttons.repeat(BTN_A, 1)) && 
                                 (!PC::buttons.pressed(BTN_B) || PC::buttons.repeat(BTN_B, 1)) &&
                                 (this->canMoveCloser(Movement::Sidle_Forward_SML, this->enemy, distBetween) || (!this->enemy.isNormalEnemy()))) {
 
-// printf("STANCE_DEFAULT_LEAN_FORWARD > B\n");
-
                                 this->player.setXPosDelta(-MAIN_SCENE_X_SIDLING_2_DELTA); 
                                 this->player.pop();
                                 this->player.push(STANCE_SIDLING_1, STANCE_DEFAULT_LEAN_FORWARD, false);
-// #ifdef DEBUG_PLAYER_MOVE
-// printf(" - yes\n"); 
-// #endif
+
                             }
                             else { 
 
@@ -430,9 +393,7 @@ void Game::playerMovements() {
                                 this->player.pop();
                                 this->player.push(STANCE_DEFAULT, false);
                                 this->player.push(STANCE_SIDLING_1, false);
-// #ifdef DEBUG_PLAYER_MOVE
-// printf(" - no\n"); 
-// #endif
+
                             }
                         
                         }
@@ -442,9 +403,6 @@ void Game::playerMovements() {
                     case STANCE_SIDLING_1:
 
                         if (this->player.getCount() == 1) {
-// #ifdef DEBUG_PLAYER_MOVE
-// printf("Player Move 5 %i - ", distBetween); 
-// #endif
 
                             if ((PC::buttons.pressed(BTN_RIGHT) || PC::buttons.repeat(BTN_RIGHT, 1)) && 
                                 (!PC::buttons.pressed(BTN_A) || PC::buttons.repeat(BTN_A, 1)) && 
@@ -453,9 +411,7 @@ void Game::playerMovements() {
 
                                 this->player.pop();
                                 this->player.push(STANCE_SIDLING_1_1, STANCE_SIDLING_1, false);
-// #ifdef DEBUG_PLAYER_MOVE
-// printf(" - yes\n"); 
-// #endif
+
                             }
 
                             else { 
@@ -464,9 +420,7 @@ void Game::playerMovements() {
                                 this->player.pop();
                                 this->player.push(STANCE_DEFAULT, STANCE_SIDLING_2, true);
                                 this->player.push(STANCE_SIDLING_1, true);
-// #ifdef DEBUG_PLAYER_MOVE
-// printf(" - no\n"); 
-// #endif
+
                             }
                         
                         }
@@ -476,9 +430,6 @@ void Game::playerMovements() {
                     case STANCE_SIDLING_1_1:
 
                         if (this->player.getCount() == 1) {
-// #ifdef DEBUG_PLAYER_MOVE
-// printf("Player Move 7 %i - ", distBetween);
-// #endif
 
                             if (PC::buttons.pressed(BTN_RIGHT) || PC::buttons.repeat(BTN_RIGHT, 1) && 
                                 (this->canMoveCloser(Movement::Sidle_Forward_LRG, this->enemy, distBetween) || (!this->enemy.isNormalEnemy()))) {
@@ -488,9 +439,7 @@ void Game::playerMovements() {
                                 this->player.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK, STANCE_SIDLING_3, false);
                                 this->player.push(STANCE_SIDLING_2_1, STANCE_SIDLING_2, STANCE_SIDLING_1_2, false);
                                 this->player.push(STANCE_SIDLING_1_1, false);
-// #ifdef DEBUG_PLAYER_MOVE
-// printf(" - yes\n"); 
-// #endif
+
                             }
                             else {
 
@@ -498,9 +447,7 @@ void Game::playerMovements() {
                                 this->player.pop();
                                 this->player.push(STANCE_DEFAULT, STANCE_DEFAULT_LEAN_BACK, STANCE_SIDLING_3, false);
                                 this->player.push(STANCE_SIDLING_1_1, false);
-// #ifdef DEBUG_PLAYER_MOVE
-// printf(" - no\n"); 
-// #endif
+
                             }
                         
                         }
@@ -543,7 +490,6 @@ void Game::playerMovements_ContinueRunning(uint16_t distBetween) {
 
         this->player.setXPosDelta(-MAIN_SCENE_X_SIDLING_4_DELTA);            
         this->player.push(STANCE_STANDING_UPRIGHT, STANCE_RUNNING_STRAIGHTEN_UP, true);
-        // this->player.setMovement(Movement::None);
 
     }
 
@@ -553,19 +499,16 @@ void Game::playerMovements_Punch() {
 
     if (PC::buttons.pressed(BTN_RIGHT))  {             // Medium punch ..
         this->player.push(STANCE_PUNCH_READY, (this->player.getRightPunch() ? STANCE_PUNCH_MED_RH_END : STANCE_PUNCH_MED_LH_END), true);
-        // this->player.setMovement(Movement::None);
         this->player.setRightPunch(!this->player.getRightPunch());
     }
 
     else if (PC::buttons.pressed(BTN_UP))  {           // High punch ..
         this->player.push(STANCE_PUNCH_READY, (this->player.getRightPunch() ? STANCE_PUNCH_HIGH_RH_END : STANCE_PUNCH_HIGH_LH_END), true);
-        // this->player.setMovement(Movement::None);
         this->player.setRightPunch(!this->player.getRightPunch());
     }
 
     else if (PC::buttons.pressed(BTN_DOWN))  {         // Low punch ..
         this->player.push(STANCE_PUNCH_READY, (this->player.getRightPunch() ? STANCE_PUNCH_LOW_RH_END : STANCE_PUNCH_LOW_LH_END), true);
-        // this->player.setMovement(Movement::None);
         this->player.setRightPunch(!this->player.getRightPunch());
     }
 
